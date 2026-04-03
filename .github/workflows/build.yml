@@ -20,6 +20,12 @@ jobs:
       with:
         channel: 'stable'
         flutter-version: '3.22.0' # ئەمە وەشانی Dart 3.4.0 تێدایە
+
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+       distribution: 'temurin'
+       java-version: '17'
     
     - name: Install dependencies
       run: flutter pub get

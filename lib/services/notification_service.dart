@@ -25,7 +25,9 @@ class NotificationService {
       iOS: iosSettings,
     );
 
-    await _notifications.initialize(settings);
+    await _notifications.initialize(
+      settings: settings,
+    );
   }
 
   static Future<void> showDailyQuoteNotification(
@@ -43,10 +45,10 @@ class NotificationService {
         NotificationDetails(android: androidDetails);
 
     await _notifications.show(
-      0,
-      '✨ Daily Wisdom ✨',
-      '$quote\n\n— $author',
-      details,
+      id: 0,
+      title: '✨ Daily Wisdom ✨',
+      body: '$quote\n\n— $author',
+      notificationDetails: details,
     );
   }
 
@@ -63,7 +65,6 @@ class NotificationService {
         ? scheduledTime.add(const Duration(days: 1))
         : scheduledTime;
 
-    // بەکارهێنانی گۆڕاوەکان - debugPrint
     debugPrint("Daily quote scheduled for: ${finalTime.toLocal()}");
 
     const AndroidNotificationDetails androidDetails =
@@ -79,11 +80,12 @@ class NotificationService {
         NotificationDetails(android: androidDetails);
 
     await _notifications.periodicallyShow(
-      1,
-      '📖 Your Daily Quote',
-      '$quote\n\n— $author',
-      RepeatInterval.daily,
-      details,
+      id: 1,
+      title: '📖 Your Daily Quote',
+      body: '$quote\n\n— $author',
+      repeatInterval: RepeatInterval.daily,
+      notificationDetails: details,
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
   }
 
@@ -108,19 +110,17 @@ class NotificationService {
     final tzDateTime = tz.TZDateTime.from(time, tz.local);
 
     await _notifications.zonedSchedule(
-      id,
-      title,
-      body,
-      tzDateTime,
-      details,
+      id: id,
+      title: title,
+      body: body,
+      scheduledDate: tzDateTime,
+      notificationDetails: details,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
     );
   }
 
   static Future<void> cancelReminder(int id) async {
-    await _notifications.cancel(id);
+    await _notifications.cancel(id: id);
   }
 
   static Future<void> cancelAllReminders() async {

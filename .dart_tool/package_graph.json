@@ -9,7 +9,7 @@
       "dependencies": [
         "flutter",
         "flutter_local_notifications",
-        "flutter_native_timezone",
+        "flutter_timezone",
         "image_gallery_saver",
         "intl",
         "path",
@@ -26,7 +26,7 @@
     },
     {
       "name": "flutter_lints",
-      "version": "3.0.2",
+      "version": "6.0.0",
       "dependencies": [
         "lints"
       ]
@@ -51,18 +51,20 @@
     },
     {
       "name": "timezone",
-      "version": "0.9.4",
+      "version": "0.10.1",
       "dependencies": [
+        "http",
         "path"
       ]
     },
     {
-      "name": "flutter_native_timezone",
-      "version": "2.0.0",
+      "name": "flutter_timezone",
+      "version": "5.0.2",
       "dependencies": [
+        "equatable",
         "flutter",
         "flutter_web_plugins",
-        "js"
+        "meta"
       ]
     },
     {
@@ -84,7 +86,7 @@
     },
     {
       "name": "intl",
-      "version": "0.18.1",
+      "version": "0.20.2",
       "dependencies": [
         "clock",
         "meta",
@@ -105,7 +107,7 @@
     },
     {
       "name": "screenshot",
-      "version": "2.5.0",
+      "version": "3.0.0",
       "dependencies": [
         "flutter"
       ]
@@ -119,12 +121,13 @@
     },
     {
       "name": "flutter_local_notifications",
-      "version": "16.3.3",
+      "version": "20.1.0",
       "dependencies": [
         "clock",
         "flutter",
         "flutter_local_notifications_linux",
         "flutter_local_notifications_platform_interface",
+        "flutter_local_notifications_windows",
         "timezone"
       ]
     },
@@ -155,7 +158,7 @@
     },
     {
       "name": "lints",
-      "version": "3.0.0",
+      "version": "6.1.0",
       "dependencies": []
     },
     {
@@ -238,15 +241,28 @@
       ]
     },
     {
-      "name": "js",
-      "version": "0.7.2",
-      "dependencies": []
+      "name": "http",
+      "version": "1.6.0",
+      "dependencies": [
+        "async",
+        "http_parser",
+        "meta",
+        "web"
+      ]
     },
     {
       "name": "flutter_web_plugins",
       "version": "0.0.0",
       "dependencies": [
         "flutter"
+      ]
+    },
+    {
+      "name": "equatable",
+      "version": "2.0.8",
+      "dependencies": [
+        "collection",
+        "meta"
       ]
     },
     {
@@ -338,15 +354,26 @@
     },
     {
       "name": "flutter_local_notifications_platform_interface",
-      "version": "7.2.0",
+      "version": "10.0.0",
       "dependencies": [
-        "flutter",
         "plugin_platform_interface"
       ]
     },
     {
+      "name": "flutter_local_notifications_windows",
+      "version": "2.0.1",
+      "dependencies": [
+        "ffi",
+        "flutter",
+        "flutter_local_notifications_platform_interface",
+        "meta",
+        "timezone",
+        "xml"
+      ]
+    },
+    {
       "name": "flutter_local_notifications_linux",
-      "version": "4.0.1",
+      "version": "7.0.0",
       "dependencies": [
         "dbus",
         "ffi",
@@ -489,6 +516,21 @@
       ]
     },
     {
+      "name": "web",
+      "version": "1.1.1",
+      "dependencies": []
+    },
+    {
+      "name": "http_parser",
+      "version": "4.1.2",
+      "dependencies": [
+        "collection",
+        "source_span",
+        "string_scanner",
+        "typed_data"
+      ]
+    },
+    {
       "name": "synchronized",
       "version": "3.4.0",
       "dependencies": []
@@ -519,6 +561,15 @@
       ]
     },
     {
+      "name": "xml",
+      "version": "6.6.1",
+      "dependencies": [
+        "collection",
+        "meta",
+        "petitparser"
+      ]
+    },
+    {
       "name": "dbus",
       "version": "0.7.12",
       "dependencies": [
@@ -537,28 +588,16 @@
       ]
     },
     {
-      "name": "web",
-      "version": "1.1.1",
-      "dependencies": []
-    },
-    {
       "name": "vm_service",
       "version": "15.0.2",
       "dependencies": []
     },
     {
-      "name": "xml",
-      "version": "6.6.1",
+      "name": "typed_data",
+      "version": "1.4.0",
       "dependencies": [
-        "collection",
-        "meta",
-        "petitparser"
+        "collection"
       ]
-    },
-    {
-      "name": "args",
-      "version": "2.7.0",
-      "dependencies": []
     },
     {
       "name": "petitparser",
@@ -567,6 +606,11 @@
         "collection",
         "meta"
       ]
+    },
+    {
+      "name": "args",
+      "version": "2.7.0",
+      "dependencies": []
     }
   ],
   "configVersion": 1
