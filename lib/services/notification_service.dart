@@ -1,7 +1,6 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
-import 'package:flutter/material.dart';
 
 class NotificationService {
   static final FlutterLocalNotificationsPlugin _notifications =
@@ -26,7 +25,7 @@ class NotificationService {
     );
 
     await _notifications.initialize(
-      settings: settings,
+      settings, // ✅ FIX
     );
   }
 
@@ -45,10 +44,10 @@ class NotificationService {
         NotificationDetails(android: androidDetails);
 
     await _notifications.show(
-      id: 0,
-      title: '✨ Daily Wisdom ✨',
-      body: '$quote\n\n— $author',
-      notificationDetails: details,
+      0, // ✅ FIX
+      '✨ Daily Wisdom ✨',
+      '$quote\n\n— $author',
+      details,
     );
   }
 
@@ -58,15 +57,6 @@ class NotificationService {
     required String quote,
     required String author,
   }) async {
-    final now = DateTime.now();
-    final scheduledTime = DateTime(now.year, now.month, now.day, hour, minute);
-
-    final DateTime finalTime = scheduledTime.isBefore(now)
-        ? scheduledTime.add(const Duration(days: 1))
-        : scheduledTime;
-
-    debugPrint("Daily quote scheduled for: ${finalTime.toLocal()}");
-
     const AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
       'daily_quote_channel',
@@ -80,11 +70,11 @@ class NotificationService {
         NotificationDetails(android: androidDetails);
 
     await _notifications.periodicallyShow(
-      id: 1,
-      title: '📖 Your Daily Quote',
-      body: '$quote\n\n— $author',
-      repeatInterval: RepeatInterval.daily,
-      notificationDetails: details,
+      1, // ✅ FIX
+      '📖 Your Daily Quote',
+      '$quote\n\n— $author',
+      RepeatInterval.daily,
+      details,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
   }
@@ -110,17 +100,19 @@ class NotificationService {
     final tzDateTime = tz.TZDateTime.from(time, tz.local);
 
     await _notifications.zonedSchedule(
-      id: id,
-      title: title,
-      body: body,
-      scheduledDate: tzDateTime,
-      notificationDetails: details,
+      id, // ✅ FIX
+      title,
+      body,
+      tzDateTime,
+      details,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime, // ✅ FIX
     );
   }
 
   static Future<void> cancelReminder(int id) async {
-    await _notifications.cancel(id: id);
+    await _notifications.cancel(id); // ✅ FIX
   }
 
   static Future<void> cancelAllReminders() async {
