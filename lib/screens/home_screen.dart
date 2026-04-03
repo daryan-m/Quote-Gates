@@ -162,12 +162,12 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
 
-    if (!mounted) return;
-
-    if (newFont != null) {
-      setState(() => _fontFamily = newFont);
-      await _storage.saveFontFamily(newFont);
+    if (!mounted || newFont == null) {
+      return; // چاوەڕوانی cancel یان unmounted widget
     }
+
+    setState(() => _fontFamily = newFont);
+    await _storage.saveFontFamily(newFont);
   }
 
   Future<void> _shareQuoteAsImage() async {
