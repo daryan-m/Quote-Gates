@@ -1,4 +1,3 @@
-// ویجێتی وتە - نمایشکردنی وتەکان بە شێوەیەکی جوان
 import 'package:flutter/material.dart';
 
 class QuoteWidget extends StatelessWidget {
@@ -43,11 +42,10 @@ class QuoteWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // ✅ گۆڕینی withOpacity بۆ withValues (ڕیزی 46)
           Icon(
             Icons.format_quote,
             size: 60,
-            color: textColor.withValues(alpha: 0.4),
+            color: textColor.withValues(alpha: 0.4), // color: زیادکرا
           ),
           const SizedBox(height: 24),
           Text(
@@ -66,7 +64,6 @@ class QuoteWidget extends StatelessWidget {
           Container(
             width: 60,
             height: 2,
-            // ✅ گۆڕینی withOpacity بۆ withValues (ڕیزی 61)
             color: textColor.withValues(alpha: 0.3),
           ),
           const SizedBox(height: 16),
@@ -74,7 +71,6 @@ class QuoteWidget extends StatelessWidget {
             "— $author —",
             style: TextStyle(
               fontSize: 18,
-              // ✅ گۆڕینی withOpacity بۆ withValues (ڕیزی 67)
               color: textColor.withValues(alpha: 0.7),
               fontWeight: FontWeight.w300,
               letterSpacing: 1,

@@ -25,6 +25,14 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _isPremium = false;
   final GlobalKey _quoteKey = GlobalKey();
 
+  // Helper: Color بکە بۆ hex string
+  String _colorToHex(Color color) {
+    return 'ff'
+        '${(color.r * 255).round().toRadixString(16).padLeft(2, '0')}'
+        '${(color.g * 255).round().toRadixString(16).padLeft(2, '0')}'
+        '${(color.b * 255).round().toRadixString(16).padLeft(2, '0')}';
+  }
+
   @override
   void initState() {
     super.initState();
@@ -40,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final time = await _storage.getDailyQuoteTime();
 
     setState(() {
-      _bgColor = Color(int.parse(colorHex));
+      _bgColor = Color(int.parse(colorHex, radix: 16)); // گۆڕدرا
       _fontFamily = font;
       _isPremium = premium;
       if (time != null) _selectedTime = time;
@@ -136,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     if (newColor != null) {
       setState(() => _bgColor = newColor);
-      await _storage.saveBackgroundColor(newColor.toARGB32().toRadixString(16));
+      await _storage.saveBackgroundColor(_colorToHex(newColor)); // گۆڕدرا
     }
   }
 
@@ -162,9 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
 
-    if (!mounted || newFont == null) {
-      return; // چاوەڕوانی cancel یان unmounted widget
-    }
+    if (!mounted || newFont == null) return;
 
     setState(() => _fontFamily = newFont);
     await _storage.saveFontFamily(newFont);
