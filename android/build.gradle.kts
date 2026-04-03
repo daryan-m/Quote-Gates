@@ -19,12 +19,12 @@ subprojects {
     project.evaluationDependsOn(":app")
 }
 
-subprojects {
-    afterEvaluate {
+// پاچی gal compileSdk
+gradle.projectsEvaluated {
+    subprojects {
         if (project.plugins.hasPlugin("com.android.library")) {
-            (project.extensions.findByName("android") as? com.android.build.gradle.LibraryExtension)?.apply {
-                compileSdk = 34
-            }
+            (project.extensions.findByName("android")
+                as? com.android.build.gradle.LibraryExtension)?.compileSdk = 34
         }
     }
 }
