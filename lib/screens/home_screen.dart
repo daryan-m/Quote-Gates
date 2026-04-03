@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // Helper: Color بکە بۆ hex string
   String _colorToHex(Color color) {
-    return color.toARGB32().toRadixString(16).padLeft(8, '0');
+    return color.value.toRadixString(16).padLeft(8, '0');
   }
 
   @override
