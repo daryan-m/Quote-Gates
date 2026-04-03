@@ -110,10 +110,10 @@
       "languageVersion": "3.8"
     },
     {
-      "name": "image_gallery_saver",
-      "rootUri": "file:///home/user/.pub-cache/hosted/pub.dev/image_gallery_saver-2.0.3",
+      "name": "gal",
+      "rootUri": "file:///home/user/.pub-cache/hosted/pub.dev/gal-2.3.2",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "intl",

@@ -1,7 +1,7 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:gal/gal.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
@@ -28,7 +28,7 @@ class ImageShare {
         await file.writeAsBytes(byteData.buffer.asUint8List());
 
         // هەڵگرتن لە گالێری
-        await ImageGallerySaver.saveFile(path);
+        await Gal.putImage(path);
 
         // پیشاندانی پیام
         // تێبینی: بۆ share کردن ڕاستەوخۆ پێویستی بە share_plus پاکێجە

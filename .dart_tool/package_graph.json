@@ -10,7 +10,7 @@
         "flutter",
         "flutter_local_notifications",
         "flutter_timezone",
-        "image_gallery_saver",
+        "gal",
         "intl",
         "path",
         "path_provider",
@@ -47,6 +47,13 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "gal",
+      "version": "2.3.2",
+      "dependencies": [
+        "flutter"
       ]
     },
     {
@@ -106,13 +113,6 @@
     {
       "name": "screenshot",
       "version": "3.0.0",
-      "dependencies": [
-        "flutter"
-      ]
-    },
-    {
-      "name": "image_gallery_saver",
-      "version": "2.0.3",
       "dependencies": [
         "flutter"
       ]
