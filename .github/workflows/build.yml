@@ -1,4 +1,4 @@
-name: Build Flutter App
+name: Build Flutter App (2026 Compatible)
 
 on:
   push:
@@ -13,10 +13,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      # Updated for 2026 compatibility
+      uses: actions/checkout@v6
 
     - name: Setup Java
-      uses: actions/setup-java@v4
+      # Updated for 2026 compatibility
+      uses: actions/setup-java@v5
       with:
         distribution: 'temurin'
         java-version: '17'
@@ -36,20 +38,24 @@ jobs:
     - name: Install dependencies
       run: flutter pub get
 
-    - name: Build APK
-      run: flutter build apk --release
+    - name: Build APK (Debug)
+      # Switched to --debug to avoid signing issues for now
+      run: flutter build apk --debug
 
-    - name: Build AppBundle
-      run: flutter build appbundle --release
+    - name: Build AppBundle (Debug)
+      # Switched to --debug to avoid signing issues for now
+      run: flutter build appbundle --debug
 
-    - name: Upload APK
-      uses: actions/upload-artifact@v4
+    - name: Upload Debug APK
+      # Updated for 2026 compatibility
+      uses: actions/upload-artifact@v6
       with:
-        name: app-release.apk
-        path: build/app/outputs/flutter-apk/app-release.apk
+        name: app-debug.apk
+        path: build/app/outputs/flutter-apk/app-debug.apk
 
-    - name: Upload AppBundle
-      uses: actions/upload-artifact@v4
+    - name: Upload Debug AppBundle
+      # Updated for 2026 compatibility
+      uses: actions/upload-artifact@v6
       with:
-        name: app-release.aab
-        path: build/app/outputs/bundle/release/app-release.aab
+        name: app-debug.aab
+        path: build/app/outputs/bundle/debug/app-debug.aab
