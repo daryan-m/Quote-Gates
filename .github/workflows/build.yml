@@ -38,24 +38,24 @@ jobs:
     - name: Install dependencies
       run: flutter pub get
 
-    - name: Build APK (Debug)
-      # Switched to --debug to avoid signing issues for now
-      run: flutter build apk --debug
+    - name: Build APK (release)
+      # Switched to --release to avoid signing issues for now
+      run: flutter build apk --release
 
-    - name: Build AppBundle (Debug)
-      # Switched to --debug to avoid signing issues for now
-      run: flutter build appbundle --debug
+    - name: Build AppBundle (release)
+      # Switched to --release to avoid signing issues for now
+      run: flutter build appbundle --release
 
-    - name: Upload Debug APK
+    - name: Upload release APK
       # Updated for 2026 compatibility
       uses: actions/upload-artifact@v6
       with:
-        name: app-debug.apk
-        path: build/app/outputs/flutter-apk/app-debug.apk
+        name: app-release.apk
+        path: build/app/outputs/flutter-apk/app-release.apk
 
-    - name: Upload Debug AppBundle
+    - name: Upload release AppBundle
       # Updated for 2026 compatibility
       uses: actions/upload-artifact@v6
       with:
-        name: app-debug.aab
-        path: build/app/outputs/bundle/debug/app-debug.aab
+        name: app-release.aab
+        path: build/app/outputs/bundle/release/app-release.aab
