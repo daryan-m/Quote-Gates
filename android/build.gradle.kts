@@ -19,16 +19,6 @@ subprojects {
     project.evaluationDependsOn(":app")
 }
 
-// پاچی gal compileSdk
-gradle.projectsEvaluated {
-    subprojects {
-        if (project.plugins.hasPlugin("com.android.library")) {
-            (project.extensions.findByName("android")
-                as? com.android.build.gradle.LibraryExtension)?.compileSdk = 34
-        }
-    }
-}
-
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }

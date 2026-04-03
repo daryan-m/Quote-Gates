@@ -1,13 +1,12 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:gal/gal.dart';
+import 'package:saver_gallery/saver_gallery.dart'; // گۆڕا
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 
 class ImageShare {
-  // وێنەگرتن لە ویجێتێک و هاوبەشکردنی
   static Future<void> captureAndShare(
     GlobalKey key,
     String quote,
@@ -28,10 +27,13 @@ class ImageShare {
         await file.writeAsBytes(byteData.buffer.asUint8List());
 
         // هەڵگرتن لە گالێری
-        await Gal.putImage(path);
-
-        // پیشاندانی پیام
-        // تێبینی: بۆ share کردن ڕاستەوخۆ پێویستی بە share_plus پاکێجە
+        await SaverGallery.saveImage(
+  byteData.buffer.asUint8List(),
+  quality: 100,
+  fileName: 'wisdom_quote',
+  skipIfExists: false,
+  androidRelativePath: 'Pictures/WisdomApp',
+);
       }
     } catch (e) {
       debugPrint('Error: $e');

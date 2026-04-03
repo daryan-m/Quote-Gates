@@ -19,7 +19,8 @@ dependencies:
   path: ^1.9.0
   flutter_timezone: ^1.0.8
   timezone: ^0.9.4
-  gal: ^2.3.2
+# gal: ^2.3.2   # ئەمە بیسڕە
+  saver_gallery: ^3.0.4
 
 dev_dependencies:
   flutter_test:

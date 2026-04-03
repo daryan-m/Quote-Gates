@@ -10,10 +10,10 @@
         "flutter",
         "flutter_local_notifications",
         "flutter_timezone",
-        "gal",
         "intl",
         "path",
         "path_provider",
+        "saver_gallery",
         "screenshot",
         "shared_preferences",
         "sqflite",
@@ -50,10 +50,14 @@
       ]
     },
     {
-      "name": "gal",
-      "version": "2.3.2",
+      "name": "saver_gallery",
+      "version": "3.0.10",
       "dependencies": [
-        "flutter"
+        "flutter",
+        "mime",
+        "path",
+        "path_provider",
+        "uuid"
       ]
     },
     {
@@ -236,6 +240,19 @@
         "string_scanner",
         "term_glyph"
       ]
+    },
+    {
+      "name": "uuid",
+      "version": "4.5.3",
+      "dependencies": [
+        "crypto",
+        "fixnum"
+      ]
+    },
+    {
+      "name": "mime",
+      "version": "2.0.0",
+      "dependencies": []
     },
     {
       "name": "js",
@@ -489,6 +506,18 @@
       ]
     },
     {
+      "name": "fixnum",
+      "version": "1.1.1",
+      "dependencies": []
+    },
+    {
+      "name": "crypto",
+      "version": "3.0.7",
+      "dependencies": [
+        "typed_data"
+      ]
+    },
+    {
       "name": "synchronized",
       "version": "3.4.0",
       "dependencies": []
@@ -545,6 +574,13 @@
       "name": "vm_service",
       "version": "15.0.2",
       "dependencies": []
+    },
+    {
+      "name": "typed_data",
+      "version": "1.4.0",
+      "dependencies": [
+        "collection"
+      ]
     },
     {
       "name": "xml",
