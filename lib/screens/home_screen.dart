@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'dart:math' as math;
 import '../services/storage_service.dart';
 import '../services/quote_loader.dart';
@@ -29,7 +30,79 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _loadSettings();
+    _checkFirstLaunch();
     _scheduleDailyQuoteIfNeeded();
+  }
+
+  Future<void> _checkFirstLaunch() async {
+    final hasShown = await _storage.getFirstLaunchShown();
+    if (!hasShown) {
+      _showPermissionDialog();
+      await _storage.setFirstLaunchShown(true);
+    }
+  }
+
+  void _showPermissionDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => AlertDialog(
+        title: const Text("Permissions Required"),
+        content: const Text("This app needs permissions to work properly:\n\n"
+            "• Notifications - Daily quotes\n"
+            "• Storage - Save images\n"
+            "• Alarms - Reminders\n\n"
+            "Please allow to continue."),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text("Later"),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _requestAllPermissions();
+            },
+            child: const Text("Allow"),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _requestAllPermissions() async {
+    await Permission.notification.request();
+    await Permission.storage.request();
+    await Permission.scheduleExactAlarm.request();
+  }
+
+  Future<bool> requestNotificationForNote() async {
+    final status = await Permission.notification.status;
+    if (status.isDenied) {
+      final result = await Permission.notification.request();
+      return result.isGranted;
+    }
+    return true;
+  }
+
+  Future<bool> requestAlarmForReminder() async {
+    final status = await Permission.scheduleExactAlarm.status;
+    if (status.isDenied) {
+      final result = await Permission.scheduleExactAlarm.request();
+      return result.isGranted;
+    }
+    return true;
+  }
+
+  Future<bool> requestStorageForImage() async {
+    final status = await Permission.storage.status;
+    if (status.isDenied) {
+      final result = await Permission.storage.request();
+      return result.isGranted;
+    }
+    return true;
   }
 
   Future<void> _loadSettings() async {
@@ -246,15 +319,29 @@ class _HomeScreenState extends State<HomeScreen> {
                     _navButton(Icons.note_add, "Notes", () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => const NotesScreen()),
+                        MaterialPageRoute(
+                          builder: (_) => NotesScreen(
+                            onRequestNotification: requestNotificationForNote,
+                            onRequestAlarm: requestAlarmForReminder,
+                          ),
+                        ),
                       );
                     }),
                     _navButton(Icons.alarm, "Reminders", () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => const RemindersScreen()),
+                          builder: (_) => RemindersScreen(
+                            onRequestAlarm: requestAlarmForReminder,
+                          ),
+                        ),
                       );
+                    }),
+                    _navButton(Icons.share, "Share", () async {
+                      final granted = await requestStorageForImage();
+                      if (granted) {
+                        // کۆدی هەڵگرتنی وێنە
+                      }
                     }),
                   ],
                 ),

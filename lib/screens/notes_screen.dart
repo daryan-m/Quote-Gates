@@ -3,7 +3,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 class NotesScreen extends StatefulWidget {
-  const NotesScreen({super.key});
+  final Future<bool> Function()? onRequestNotification;
+  final Future<bool> Function()? onRequestAlarm;
+
+  const NotesScreen({
+    super.key,
+    this.onRequestNotification,
+    this.onRequestAlarm,
+  });
 
   @override
   State<NotesScreen> createState() => _NotesScreenState();
@@ -15,7 +22,6 @@ class _NotesScreenState extends State<NotesScreen> {
   final TextEditingController _contentController = TextEditingController();
   int? _editingIndex;
 
-  // Reminder variables
   DateTime? _selectedDate;
   TimeOfDay? _selectedTime;
   List<String> _selectedWeekdays = [];
@@ -60,15 +66,19 @@ class _NotesScreenState extends State<NotesScreen> {
       _editingIndex = index;
       _titleController.text = _notes[index]['title'];
       _contentController.text = _notes[index]['content'];
-      
-      if (_notes[index].containsKey('reminderDate') && _notes[index]['reminderDate'] != null) {
+
+      if (_notes[index].containsKey('reminderDate') &&
+          _notes[index]['reminderDate'] != null) {
         _selectedDate = DateTime.parse(_notes[index]['reminderDate']);
       }
-      if (_notes[index].containsKey('reminderTime') && _notes[index]['reminderTime'] != null) {
+      if (_notes[index].containsKey('reminderTime') &&
+          _notes[index]['reminderTime'] != null) {
         final parts = _notes[index]['reminderTime'].split(':');
-        _selectedTime = TimeOfDay(hour: int.parse(parts[0]), minute: int.parse(parts[1]));
+        _selectedTime =
+            TimeOfDay(hour: int.parse(parts[0]), minute: int.parse(parts[1]));
       }
-      if (_notes[index].containsKey('repeatType') && _notes[index]['repeatType'] != null) {
+      if (_notes[index].containsKey('repeatType') &&
+          _notes[index]['repeatType'] != null) {
         final String repeatType = _notes[index]['repeatType'];
         if (repeatType == 'daily') {
           _isRecurringDaily = true;
@@ -80,10 +90,12 @@ class _NotesScreenState extends State<NotesScreen> {
           _isRecurringYearly = true;
         }
       }
-      if (_notes[index].containsKey('weekdays') && _notes[index]['weekdays'] != null) {
+      if (_notes[index].containsKey('weekdays') &&
+          _notes[index]['weekdays'] != null) {
         _selectedWeekdays = List<String>.from(_notes[index]['weekdays']);
       }
-      if (_notes[index].containsKey('customDays') && _notes[index]['customDays'] != null) {
+      if (_notes[index].containsKey('customDays') &&
+          _notes[index]['customDays'] != null) {
         _customRepeatDays = _notes[index]['customDays'];
       }
     } else {
@@ -114,7 +126,8 @@ class _NotesScreenState extends State<NotesScreen> {
                   ),
                   const SizedBox(height: 16),
                   const Divider(),
-                  const Text("Set Reminder (Optional)", style: TextStyle(fontWeight: FontWeight.bold)),
+                  const Text("Set Reminder (Optional)",
+                      style: TextStyle(fontWeight: FontWeight.bold)),
                   const SizedBox(height: 8),
                   Row(
                     children: [
@@ -125,14 +138,17 @@ class _NotesScreenState extends State<NotesScreen> {
                               context: context,
                               initialDate: _selectedDate ?? DateTime.now(),
                               firstDate: DateTime.now(),
-                              lastDate: DateTime.now().add(const Duration(days: 3650)),
+                              lastDate: DateTime.now()
+                                  .add(const Duration(days: 3650)),
                             );
                             if (date != null) {
                               setDialogState(() => _selectedDate = date);
                             }
                           },
                           icon: const Icon(Icons.calendar_today),
-                          label: Text(_selectedDate != null ? "${_selectedDate!.toLocal()}".split(' ')[0] : "Select Date"),
+                          label: Text(_selectedDate != null
+                              ? "${_selectedDate!.toLocal()}".split(' ')[0]
+                              : "Select Date"),
                         ),
                       ),
                       const SizedBox(width: 8),
@@ -148,7 +164,9 @@ class _NotesScreenState extends State<NotesScreen> {
                             }
                           },
                           icon: const Icon(Icons.access_time),
-                          label: Text(_selectedTime != null ? _selectedTime!.format(context) : "Select Time"),
+                          label: Text(_selectedTime != null
+                              ? _selectedTime!.format(context)
+                              : "Select Time"),
                         ),
                       ),
                     ],
@@ -187,7 +205,15 @@ class _NotesScreenState extends State<NotesScreen> {
                       padding: const EdgeInsets.only(left: 32),
                       child: Wrap(
                         spacing: 8,
-                        children: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'].map((day) {
+                        children: [
+                          'MON',
+                          'TUE',
+                          'WED',
+                          'THU',
+                          'FRI',
+                          'SAT',
+                          'SUN'
+                        ].map((day) {
                           return FilterChip(
                             label: Text(day),
                             selected: _selectedWeekdays.contains(day),
@@ -233,10 +259,12 @@ class _NotesScreenState extends State<NotesScreen> {
                     },
                   ),
                   TextField(
-                    decoration: const InputDecoration(hintText: "Custom repeat (days)"),
+                    decoration:
+                        const InputDecoration(hintText: "Custom repeat (days)"),
                     keyboardType: TextInputType.number,
                     onChanged: (val) {
-                      setDialogState(() => _customRepeatDays = int.tryParse(val));
+                      setDialogState(
+                          () => _customRepeatDays = int.tryParse(val));
                     },
                   ),
                 ],
@@ -248,26 +276,52 @@ class _NotesScreenState extends State<NotesScreen> {
                 child: const Text("Cancel"),
               ),
               TextButton(
-                onPressed: () {
+                onPressed: () async {
+                  final nav = Navigator.of(context); // ✅ پێش هەر await
+
+                  if (_selectedDate != null && _selectedTime != null) {
+                    if (widget.onRequestNotification != null) {
+                      final granted = await widget.onRequestNotification!();
+                      if (!granted) return;
+                    }
+                    if (widget.onRequestAlarm != null) {
+                      final granted = await widget.onRequestAlarm!();
+                      if (!granted) return;
+                    }
+                  }
+
                   final newNote = {
                     'title': _titleController.text,
                     'content': _contentController.text,
                     'date': DateTime.now().toIso8601String(),
                     'reminderDate': _selectedDate?.toIso8601String(),
-                    'reminderTime': _selectedTime != null ? "${_selectedTime!.hour}:${_selectedTime!.minute}" : null,
-                    'repeatType': _isRecurringDaily ? 'daily' : _isRecurringWeekly ? 'weekly' : _isRecurringMonthly ? 'monthly' : _isRecurringYearly ? 'yearly' : null,
+                    'reminderTime': _selectedTime != null
+                        ? "${_selectedTime!.hour}:${_selectedTime!.minute}"
+                        : null,
+                    'repeatType': _isRecurringDaily
+                        ? 'daily'
+                        : _isRecurringWeekly
+                            ? 'weekly'
+                            : _isRecurringMonthly
+                                ? 'monthly'
+                                : _isRecurringYearly
+                                    ? 'yearly'
+                                    : null,
                     'weekdays': _selectedWeekdays,
                     'customDays': _customRepeatDays,
                   };
-                  
+
                   if (_editingIndex == null) {
                     _notes.add(newNote);
                   } else {
                     _notes[_editingIndex!] = newNote;
                   }
-                  _saveNotes();
+
+                  await _saveNotes();
+
+                  if (!mounted) return;
                   setState(() {});
-                  Navigator.pop(context);
+                  nav.pop(); // ✅ context بەکارنەهێنا
                 },
                 child: const Text("Save"),
               ),
@@ -331,7 +385,9 @@ class _NotesScreenState extends State<NotesScreen> {
                 return Card(
                   margin: const EdgeInsets.symmetric(vertical: 6),
                   child: ListTile(
-                    leading: hasReminder ? const Icon(Icons.alarm, color: Colors.orange) : null,
+                    leading: hasReminder
+                        ? const Icon(Icons.alarm, color: Colors.orange)
+                        : null,
                     title: Text(
                       note['title'],
                       style: const TextStyle(fontWeight: FontWeight.bold),

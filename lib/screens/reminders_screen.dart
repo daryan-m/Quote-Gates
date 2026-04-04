@@ -4,7 +4,12 @@ import 'dart:convert';
 import '../services/notification_service.dart';
 
 class RemindersScreen extends StatefulWidget {
-  const RemindersScreen({super.key});
+  final Future<bool> Function()? onRequestAlarm;
+
+  const RemindersScreen({
+    super.key,
+    this.onRequestAlarm,
+  });
 
   @override
   State<RemindersScreen> createState() => _RemindersScreenState();
@@ -44,6 +49,12 @@ class _RemindersScreenState extends State<RemindersScreen> {
   }
 
   Future<void> _addReminder() async {
+    // پشکنینی ڕێگەپێدان پێش زیادکردنی ریمایندەر
+    if (widget.onRequestAlarm != null) {
+      final granted = await widget.onRequestAlarm!();
+      if (!granted) return;
+    }
+
     final scheduledDateTime = DateTime(
       _selectedDate.year,
       _selectedDate.month,
@@ -84,7 +95,6 @@ class _RemindersScreenState extends State<RemindersScreen> {
     _reminders.add(reminder);
     await _saveReminders();
 
-    // Schedule notification
     await NotificationService.scheduleReminder(
       scheduledDateTime,
       _titleController.text,
@@ -179,24 +189,30 @@ class _RemindersScreenState extends State<RemindersScreen> {
                     CheckboxListTile(
                       title: const Text("Repeat Daily"),
                       value: _isRecurringDaily,
-                      onChanged: (val) => setState(() {
-                        _isRecurringDaily = val ?? false;
-                        if (val == true) {
-                          _isRecurringWeekly =
-                              _isRecurringMonthly = _isRecurringYearly = false;
-                        }
-                      }),
+                      onChanged: (val) {
+                        setState(() {
+                          _isRecurringDaily = val ?? false;
+                          if (val == true) {
+                            _isRecurringWeekly = false;
+                            _isRecurringMonthly = false;
+                            _isRecurringYearly = false;
+                          }
+                        });
+                      },
                     ),
                     CheckboxListTile(
                       title: const Text("Repeat Weekly"),
                       value: _isRecurringWeekly,
-                      onChanged: (val) => setState(() {
-                        _isRecurringWeekly = val ?? false;
-                        if (val == true) {
-                          _isRecurringDaily =
-                              _isRecurringMonthly = _isRecurringYearly = false;
-                        }
-                      }),
+                      onChanged: (val) {
+                        setState(() {
+                          _isRecurringWeekly = val ?? false;
+                          if (val == true) {
+                            _isRecurringDaily = false;
+                            _isRecurringMonthly = false;
+                            _isRecurringYearly = false;
+                          }
+                        });
+                      },
                     ),
                     if (_isRecurringWeekly)
                       Padding(
@@ -231,24 +247,30 @@ class _RemindersScreenState extends State<RemindersScreen> {
                     CheckboxListTile(
                       title: const Text("Repeat Monthly"),
                       value: _isRecurringMonthly,
-                      onChanged: (val) => setState(() {
-                        _isRecurringMonthly = val ?? false;
-                        if (val == true) {
-                          _isRecurringDaily =
-                              _isRecurringWeekly = _isRecurringYearly = false;
-                        }
-                      }),
+                      onChanged: (val) {
+                        setState(() {
+                          _isRecurringMonthly = val ?? false;
+                          if (val == true) {
+                            _isRecurringDaily = false;
+                            _isRecurringWeekly = false;
+                            _isRecurringYearly = false;
+                          }
+                        });
+                      },
                     ),
                     CheckboxListTile(
                       title: const Text("Repeat Yearly"),
                       value: _isRecurringYearly,
-                      onChanged: (val) => setState(() {
-                        _isRecurringYearly = val ?? false;
-                        if (val == true) {
-                          _isRecurringDaily =
-                              _isRecurringWeekly = _isRecurringMonthly = false;
-                        }
-                      }),
+                      onChanged: (val) {
+                        setState(() {
+                          _isRecurringYearly = val ?? false;
+                          if (val == true) {
+                            _isRecurringDaily = false;
+                            _isRecurringWeekly = false;
+                            _isRecurringMonthly = false;
+                          }
+                        });
+                      },
                     ),
                     const SizedBox(height: 12),
                     ElevatedButton(
