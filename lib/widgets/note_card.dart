@@ -1,4 +1,3 @@
-// کارتی یادداشت - نمایشی یادداشتەکان
 import 'package:flutter/material.dart';
 
 class NoteCard extends StatelessWidget {
@@ -7,6 +6,7 @@ class NoteCard extends StatelessWidget {
   final String date;
   final VoidCallback onTap;
   final VoidCallback onDelete;
+  final bool hasReminder;
 
   const NoteCard({
     super.key,
@@ -15,6 +15,7 @@ class NoteCard extends StatelessWidget {
     required this.date,
     required this.onTap,
     required this.onDelete,
+    this.hasReminder = false,
   });
 
   @override
@@ -35,22 +36,27 @@ class NoteCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                    child: Text(
-                      title,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                    child: Row(
+                      children: [
+                        if (hasReminder)
+                          const Icon(Icons.alarm, size: 16, color: Colors.orange),
+                        const SizedBox(width: 4),
+                        Expanded(
+                          child: Text(
+                            title,
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(
-                      Icons.delete,
-                      size: 20,
-                      color: Colors.grey,
-                    ),
+                    icon: const Icon(Icons.delete, size: 20, color: Colors.grey),
                     onPressed: onDelete,
                   ),
                 ],

@@ -1,14 +1,10 @@
-// فایلی سەرەکی ئەپەکە - لێرەوە ئەپەکە دەست پێ دەکات
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 import 'services/notification_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // ڕێکخستنی ئاگادارییەکان (Notifications)
   await NotificationService.initialize();
-
   runApp(const WisdomApp());
 }
 
@@ -18,7 +14,7 @@ class WisdomApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Wisdom Quotes',
+      title: 'Wisdom Gates',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: 'System',

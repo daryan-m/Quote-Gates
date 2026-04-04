@@ -34,7 +34,7 @@ class StorageService {
 
   Future<String> getBackgroundColor() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getString(_backgroundColorKey) ?? 'ffffffff'; // گۆڕدرا
+    return prefs.getString(_backgroundColorKey) ?? 'ffffffff';
   }
 
   Future<void> saveFontFamily(String font) async {

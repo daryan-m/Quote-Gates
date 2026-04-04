@@ -9,11 +9,10 @@
       "dependencies": [
         "flutter",
         "flutter_local_notifications",
-        "flutter_timezone",
+        "image_gallery_saver",
         "intl",
         "path",
         "path_provider",
-        "saver_gallery",
         "screenshot",
         "shared_preferences",
         "sqflite",
@@ -50,30 +49,10 @@
       ]
     },
     {
-      "name": "saver_gallery",
-      "version": "3.0.10",
-      "dependencies": [
-        "flutter",
-        "mime",
-        "path",
-        "path_provider",
-        "uuid"
-      ]
-    },
-    {
       "name": "timezone",
       "version": "0.9.4",
       "dependencies": [
         "path"
-      ]
-    },
-    {
-      "name": "flutter_timezone",
-      "version": "1.0.8",
-      "dependencies": [
-        "flutter",
-        "flutter_web_plugins",
-        "js"
       ]
     },
     {
@@ -117,6 +96,13 @@
     {
       "name": "screenshot",
       "version": "3.0.0",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
+      "name": "image_gallery_saver",
+      "version": "2.0.3",
       "dependencies": [
         "flutter"
       ]
@@ -239,31 +225,6 @@
         "stream_channel",
         "string_scanner",
         "term_glyph"
-      ]
-    },
-    {
-      "name": "uuid",
-      "version": "4.5.3",
-      "dependencies": [
-        "crypto",
-        "fixnum"
-      ]
-    },
-    {
-      "name": "mime",
-      "version": "2.0.0",
-      "dependencies": []
-    },
-    {
-      "name": "js",
-      "version": "0.7.2",
-      "dependencies": []
-    },
-    {
-      "name": "flutter_web_plugins",
-      "version": "0.0.0",
-      "dependencies": [
-        "flutter"
       ]
     },
     {
@@ -506,18 +467,6 @@
       ]
     },
     {
-      "name": "fixnum",
-      "version": "1.1.1",
-      "dependencies": []
-    },
-    {
-      "name": "crypto",
-      "version": "3.0.7",
-      "dependencies": [
-        "typed_data"
-      ]
-    },
-    {
       "name": "synchronized",
       "version": "3.4.0",
       "dependencies": []
@@ -571,16 +520,16 @@
       "dependencies": []
     },
     {
+      "name": "flutter_web_plugins",
+      "version": "0.0.0",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
       "name": "vm_service",
       "version": "15.0.2",
       "dependencies": []
-    },
-    {
-      "name": "typed_data",
-      "version": "1.4.0",
-      "dependencies": [
-        "collection"
-      ]
     },
     {
       "name": "xml",

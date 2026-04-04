@@ -45,7 +45,7 @@ class QuoteWidget extends StatelessWidget {
           Icon(
             Icons.format_quote,
             size: 60,
-            color: textColor.withOpacity(0.4), // color: زیادکرا
+            color: textColor.withValues(alpha: 0.4),
           ),
           const SizedBox(height: 24),
           Text(
@@ -64,14 +64,14 @@ class QuoteWidget extends StatelessWidget {
           Container(
             width: 60,
             height: 2,
-            color: textColor.withOpacity(0.3),
+            color: textColor.withValues(alpha: 0.3),
           ),
           const SizedBox(height: 16),
           Text(
             "— $author —",
             style: TextStyle(
               fontSize: 18,
-              color: textColor.withOpacity(0.7),
+              color: textColor.withValues(alpha: 0.7),
               fontWeight: FontWeight.w300,
               letterSpacing: 1,
             ),

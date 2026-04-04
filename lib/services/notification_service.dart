@@ -8,6 +8,7 @@ class NotificationService {
 
   static Future<void> initialize() async {
     tz.initializeTimeZones();
+    tz.setLocalLocation(tz.getLocation('Asia/Baghdad'));
 
     const AndroidInitializationSettings androidSettings =
         AndroidInitializationSettings('@mipmap/ic_launcher');
@@ -24,9 +25,7 @@ class NotificationService {
       iOS: iosSettings,
     );
 
-    await _notifications.initialize(
-      settings, // ✅ FIX
-    );
+    await _notifications.initialize(settings);
   }
 
   static Future<void> showDailyQuoteNotification(
@@ -44,7 +43,7 @@ class NotificationService {
         NotificationDetails(android: androidDetails);
 
     await _notifications.show(
-      0, // ✅ FIX
+      0,
       '✨ Daily Wisdom ✨',
       '$quote\n\n— $author',
       details,
@@ -70,7 +69,7 @@ class NotificationService {
         NotificationDetails(android: androidDetails);
 
     await _notifications.periodicallyShow(
-      1, // ✅ FIX
+      1,
       '📖 Your Daily Quote',
       '$quote\n\n— $author',
       RepeatInterval.daily,
@@ -97,22 +96,23 @@ class NotificationService {
     const NotificationDetails details =
         NotificationDetails(android: androidDetails);
 
+    // گۆڕینی DateTime بۆ TZDateTime
     final tzDateTime = tz.TZDateTime.from(time, tz.local);
 
     await _notifications.zonedSchedule(
-      id, // ✅ FIX
+      id,
       title,
       body,
       tzDateTime,
       details,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime, // ✅ FIX
+          UILocalNotificationDateInterpretation.absoluteTime,
     );
   }
 
   static Future<void> cancelReminder(int id) async {
-    await _notifications.cancel(id); // ✅ FIX
+    await _notifications.cancel(id);
   }
 
   static Future<void> cancelAllReminders() async {

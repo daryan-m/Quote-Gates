@@ -1,4 +1,3 @@
-// شاشەی یادداشتەکان - نووسین و هەڵگرتنی یادداشت لە مۆبایلدا
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
@@ -15,6 +14,16 @@ class _NotesScreenState extends State<NotesScreen> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _contentController = TextEditingController();
   int? _editingIndex;
+
+  // Reminder variables
+  DateTime? _selectedDate;
+  TimeOfDay? _selectedTime;
+  List<String> _selectedWeekdays = [];
+  bool _isRecurringDaily = false;
+  bool _isRecurringWeekly = false;
+  bool _isRecurringMonthly = false;
+  bool _isRecurringYearly = false;
+  int? _customRepeatDays;
 
   @override
   void initState() {
@@ -38,10 +47,45 @@ class _NotesScreenState extends State<NotesScreen> {
   }
 
   void _openNoteDialog({int? index}) {
+    _selectedDate = null;
+    _selectedTime = null;
+    _selectedWeekdays = [];
+    _isRecurringDaily = false;
+    _isRecurringWeekly = false;
+    _isRecurringMonthly = false;
+    _isRecurringYearly = false;
+    _customRepeatDays = null;
+
     if (index != null) {
       _editingIndex = index;
       _titleController.text = _notes[index]['title'];
       _contentController.text = _notes[index]['content'];
+      
+      if (_notes[index].containsKey('reminderDate') && _notes[index]['reminderDate'] != null) {
+        _selectedDate = DateTime.parse(_notes[index]['reminderDate']);
+      }
+      if (_notes[index].containsKey('reminderTime') && _notes[index]['reminderTime'] != null) {
+        final parts = _notes[index]['reminderTime'].split(':');
+        _selectedTime = TimeOfDay(hour: int.parse(parts[0]), minute: int.parse(parts[1]));
+      }
+      if (_notes[index].containsKey('repeatType') && _notes[index]['repeatType'] != null) {
+        final String repeatType = _notes[index]['repeatType'];
+        if (repeatType == 'daily') {
+          _isRecurringDaily = true;
+        } else if (repeatType == 'weekly') {
+          _isRecurringWeekly = true;
+        } else if (repeatType == 'monthly') {
+          _isRecurringMonthly = true;
+        } else if (repeatType == 'yearly') {
+          _isRecurringYearly = true;
+        }
+      }
+      if (_notes[index].containsKey('weekdays') && _notes[index]['weekdays'] != null) {
+        _selectedWeekdays = List<String>.from(_notes[index]['weekdays']);
+      }
+      if (_notes[index].containsKey('customDays') && _notes[index]['customDays'] != null) {
+        _customRepeatDays = _notes[index]['customDays'];
+      }
     } else {
       _editingIndex = null;
       _titleController.clear();
@@ -50,53 +94,186 @@ class _NotesScreenState extends State<NotesScreen> {
 
     showDialog(
       context: context,
-      builder: (_) => AlertDialog(
-        title: Text(_editingIndex == null ? "New Note" : "Edit Note"),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: _titleController,
-              decoration: const InputDecoration(hintText: "Title"),
+      builder: (dialogContext) => StatefulBuilder(
+        builder: (context, setDialogState) {
+          return AlertDialog(
+            title: Text(_editingIndex == null ? "New Note" : "Edit Note"),
+            content: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  TextField(
+                    controller: _titleController,
+                    decoration: const InputDecoration(hintText: "Title"),
+                  ),
+                  const SizedBox(height: 12),
+                  TextField(
+                    controller: _contentController,
+                    decoration: const InputDecoration(hintText: "Content"),
+                    maxLines: 5,
+                  ),
+                  const SizedBox(height: 16),
+                  const Divider(),
+                  const Text("Set Reminder (Optional)", style: TextStyle(fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: OutlinedButton.icon(
+                          onPressed: () async {
+                            final date = await showDatePicker(
+                              context: context,
+                              initialDate: _selectedDate ?? DateTime.now(),
+                              firstDate: DateTime.now(),
+                              lastDate: DateTime.now().add(const Duration(days: 3650)),
+                            );
+                            if (date != null) {
+                              setDialogState(() => _selectedDate = date);
+                            }
+                          },
+                          icon: const Icon(Icons.calendar_today),
+                          label: Text(_selectedDate != null ? "${_selectedDate!.toLocal()}".split(' ')[0] : "Select Date"),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: OutlinedButton.icon(
+                          onPressed: () async {
+                            final time = await showTimePicker(
+                              context: context,
+                              initialTime: _selectedTime ?? TimeOfDay.now(),
+                            );
+                            if (time != null) {
+                              setDialogState(() => _selectedTime = time);
+                            }
+                          },
+                          icon: const Icon(Icons.access_time),
+                          label: Text(_selectedTime != null ? _selectedTime!.format(context) : "Select Time"),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  CheckboxListTile(
+                    title: const Text("Repeat Daily"),
+                    value: _isRecurringDaily,
+                    onChanged: (val) {
+                      setDialogState(() {
+                        _isRecurringDaily = val ?? false;
+                        if (val == true) {
+                          _isRecurringWeekly = false;
+                          _isRecurringMonthly = false;
+                          _isRecurringYearly = false;
+                        }
+                      });
+                    },
+                  ),
+                  CheckboxListTile(
+                    title: const Text("Repeat Weekly"),
+                    value: _isRecurringWeekly,
+                    onChanged: (val) {
+                      setDialogState(() {
+                        _isRecurringWeekly = val ?? false;
+                        if (val == true) {
+                          _isRecurringDaily = false;
+                          _isRecurringMonthly = false;
+                          _isRecurringYearly = false;
+                        }
+                      });
+                    },
+                  ),
+                  if (_isRecurringWeekly)
+                    Padding(
+                      padding: const EdgeInsets.only(left: 32),
+                      child: Wrap(
+                        spacing: 8,
+                        children: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'].map((day) {
+                          return FilterChip(
+                            label: Text(day),
+                            selected: _selectedWeekdays.contains(day),
+                            onSelected: (selected) {
+                              setDialogState(() {
+                                if (selected) {
+                                  _selectedWeekdays.add(day);
+                                } else {
+                                  _selectedWeekdays.remove(day);
+                                }
+                              });
+                            },
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  CheckboxListTile(
+                    title: const Text("Repeat Monthly"),
+                    value: _isRecurringMonthly,
+                    onChanged: (val) {
+                      setDialogState(() {
+                        _isRecurringMonthly = val ?? false;
+                        if (val == true) {
+                          _isRecurringDaily = false;
+                          _isRecurringWeekly = false;
+                          _isRecurringYearly = false;
+                        }
+                      });
+                    },
+                  ),
+                  CheckboxListTile(
+                    title: const Text("Repeat Yearly"),
+                    value: _isRecurringYearly,
+                    onChanged: (val) {
+                      setDialogState(() {
+                        _isRecurringYearly = val ?? false;
+                        if (val == true) {
+                          _isRecurringDaily = false;
+                          _isRecurringWeekly = false;
+                          _isRecurringMonthly = false;
+                        }
+                      });
+                    },
+                  ),
+                  TextField(
+                    decoration: const InputDecoration(hintText: "Custom repeat (days)"),
+                    keyboardType: TextInputType.number,
+                    onChanged: (val) {
+                      setDialogState(() => _customRepeatDays = int.tryParse(val));
+                    },
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: _contentController,
-              decoration: const InputDecoration(hintText: "Content"),
-              maxLines: 5,
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text("Cancel"),
-          ),
-          TextButton(
-            onPressed: () {
-              if (_titleController.text.isNotEmpty &&
-                  _contentController.text.isNotEmpty) {
-                if (_editingIndex == null) {
-                  _notes.add({
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text("Cancel"),
+              ),
+              TextButton(
+                onPressed: () {
+                  final newNote = {
                     'title': _titleController.text,
                     'content': _contentController.text,
                     'date': DateTime.now().toIso8601String(),
-                  });
-                } else {
-                  _notes[_editingIndex!] = {
-                    'title': _titleController.text,
-                    'content': _contentController.text,
-                    'date': DateTime.now().toIso8601String(),
+                    'reminderDate': _selectedDate?.toIso8601String(),
+                    'reminderTime': _selectedTime != null ? "${_selectedTime!.hour}:${_selectedTime!.minute}" : null,
+                    'repeatType': _isRecurringDaily ? 'daily' : _isRecurringWeekly ? 'weekly' : _isRecurringMonthly ? 'monthly' : _isRecurringYearly ? 'yearly' : null,
+                    'weekdays': _selectedWeekdays,
+                    'customDays': _customRepeatDays,
                   };
-                }
-                _saveNotes();
-                setState(() {});
-                Navigator.pop(context);
-              }
-            },
-            child: const Text("Save"),
-          ),
-        ],
+                  
+                  if (_editingIndex == null) {
+                    _notes.add(newNote);
+                  } else {
+                    _notes[_editingIndex!] = newNote;
+                  }
+                  _saveNotes();
+                  setState(() {});
+                  Navigator.pop(context);
+                },
+                child: const Text("Save"),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -106,7 +283,7 @@ class _NotesScreenState extends State<NotesScreen> {
       context: context,
       builder: (_) => AlertDialog(
         title: const Text("Delete Note"),
-        content: const Text("Are you sure you want to delete this note?"),
+        content: const Text("Are you sure?"),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -150,9 +327,11 @@ class _NotesScreenState extends State<NotesScreen> {
               itemCount: _notes.length,
               itemBuilder: (context, index) {
                 final note = _notes[index];
+                final hasReminder = note['reminderDate'] != null;
                 return Card(
                   margin: const EdgeInsets.symmetric(vertical: 6),
                   child: ListTile(
+                    leading: hasReminder ? const Icon(Icons.alarm, color: Colors.orange) : null,
                     title: Text(
                       note['title'],
                       style: const TextStyle(fontWeight: FontWeight.bold),

@@ -1,4 +1,3 @@
-// مۆدێلی وتە - پێکهاتەی هەر وتەیەک دیاری دەکات
 class Quote {
   final String text;
   final String author;
@@ -10,7 +9,6 @@ class Quote {
     this.category,
   });
 
-  // لە JSONەوە دەهێنێت
   factory Quote.fromJson(Map<String, dynamic> json) {
     return Quote(
       text: json['text'] ?? json['quote'] ?? '',
@@ -19,7 +17,6 @@ class Quote {
     );
   }
 
-  // دەگۆڕێت بۆ JSON
   Map<String, dynamic> toJson() => {
     'text': text,
     'author': author,

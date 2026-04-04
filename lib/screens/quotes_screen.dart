@@ -1,11 +1,11 @@
-// شاشەی هەموو وتەکان - لیستێکی گەورەی وتەکان
 import 'package:flutter/material.dart';
 import '../services/quote_loader.dart';
 import '../models/quote.dart';
 import '../widgets/quote_widget.dart';
 
 class QuotesScreen extends StatefulWidget {
-  const QuotesScreen({super.key});
+  final Function(Quote) onQuoteSelected;
+  const QuotesScreen({super.key, required this.onQuoteSelected});
 
   @override
   State<QuotesScreen> createState() => _QuotesScreenState();
@@ -31,9 +31,7 @@ class _QuotesScreenState extends State<QuotesScreen> {
   }
 
   List<Quote> get _filteredQuotes {
-    if (_searchQuery.isEmpty) {
-      return _quotes;
-    }
+    if (_searchQuery.isEmpty) return _quotes;
     return _quotes.where((quote) {
       return quote.text.toLowerCase().contains(_searchQuery.toLowerCase()) ||
           quote.author.toLowerCase().contains(_searchQuery.toLowerCase());
@@ -62,39 +60,15 @@ class _QuotesScreenState extends State<QuotesScreen> {
                   borderSide: BorderSide.none,
                 ),
               ),
-              onChanged: (value) {
-                setState(() {
-                  _searchQuery = value;
-                });
-              },
+              onChanged: (value) => setState(() => _searchQuery = value),
             ),
           ),
         ),
       ),
       body: _isLoading
-          ? const Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircularProgressIndicator(),
-                  SizedBox(height: 16),
-                  Text("Loading wisdom quotes..."),
-                ],
-              ),
-            )
+          ? const Center(child: CircularProgressIndicator())
           : _filteredQuotes.isEmpty
-              ? const Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.search_off, size: 64, color: Colors.grey),
-                      SizedBox(height: 16),
-                      Text("No quotes found"),
-                      SizedBox(height: 8),
-                      Text("Try a different search term"),
-                    ],
-                  ),
-                )
+              ? const Center(child: Text("No quotes found"))
               : ListView.builder(
                   padding: const EdgeInsets.all(12),
                   itemCount: _filteredQuotes.length,
@@ -103,58 +77,58 @@ class _QuotesScreenState extends State<QuotesScreen> {
                     return Card(
                       margin: const EdgeInsets.symmetric(vertical: 6),
                       elevation: 2,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       child: ListTile(
                         contentPadding: const EdgeInsets.all(12),
                         title: Text(
                           quote.text,
-                          style: const TextStyle(
-                            fontStyle: FontStyle.italic,
-                            fontSize: 16,
-                          ),
+                          style: const TextStyle(fontStyle: FontStyle.italic, fontSize: 16),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
                         subtitle: Padding(
                           padding: const EdgeInsets.only(top: 8),
-                          child: Text(
-                            "— ${quote.author}",
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: Colors.blueGrey,
+                          child: Text("— ${quote.author}", style: const TextStyle(fontSize: 14, color: Colors.blueGrey)),
+                        ),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: const Icon(Icons.check_circle_outline, color: Colors.green),
+                              onPressed: () {
+                                widget.onQuoteSelected(quote);
+                                Navigator.pop(context);
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(content: Text("Quote selected for home screen")),
+                                );
+                              },
+                              tooltip: "Select this quote",
                             ),
-                          ),
-                        ),
-                        trailing: const Icon(
-                          Icons.format_quote,
-                          color: Colors.blueGrey,
-                          size: 32,
-                        ),
-                        onTap: () {
-                          showDialog(
-                            context: context,
-                            builder: (_) => AlertDialog(
-                              contentPadding: const EdgeInsets.all(8),
-                              content: QuoteWidget(
-                                quote: quote.text,
-                                author: quote.author,
-                                backgroundColor: Colors.white,
-                                fontFamily: "System",
-                              ),
-                              actions: [
-                                TextButton(
-                                  onPressed: () => Navigator.pop(context),
-                                  style: TextButton.styleFrom(
-                                    foregroundColor: Colors.blueGrey,
+                            IconButton(
+                              icon: const Icon(Icons.format_quote, color: Colors.blueGrey),
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (_) => AlertDialog(
+                                    contentPadding: const EdgeInsets.all(8),
+                                    content: QuoteWidget(
+                                      quote: quote.text,
+                                      author: quote.author,
+                                      backgroundColor: Colors.white,
+                                      fontFamily: "System",
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(context),
+                                        child: const Text("Close"),
+                                      ),
+                                    ],
                                   ),
-                                  child: const Text("Close"),
-                                ),
-                              ],
+                                );
+                              },
                             ),
-                          );
-                        },
+                          ],
+                        ),
                       ),
                     );
                   },

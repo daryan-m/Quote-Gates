@@ -1,4 +1,3 @@
-// شاشەی بیرخستنەوەکان - دانانی ئاگاداری بۆ کاتی دیاریکراو
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
@@ -16,6 +15,11 @@ class _RemindersScreenState extends State<RemindersScreen> {
   final TextEditingController _titleController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
   TimeOfDay _selectedTime = TimeOfDay.now();
+  List<String> _selectedWeekdays = [];
+  bool _isRecurringDaily = false;
+  bool _isRecurringWeekly = false;
+  bool _isRecurringMonthly = false;
+  bool _isRecurringYearly = false;
 
   @override
   void initState() {
@@ -40,7 +44,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
   }
 
   Future<void> _addReminder() async {
-    final DateTime scheduledDateTime = DateTime(
+    final scheduledDateTime = DateTime(
       _selectedDate.year,
       _selectedDate.month,
       _selectedDate.day,
@@ -48,7 +52,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
       _selectedTime.minute,
     );
 
-    if (scheduledDateTime.isBefore(DateTime.now())) {
+    if (scheduledDateTime.isBefore(DateTime.now()) && !_isRecurringWeekly) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Please select a future time")),
@@ -58,6 +62,29 @@ class _RemindersScreenState extends State<RemindersScreen> {
 
     final id = DateTime.now().millisecondsSinceEpoch;
 
+    String repeatType = 'none';
+    if (_isRecurringDaily) {
+      repeatType = 'daily';
+    } else if (_isRecurringWeekly) {
+      repeatType = 'weekly';
+    } else if (_isRecurringMonthly) {
+      repeatType = 'monthly';
+    } else if (_isRecurringYearly) {
+      repeatType = 'yearly';
+    }
+
+    final reminder = {
+      'id': id,
+      'title': _titleController.text,
+      'dateTime': scheduledDateTime.toIso8601String(),
+      'repeatType': repeatType,
+      'weekdays': _selectedWeekdays,
+    };
+
+    _reminders.add(reminder);
+    await _saveReminders();
+
+    // Schedule notification
     await NotificationService.scheduleReminder(
       scheduledDateTime,
       _titleController.text,
@@ -65,14 +92,12 @@ class _RemindersScreenState extends State<RemindersScreen> {
       id,
     );
 
-    _reminders.add({
-      'id': id,
-      'title': _titleController.text,
-      'dateTime': scheduledDateTime.toIso8601String(),
-    });
-
-    await _saveReminders();
     _titleController.clear();
+    _selectedWeekdays = [];
+    _isRecurringDaily = false;
+    _isRecurringWeekly = false;
+    _isRecurringMonthly = false;
+    _isRecurringYearly = false;
     setState(() {});
 
     if (!mounted) return;
@@ -86,7 +111,6 @@ class _RemindersScreenState extends State<RemindersScreen> {
     _reminders.removeAt(index);
     await _saveReminders();
     setState(() {});
-
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text("Reminder deleted")),
@@ -101,20 +125,14 @@ class _RemindersScreenState extends State<RemindersScreen> {
       lastDate: DateTime.now().add(const Duration(days: 365)),
     );
     if (!mounted) return;
-    if (date != null) {
-      setState(() => _selectedDate = date);
-    }
+    if (date != null) setState(() => _selectedDate = date);
   }
 
   Future<void> _pickTime() async {
-    final time = await showTimePicker(
-      context: context,
-      initialTime: _selectedTime,
-    );
+    final time =
+        await showTimePicker(context: context, initialTime: _selectedTime);
     if (!mounted) return;
-    if (time != null) {
-      setState(() => _selectedTime = time);
-    }
+    if (time != null) setState(() => _selectedTime = time);
   }
 
   @override
@@ -127,7 +145,6 @@ class _RemindersScreenState extends State<RemindersScreen> {
       ),
       body: Column(
         children: [
-          // فۆرمی زیادکردنی بیرخستنەوە
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Card(
@@ -138,43 +155,110 @@ class _RemindersScreenState extends State<RemindersScreen> {
                     TextField(
                       controller: _titleController,
                       decoration: const InputDecoration(
-                        hintText: "Reminder title",
-                        border: OutlineInputBorder(),
-                      ),
+                          hintText: "Reminder title",
+                          border: OutlineInputBorder()),
                     ),
                     const SizedBox(height: 12),
                     Row(
                       children: [
                         Expanded(
-                          child: OutlinedButton.icon(
-                            onPressed: _pickDate,
-                            icon: const Icon(Icons.calendar_today),
-                            label: Text(
-                                "${_selectedDate.toLocal()}".split(' ')[0]),
-                          ),
-                        ),
+                            child: OutlinedButton.icon(
+                                onPressed: _pickDate,
+                                icon: const Icon(Icons.calendar_today),
+                                label: Text("${_selectedDate.toLocal()}"
+                                    .split(' ')[0]))),
                         const SizedBox(width: 12),
                         Expanded(
-                          child: OutlinedButton.icon(
-                            onPressed: _pickTime,
-                            icon: const Icon(Icons.access_time),
-                            label: Text(_selectedTime.format(context)),
-                          ),
-                        ),
+                            child: OutlinedButton.icon(
+                                onPressed: _pickTime,
+                                icon: const Icon(Icons.access_time),
+                                label: Text(_selectedTime.format(context)))),
                       ],
+                    ),
+                    const SizedBox(height: 8),
+                    CheckboxListTile(
+                      title: const Text("Repeat Daily"),
+                      value: _isRecurringDaily,
+                      onChanged: (val) => setState(() {
+                        _isRecurringDaily = val ?? false;
+                        if (val == true) {
+                          _isRecurringWeekly =
+                              _isRecurringMonthly = _isRecurringYearly = false;
+                        }
+                      }),
+                    ),
+                    CheckboxListTile(
+                      title: const Text("Repeat Weekly"),
+                      value: _isRecurringWeekly,
+                      onChanged: (val) => setState(() {
+                        _isRecurringWeekly = val ?? false;
+                        if (val == true) {
+                          _isRecurringDaily =
+                              _isRecurringMonthly = _isRecurringYearly = false;
+                        }
+                      }),
+                    ),
+                    if (_isRecurringWeekly)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 32),
+                        child: Wrap(
+                          spacing: 8,
+                          children: [
+                            'MON',
+                            'TUE',
+                            'WED',
+                            'THU',
+                            'FRI',
+                            'SAT',
+                            'SUN'
+                          ].map((day) {
+                            return FilterChip(
+                              label: Text(day),
+                              selected: _selectedWeekdays.contains(day),
+                              onSelected: (selected) {
+                                setState(() {
+                                  if (selected) {
+                                    _selectedWeekdays.add(day);
+                                  } else {
+                                    _selectedWeekdays.remove(day);
+                                  }
+                                });
+                              },
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    CheckboxListTile(
+                      title: const Text("Repeat Monthly"),
+                      value: _isRecurringMonthly,
+                      onChanged: (val) => setState(() {
+                        _isRecurringMonthly = val ?? false;
+                        if (val == true) {
+                          _isRecurringDaily =
+                              _isRecurringWeekly = _isRecurringYearly = false;
+                        }
+                      }),
+                    ),
+                    CheckboxListTile(
+                      title: const Text("Repeat Yearly"),
+                      value: _isRecurringYearly,
+                      onChanged: (val) => setState(() {
+                        _isRecurringYearly = val ?? false;
+                        if (val == true) {
+                          _isRecurringDaily =
+                              _isRecurringWeekly = _isRecurringMonthly = false;
+                        }
+                      }),
                     ),
                     const SizedBox(height: 12),
                     ElevatedButton(
-                      onPressed: _addReminder,
-                      child: const Text("Set Reminder"),
-                    ),
+                        onPressed: _addReminder,
+                        child: const Text("Set Reminder")),
                   ],
                 ),
               ),
             ),
           ),
-
-          // لیستی بیرخستنەوەکان
           Expanded(
             child: _reminders.isEmpty
                 ? const Center(child: Text("No reminders yet"))
@@ -191,8 +275,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
                               const Icon(Icons.alarm, color: Colors.orange),
                           title: Text(reminder['title']),
                           subtitle: Text(
-                            "${dateTime.toLocal()}".replaceAll('.000', ''),
-                          ),
+                              "${dateTime.toLocal()}".replaceAll('.000', '')),
                           trailing: IconButton(
                             icon: const Icon(Icons.delete, color: Colors.red),
                             onPressed: () =>
