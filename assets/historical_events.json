@@ -1,0 +1,1858 @@
+{
+  "1": {
+    "1": [
+      { "year": 45, "event": "Julius Caesar introduces the Julian calendar", "category": "science" },
+      { "year": 1892, "event": "Ellis Island opens as an immigration station in New York", "category": "politics" },
+      { "year": 1959, "event": "Cuba's revolution succeeds as Batista flees and Castro takes power", "category": "politics" },
+      { "year": 1993, "event": "Czechoslovakia peacefully splits into Czech Republic and Slovakia", "category": "politics" }
+    ],
+    "2": [
+      { "year": 1492, "event": "Granada falls to Spain, ending Muslim rule in Iberia", "category": "war" },
+      { "year": 1788, "event": "Georgia becomes the 4th U.S. state", "category": "politics" },
+      { "year": 1920, "event": "Isaac Asimov, science fiction author, is born", "category": "culture" }
+    ],
+    "3": [
+      { "year": 1521, "event": "Martin Luther is excommunicated from the Catholic Church", "category": "religion" },
+      { "year": 1833, "event": "Alaska is purchased by the United States from Russia", "category": "politics" },
+      { "year": 1959, "event": "Alaska becomes the 49th U.S. state", "category": "politics" }
+    ],
+    "4": [
+      { "year": 1643, "event": "Isaac Newton is born in England", "category": "science" },
+      { "year": 1847, "event": "Samuel Colt sells his first revolver to the U.S. government", "category": "invention" },
+      { "year": 1965, "event": "The United States launches Intelsat 1, the first commercial communications satellite", "category": "science" }
+    ],
+    "5": [
+      { "year": 1066, "event": "Halley's Comet appears, later seen as an omen of the Norman conquest", "category": "science" },
+      { "year": 1781, "event": "American forces defeat the British at the Battle of Cowpens", "category": "war" },
+      { "year": 1914, "event": "Henry Ford introduces the $5 workday, doubling workers' wages", "category": "economy" }
+    ],
+    "6": [
+      { "year": 1066, "event": "Harold II is crowned King of England", "category": "politics" },
+      { "year": 1838, "event": "Samuel Morse and Alfred Vail publicly demonstrate the telegraph", "category": "invention" },
+      { "year": 1941, "event": "The first Superman comic book is published", "category": "culture" }
+    ],
+    "7": [
+      { "year": 1325, "event": "Aztecs found Tenochtitlán, modern-day Mexico City", "category": "civilization" },
+      { "year": 1714, "event": "Fahrenheit invents the mercury thermometer", "category": "science" },
+      { "year": 1927, "event": "First transatlantic telephone call is made between New York and London", "category": "invention" }
+    ],
+    "8": [
+      { "year": 1198, "event": "Pope Innocent III begins his papacy", "category": "religion" },
+      { "year": 1815, "event": "Andrew Jackson defeats British forces at the Battle of New Orleans", "category": "war" },
+      { "year": 1959, "event": "The first Grammy Awards ceremony is held", "category": "culture" }
+    ],
+    "9": [
+      { "year": 475, "event": "Romulus Augustulus becomes the last Roman Emperor of the West", "category": "civilization" },
+      { "year": 1788, "event": "Connecticut becomes the 5th U.S. state", "category": "politics" },
+      { "year": 1968, "event": "The Beatles' Apple Records is founded", "category": "culture" }
+    ],
+    "10": [
+      { "year": 49, "event": "Julius Caesar crosses the Rubicon river, starting a Roman civil war", "category": "war" },
+      { "year": 1776, "event": "Thomas Paine publishes 'Common Sense'", "category": "politics" },
+      { "year": 1946, "event": "The United Nations holds its first General Assembly in London", "category": "politics" }
+    ],
+    "11": [
+      { "year": 1569, "event": "Gerardus Mercator publishes his world map using the Mercator projection", "category": "science" },
+      { "year": 1922, "event": "Howard Carter discovers Tutankhamun's tomb in Egypt", "category": "history" },
+      { "year": 1964, "event": "The surgeon general declares cigarette smoking hazardous to health", "category": "science" }
+    ],
+    "12": [
+      { "year": 1519, "event": "Hernán Cortés lands in Mexico to begin his conquest", "category": "history" },
+      { "year": 1876, "event": "Jack London, author of The Call of the Wild, is born", "category": "culture" },
+      { "year": 1998, "event": "The first element of the International Space Station is launched", "category": "science" }
+    ],
+    "13": [
+      { "year": 1128, "event": "The Knights Templar receive papal endorsement", "category": "religion" },
+      { "year": 1864, "event": "The Thirteenth Amendment abolishing slavery passes the U.S. Senate", "category": "politics" },
+      { "year": 1970, "event": "An oxygen tank explodes aboard Apollo 13", "category": "science" }
+    ],
+    "14": [
+      { "year": 1301, "event": "Edward I's son becomes the first Prince of Wales", "category": "politics" },
+      { "year": 1639, "event": "The Fundamental Orders of Connecticut are signed, one of the first constitutions", "category": "politics" },
+      { "year": 1954, "event": "The first nuclear submarine USS Nautilus is commissioned", "category": "science" }
+    ],
+    "15": [
+      { "year": 1559, "event": "Elizabeth I is crowned Queen of England", "category": "politics" },
+      { "year": 1777, "event": "Vermont declares independence from Britain and becomes a republic", "category": "politics" },
+      { "year": 1929, "event": "Martin Luther King Jr. is born in Atlanta, Georgia", "category": "history" }
+    ],
+    "16": [
+      { "year": 27, "event": "Octavian receives the title of Augustus, marking the start of the Roman Empire", "category": "civilization" },
+      { "year": 1547, "event": "Ivan the Terrible is crowned as the first Tsar of Russia", "category": "politics" },
+      { "year": 1920, "event": "The League of Nations holds its first meeting in Geneva", "category": "politics" }
+    ],
+    "17": [
+      { "year": 1377, "event": "Pope Gregory XI returns the papacy to Rome from Avignon", "category": "religion" },
+      { "year": 1773, "event": "James Cook becomes the first person to cross the Antarctic Circle", "category": "exploration" },
+      { "year": 1945, "event": "The Red Army liberates Warsaw from Nazi occupation", "category": "war" }
+    ],
+    "18": [
+      { "year": 1778, "event": "Captain Cook discovers the Hawaiian Islands", "category": "exploration" },
+      { "year": 1788, "event": "The First Fleet arrives at Port Jackson, Australia", "category": "history" },
+      { "year": 1911, "event": "The first airmail flight in India takes place in Allahabad", "category": "invention" }
+    ],
+    "19": [
+      { "year": 1419, "event": "Rouen surrenders to Henry V of England", "category": "war" },
+      { "year": 1807, "event": "Robert E. Lee, Confederate general in the Civil War, is born", "category": "history" },
+      { "year": 1983, "event": "Apple releases the Lisa, the first personal computer with a graphical interface", "category": "invention" }
+    ],
+    "20": [
+      { "year": 1265, "event": "The first English Parliament is convened by Simon de Montfort", "category": "politics" },
+      { "year": 1841, "event": "Edgar Allan Poe publishes 'The Murders in the Rue Morgue', the first detective story", "category": "culture" },
+      { "year": 1981, "event": "Ronald Reagan is inaugurated as the 40th U.S. President", "category": "politics" }
+    ],
+    "21": [
+      { "year": 1535, "event": "The city of Lima, Peru is founded by Francisco Pizarro", "category": "history" },
+      { "year": 1793, "event": "King Louis XVI of France is executed by guillotine", "category": "politics" },
+      { "year": 1954, "event": "The first Burger King restaurant opens in Miami, Florida", "category": "culture" }
+    ],
+    "22": [
+      { "year": 1506, "event": "The Swiss Guard is founded to protect the Pope", "category": "history" },
+      { "year": 1788, "event": "Lord Byron, Romantic poet, is born", "category": "culture" },
+      { "year": 1970, "event": "The first Earth Day is celebrated worldwide", "category": "environment" }
+    ],
+    "23": [
+      { "year": 1368, "event": "The Ming Dynasty begins in China", "category": "civilization" },
+      { "year": 1556, "event": "One of the deadliest earthquakes in history strikes Shaanxi, China, killing 830,000", "category": "disaster" },
+      { "year": 1849, "event": "Elizabeth Blackwell becomes the first woman to receive a medical degree in the U.S.", "category": "history" }
+    ],
+    "24": [
+      { "year": 41, "event": "Roman Emperor Caligula is assassinated", "category": "history" },
+      { "year": 1848, "event": "Gold is discovered at Sutter's Mill, triggering the California Gold Rush", "category": "economy" },
+      { "year": 1965, "event": "Winston Churchill dies at the age of 90", "category": "history" }
+    ],
+    "25": [
+      { "year": 1533, "event": "Henry VIII secretly marries Anne Boleyn", "category": "history" },
+      { "year": 1759, "event": "Robert Burns, Scottish national poet, is born", "category": "culture" },
+      { "year": 1924, "event": "The first Winter Olympics opens in Chamonix, France", "category": "sports" }
+    ],
+    "26": [
+      { "year": 1500, "event": "Portuguese explorer Pedro Álvares Cabral discovers Brazil", "category": "exploration" },
+      { "year": 1788, "event": "The first British settlers arrive in Australia", "category": "history" },
+      { "year": 1950, "event": "India officially becomes a republic, adopting its constitution", "category": "politics" }
+    ],
+    "27": [
+      { "year": 98, "event": "Trajan becomes Roman Emperor, beginning Rome's golden age", "category": "civilization" },
+      { "year": 1756, "event": "Wolfgang Amadeus Mozart is born in Salzburg", "category": "culture" },
+      { "year": 1945, "event": "The Red Army liberates Auschwitz concentration camp", "category": "war" }
+    ],
+    "28": [
+      { "year": 1521, "event": "Ferdinand Magellan is killed in the Philippines during his circumnavigation", "category": "exploration" },
+      { "year": 1813, "event": "Pride and Prejudice by Jane Austen is published", "category": "culture" },
+      { "year": 1986, "event": "The Space Shuttle Challenger explodes 73 seconds after launch, killing 7 astronauts", "category": "disaster" }
+    ],
+    "29": [
+      { "year": 1886, "event": "Coca-Cola is invented by pharmacist John Pemberton", "category": "invention" },
+      { "year": 1845, "event": "Edgar Allan Poe publishes 'The Raven'", "category": "culture" },
+      { "year": 1936, "event": "Oprah Winfrey is born in Koscuisko, Mississippi", "category": "culture" }
+    ],
+    "30": [
+      { "year": 1649, "event": "King Charles I of England is executed", "category": "politics" },
+      { "year": 1933, "event": "Adolf Hitler becomes Chancellor of Germany", "category": "politics" },
+      { "year": 1948, "event": "Mahatma Gandhi is assassinated in New Delhi", "category": "history" }
+    ],
+    "31": [
+      { "year": 1606, "event": "Guy Fawkes is executed for his role in the Gunpowder Plot", "category": "history" },
+      { "year": 1747, "event": "The first venereal disease clinic opens in London", "category": "science" },
+      { "year": 1958, "event": "The United States launches Explorer 1, its first successful satellite", "category": "science" }
+    ]
+  },
+  "2": {
+    "1": [
+      { "year": 1790, "event": "The U.S. Supreme Court convenes for the first time", "category": "politics" },
+      { "year": 1896, "event": "Puccini's opera La Bohème premieres in Turin", "category": "culture" },
+      { "year": 2003, "event": "Space Shuttle Columbia disintegrates on re-entry, killing 7 astronauts", "category": "disaster" }
+    ],
+    "2": [
+      { "year": 506, "event": "The Breviary of Alaric, a collection of Roman law, is published", "category": "history" },
+      { "year": 1848, "event": "The Treaty of Guadalupe Hidalgo ends the Mexican-American War", "category": "war" },
+      { "year": 1990, "event": "Nelson Mandela is released after 27 years in prison in South Africa", "category": "politics" }
+    ],
+    "3": [
+      { "year": 1488, "event": "Bartolomeu Dias rounds the Cape of Good Hope", "category": "exploration" },
+      { "year": 1870, "event": "The 15th Amendment grants African American men the right to vote", "category": "politics" },
+      { "year": 1966, "event": "Soviet spacecraft Luna 9 makes the first soft landing on the Moon", "category": "science" }
+    ],
+    "4": [
+      { "year": 211, "event": "Roman Emperor Septimius Severus dies in York, England", "category": "history" },
+      { "year": 1789, "event": "George Washington is unanimously elected as the first U.S. President", "category": "politics" },
+      { "year": 2004, "event": "Facebook is launched by Mark Zuckerberg at Harvard", "category": "invention" }
+    ],
+    "5": [
+      { "year": 1783, "event": "Sweden and the United States sign their first treaty", "category": "politics" },
+      { "year": 1885, "event": "The Congo Free State is established under King Leopold II of Belgium", "category": "history" },
+      { "year": 1974, "event": "Hank Aaron hits his 714th home run, tying Babe Ruth's record", "category": "sports" }
+    ],
+    "6": [
+      { "year": 1685, "event": "King Charles II of England dies", "category": "history" },
+      { "year": 1820, "event": "The first American missionaries arrive in Hawaii", "category": "religion" },
+      { "year": 1952, "event": "Queen Elizabeth II ascends to the British throne upon the death of her father", "category": "politics" }
+    ],
+    "7": [
+      { "year": 457, "event": "Leo I becomes Byzantine Emperor", "category": "history" },
+      { "year": 1812, "event": "Charles Dickens, author of Oliver Twist and A Christmas Carol, is born", "category": "culture" },
+      { "year": 1964, "event": "The Beatles make their first appearance on The Ed Sullivan Show in the U.S.", "category": "culture" }
+    ],
+    "8": [
+      { "year": 421, "event": "The city of Venice is founded", "category": "civilization" },
+      { "year": 1587, "event": "Mary, Queen of Scots, is executed", "category": "history" },
+      { "year": 1910, "event": "The Boy Scouts of America is incorporated", "category": "culture" }
+    ],
+    "9": [
+      { "year": 1540, "event": "Henry VIII of England marries Anne of Cleves", "category": "history" },
+      { "year": 1895, "event": "William G. Morgan invents volleyball", "category": "sports" },
+      { "year": 1964, "event": "The Beatles are seen by 73 million viewers on the Ed Sullivan Show", "category": "culture" }
+    ],
+    "10": [
+      { "year": 1763, "event": "The Treaty of Paris ends the Seven Years' War", "category": "war" },
+      { "year": 1840, "event": "Queen Victoria of England marries Prince Albert of Saxe-Coburg", "category": "history" },
+      { "year": 1996, "event": "IBM's Deep Blue defeats chess champion Garry Kasparov for the first time", "category": "science" }
+    ],
+    "11": [
+      { "year": 660, "event": "Traditional founding date of Japan by Emperor Jimmu", "category": "civilization" },
+      { "year": 1847, "event": "Thomas Edison, inventor of the lightbulb, is born", "category": "science" },
+      { "year": 1990, "event": "Nelson Mandela is released from Victor Verster Prison", "category": "politics" }
+    ],
+    "12": [
+      { "year": 1554, "event": "Lady Jane Grey is executed after just nine days as Queen of England", "category": "history" },
+      { "year": 1809, "event": "Abraham Lincoln and Charles Darwin are both born on this day", "category": "history" },
+      { "year": 1999, "event": "Bill Clinton is acquitted by the Senate in his impeachment trial", "category": "politics" }
+    ],
+    "13": [
+      { "year": 1542, "event": "Catherine Howard is executed at the Tower of London", "category": "history" },
+      { "year": 1633, "event": "Galileo arrives in Rome to face charges of heresy", "category": "science" },
+      { "year": 1945, "event": "Allied bombing of Dresden, Germany begins", "category": "war" }
+    ],
+    "14": [
+      { "year": 278, "event": "Saint Valentine is martyred, traditionally inspiring Valentine's Day", "category": "history" },
+      { "year": 1876, "event": "Alexander Graham Bell patents the telephone", "category": "invention" },
+      { "year": 1929, "event": "The Saint Valentine's Day Massacre occurs in Chicago", "category": "history" }
+    ],
+    "15": [
+      { "year": 44, "event": "Julius Caesar is assassinated on the Ides of March... actually the Ides of March is March 15", "category": "history" },
+      { "year": 1564, "event": "Galileo Galilei is born in Pisa, Italy", "category": "science" },
+      { "year": 1942, "event": "The first American bomber raid on Japan is launched", "category": "war" }
+    ],
+    "16": [
+      { "year": 1804, "event": "Ohio becomes the 17th U.S. state", "category": "politics" },
+      { "year": 1862, "event": "The U.S. ironclad Monitor battles the Confederate Virginia to a draw", "category": "war" },
+      { "year": 1968, "event": "The My Lai Massacre occurs in Vietnam", "category": "war" }
+    ],
+    "17": [
+      { "year": 461, "event": "St. Patrick, patron saint of Ireland, dies", "category": "religion" },
+      { "year": 1756, "event": "Britain declares war on France, beginning the Seven Years' War", "category": "war" },
+      { "year": 1959, "event": "The Dalai Lama flees Tibet following a failed uprising against China", "category": "politics" }
+    ],
+    "18": [
+      { "year": 1229, "event": "Holy Roman Emperor Frederick II crowns himself King of Jerusalem", "category": "history" },
+      { "year": 1861, "event": "Victor Emmanuel II becomes the first King of unified Italy", "category": "politics" },
+      { "year": 1930, "event": "The planet Pluto is discovered by Clyde Tombaugh", "category": "science" }
+    ],
+    "19": [
+      { "year": 197, "event": "Septimius Severus defeats Clodius Albinus to become sole Roman Emperor", "category": "history" },
+      { "year": 1878, "event": "Thomas Edison patents the phonograph", "category": "invention" },
+      { "year": 1986, "event": "The first Hands Across America fundraiser is announced", "category": "culture" }
+    ],
+    "20": [
+      { "year": 1472, "event": "Orkney and Shetland Islands are transferred from Norway to Scotland", "category": "history" },
+      { "year": 1792, "event": "The guillotine is first used in France as a method of execution", "category": "history" },
+      { "year": 1962, "event": "John Glenn becomes the first American to orbit the Earth", "category": "science" }
+    ],
+    "21": [
+      { "year": 1613, "event": "Mikhail Romanov is elected Tsar of Russia, beginning the Romanov dynasty", "category": "politics" },
+      { "year": 1804, "event": "The Napoleonic Code is adopted in France", "category": "politics" },
+      { "year": 1972, "event": "Nixon becomes the first U.S. President to visit China", "category": "politics" }
+    ],
+    "22": [
+      { "year": 1371, "event": "Robert II becomes King of Scotland, beginning the Stuart dynasty", "category": "politics" },
+      { "year": 1630, "event": "Popcorn is introduced to the English colonists by a Native American", "category": "culture" },
+      { "year": 1997, "event": "Dolly the sheep, the first mammal cloned from an adult cell, is unveiled", "category": "science" }
+    ],
+    "23": [
+      { "year": 1455, "event": "Johannes Gutenberg prints the first Bible using movable type", "category": "invention" },
+      { "year": 1820, "event": "The Cato Street Conspiracy to assassinate British cabinet ministers is foiled", "category": "history" },
+      { "year": 1987, "event": "Supernova 1987A is observed, the first visible to the naked eye in 383 years", "category": "science" }
+    ],
+    "24": [
+      { "year": 303, "event": "Diocletian's Edict against Christians triggers Great Persecution", "category": "religion" },
+      { "year": 1582, "event": "Pope Gregory XIII introduces the Gregorian calendar", "category": "science" },
+      { "year": 1989, "event": "The Exxon Valdez oil tanker runs aground in Alaska, causing a massive oil spill", "category": "environment" }
+    ],
+    "25": [
+      { "year": 138, "event": "Hadrian adopts Antoninus Pius as his successor", "category": "history" },
+      { "year": 1836, "event": "Texas declares independence from Mexico", "category": "politics" },
+      { "year": 1964, "event": "Muhammad Ali defeats Sonny Liston to become world heavyweight champion", "category": "sports" }
+    ],
+    "26": [
+      { "year": 747, "event": "Charlemagne, first Holy Roman Emperor, is born", "category": "history" },
+      { "year": 1616, "event": "William Shakespeare dies in Stratford-upon-Avon", "category": "culture" },
+      { "year": 1935, "event": "Robert Watson-Watt demonstrates the first practical radar system", "category": "invention" }
+    ],
+    "27": [
+      { "year": 1594, "event": "Henry IV is crowned King of France", "category": "politics" },
+      { "year": 1827, "event": "The city of New Orleans is incorporated", "category": "history" },
+      { "year": 1933, "event": "The Reichstag fire in Germany is blamed on communists, giving Hitler power", "category": "politics" }
+    ],
+    "28": [
+      { "year": 202, "event": "The Han Dynasty defeats the Chu at the Battle of Gaixia", "category": "war" },
+      { "year": 1854, "event": "Britain and France declare war on Russia, starting the Crimean War", "category": "war" },
+      { "year": 1979, "event": "Three Mile Island nuclear accident occurs in Pennsylvania", "category": "disaster" }
+    ],
+    "29": [
+      { "year": 1504, "event": "Christopher Columbus uses a lunar eclipse to manipulate Jamaican natives", "category": "history" },
+      { "year": 1960, "event": "Ben-Hur wins 11 Academy Awards, a record at the time", "category": "culture" },
+      { "year": 1996, "event": "End of leap day — the last one in the 20th century", "category": "science" }
+    ]
+  },
+  "3": {
+    "1": [
+      { "year": 1872, "event": "Yellowstone becomes the world's first national park", "category": "environment" },
+      { "year": 1932, "event": "Charles Lindbergh's baby son is kidnapped", "category": "history" },
+      { "year": 1954, "event": "The United States tests the hydrogen bomb at Bikini Atoll", "category": "science" }
+    ],
+    "2": [
+      { "year": 1793, "event": "The U.S. Mint is established in Philadelphia", "category": "economy" },
+      { "year": 1836, "event": "Texas declares independence from Mexico", "category": "politics" },
+      { "year": 1877, "event": "Rutherford B. Hayes is declared U.S. president after disputed election", "category": "politics" }
+    ],
+    "3": [
+      { "year": 1845, "event": "Florida becomes the 27th U.S. state", "category": "politics" },
+      { "year": 1847, "event": "Alexander Graham Bell is born in Edinburgh, Scotland", "category": "science" },
+      { "year": 1931, "event": "The Star-Spangled Banner is officially adopted as the U.S. national anthem", "category": "culture" }
+    ],
+    "4": [
+      { "year": 1461, "event": "Edward IV becomes King of England", "category": "politics" },
+      { "year": 1789, "event": "The U.S. Constitution goes into effect", "category": "politics" },
+      { "year": 1952, "event": "Queen Elizabeth II's coronation is planned after the death of King George VI", "category": "history" }
+    ],
+    "5": [
+      { "year": 1046, "event": "The Council of Rome deposes Pope Gregory VI", "category": "religion" },
+      { "year": 1770, "event": "The Boston Massacre occurs when British soldiers kill five colonists", "category": "war" },
+      { "year": 1946, "event": "Winston Churchill delivers his 'Iron Curtain' speech in Fulton, Missouri", "category": "politics" }
+    ],
+    "6": [
+      { "year": 1475, "event": "Michelangelo is born in Caprese, Italy", "category": "culture" },
+      { "year": 1836, "event": "The Alamo falls to Mexican forces under Santa Anna", "category": "war" },
+      { "year": 1957, "event": "Ghana gains independence from Britain, the first sub-Saharan African country to do so", "category": "politics" }
+    ],
+    "7": [
+      { "year": 321, "event": "Emperor Constantine decrees Sunday as a day of rest in the Roman Empire", "category": "religion" },
+      { "year": 1876, "event": "Alexander Graham Bell is granted a patent for the telephone", "category": "invention" },
+      { "year": 1945, "event": "U.S. forces cross the Rhine River into Germany at Remagen", "category": "war" }
+    ],
+    "8": [
+      { "year": 1618, "event": "Johannes Kepler discovers his third law of planetary motion", "category": "science" },
+      { "year": 1917, "event": "Russia's February Revolution begins as workers strike in Petrograd", "category": "politics" },
+      { "year": 1983, "event": "Ronald Reagan refers to the Soviet Union as the 'Evil Empire'", "category": "politics" }
+    ],
+    "9": [
+      { "year": 1074, "event": "Pope Gregory VII threatens Holy Roman Emperor Henry IV with excommunication", "category": "religion" },
+      { "year": 1796, "event": "Napoleon Bonaparte marries Joséphine de Beauharnais", "category": "history" },
+      { "year": 1954, "event": "The first Chevrolet Corvette is produced in Flint, Michigan", "category": "invention" }
+    ],
+    "10": [
+      { "year": 1629, "event": "King Charles I dissolves the English Parliament", "category": "politics" },
+      { "year": 1848, "event": "The French Second Republic is proclaimed", "category": "politics" },
+      { "year": 1969, "event": "James Earl Ray pleads guilty to the assassination of Martin Luther King Jr.", "category": "history" }
+    ],
+    "11": [
+      { "year": 222, "event": "Emperor Elagabalus of Rome is assassinated", "category": "history" },
+      { "year": 1888, "event": "The Great Blizzard of 1888 hits the northeastern United States", "category": "disaster" },
+      { "year": 1985, "event": "Mikhail Gorbachev becomes leader of the Soviet Union", "category": "politics" }
+    ],
+    "12": [
+      { "year": 538, "event": "Vitiges, king of the Ostrogoths, ends his siege of Rome", "category": "war" },
+      { "year": 1912, "event": "The Girl Scouts of the USA is founded by Juliette Gordon Low", "category": "culture" },
+      { "year": 1993, "event": "A series of bomb blasts rock Mumbai, India, killing 300", "category": "disaster" }
+    ],
+    "13": [
+      { "year": 1781, "event": "William Herschel discovers Uranus", "category": "science" },
+      { "year": 1868, "event": "The first bicycle race in history is held in Paris", "category": "sports" },
+      { "year": 1969, "event": "John Lennon and Yoko Ono begin their 'Bed-In for Peace' in Amsterdam", "category": "culture" }
+    ],
+    "14": [
+      { "year": 44, "event": "Julius Caesar is assassinated in the Theatre of Pompey in Rome", "category": "history" },
+      { "year": 1794, "event": "Eli Whitney patents the cotton gin", "category": "invention" },
+      { "year": 1879, "event": "Albert Einstein is born in Ulm, Germany", "category": "science" }
+    ],
+    "15": [
+      { "year": 44, "event": "Julius Caesar is warned to 'beware the Ides of March'", "category": "history" },
+      { "year": 1917, "event": "Tsar Nicholas II of Russia abdicates the throne", "category": "politics" },
+      { "year": 1985, "event": "The first Internet domain name, symbolics.com, is registered", "category": "invention" }
+    ],
+    "16": [
+      { "year": 597, "event": "St. Augustine arrives in Canterbury to convert Anglo-Saxons to Christianity", "category": "religion" },
+      { "year": 1802, "event": "The U.S. Military Academy at West Point is established", "category": "history" },
+      { "year": 1968, "event": "The My Lai Massacre takes place in Vietnam", "category": "war" }
+    ],
+    "17": [
+      { "year": 461, "event": "Saint Patrick, patron saint of Ireland, dies", "category": "religion" },
+      { "year": 1776, "event": "British forces evacuate Boston during the Revolutionary War", "category": "war" },
+      { "year": 1959, "event": "The Dalai Lama flees Tibet after a failed uprising against Chinese rule", "category": "politics" }
+    ],
+    "18": [
+      { "year": 1848, "event": "The German revolution of 1848 begins in Berlin", "category": "politics" },
+      { "year": 1871, "event": "The Paris Commune is established", "category": "politics" },
+      { "year": 1965, "event": "The first American combat troops arrive in Vietnam", "category": "war" }
+    ],
+    "19": [
+      { "year": 721, "event": "The Battle of Toulouse halts the northward advance of the Umayyad Caliphate", "category": "war" },
+      { "year": 1915, "event": "Albert Einstein publishes his general theory of relativity", "category": "science" },
+      { "year": 1979, "event": "Eric Clapton and Pattie Boyd marry", "category": "culture" }
+    ],
+    "20": [
+      { "year": 1602, "event": "The Dutch East India Company is founded", "category": "economy" },
+      { "year": 1852, "event": "Harriet Beecher Stowe publishes 'Uncle Tom's Cabin'", "category": "culture" },
+      { "year": 2003, "event": "The United States and coalition forces begin the invasion of Iraq", "category": "war" }
+    ],
+    "21": [
+      { "year": 630, "event": "Byzantine Emperor Heraclius recovers the True Cross from the Persians", "category": "religion" },
+      { "year": 1685, "event": "Johann Sebastian Bach is born in Eisenach, Germany", "category": "culture" },
+      { "year": 1990, "event": "Namibia gains independence from South Africa", "category": "politics" }
+    ],
+    "22": [
+      { "year": 1312, "event": "The Knights Templar are dissolved by Pope Clement V", "category": "religion" },
+      { "year": 1622, "event": "Indian chief Opechancanough launches a surprise attack on Virginia colonists", "category": "history" },
+      { "year": 1945, "event": "The Arab League is founded in Cairo", "category": "politics" }
+    ],
+    "23": [
+      { "year": 1801, "event": "Tsar Paul I of Russia is assassinated", "category": "history" },
+      { "year": 1839, "event": "OK (okay) is first recorded in print in The Boston Morning Post", "category": "culture" },
+      { "year": 1983, "event": "President Reagan proposes the Strategic Defense Initiative (Star Wars)", "category": "science" }
+    ],
+    "24": [
+      { "year": 1603, "event": "Queen Elizabeth I of England dies, ending the Tudor dynasty", "category": "history" },
+      { "year": 1765, "event": "The British Parliament passes the Stamp Act, taxing American colonists", "category": "politics" },
+      { "year": 1989, "event": "The Exxon Valdez runs aground in Prince William Sound, Alaska", "category": "environment" }
+    ],
+    "25": [
+      { "year": 1306, "event": "Robert the Bruce is crowned King of Scotland", "category": "politics" },
+      { "year": 1957, "event": "The Treaty of Rome establishes the European Economic Community (EEC)", "category": "politics" },
+      { "year": 1975, "event": "King Faisal of Saudi Arabia is assassinated", "category": "history" }
+    ],
+    "26": [
+      { "year": 1484, "event": "William Caxton prints the first book in English — Aesop's Fables", "category": "culture" },
+      { "year": 1827, "event": "Ludwig van Beethoven dies in Vienna at age 56", "category": "culture" },
+      { "year": 1953, "event": "Dr. Jonas Salk announces the successful polio vaccine", "category": "science" }
+    ],
+    "27": [
+      { "year": 1625, "event": "King James I of England dies", "category": "history" },
+      { "year": 1794, "event": "The U.S. Navy is established", "category": "history" },
+      { "year": 1977, "event": "The Tenerife airport disaster kills 583 people, the deadliest aviation accident", "category": "disaster" }
+    ],
+    "28": [
+      { "year": 193, "event": "Roman Emperor Pertinax is assassinated by the Praetorian Guard", "category": "history" },
+      { "year": 1979, "event": "Three Mile Island nuclear plant accident begins in Pennsylvania", "category": "disaster" },
+      { "year": 1939, "event": "The Spanish Civil War ends as Franco's forces take Madrid", "category": "war" }
+    ],
+    "29": [
+      { "year": 1461, "event": "The Battle of Towton, the bloodiest battle ever fought in England", "category": "war" },
+      { "year": 1867, "event": "The British North America Act creates the Dominion of Canada", "category": "politics" },
+      { "year": 1973, "event": "The last U.S. combat troops leave Vietnam", "category": "war" }
+    ],
+    "30": [
+      { "year": 240, "event": "Roman consul Quintus Lutatius Catulus celebrates a triumph", "category": "history" },
+      { "year": 1842, "event": "Ether is used as an anesthetic for the first time in an operation", "category": "science" },
+      { "year": 1981, "event": "President Ronald Reagan is shot and wounded in Washington D.C.", "category": "history" }
+    ],
+    "31": [
+      { "year": 1492, "event": "Spain issues the Alhambra Decree, expelling Jews from Spain", "category": "history" },
+      { "year": 1889, "event": "The Eiffel Tower is officially opened in Paris", "category": "culture" },
+      { "year": 1968, "event": "President Lyndon B. Johnson announces he will not seek re-election", "category": "politics" }
+    ]
+  },
+  "4": {
+    "1": [
+      { "year": 527, "event": "Justinian I becomes co-emperor of the Byzantine Empire", "category": "history" },
+      { "year": 1700, "event": "April Fools' Day becomes widely recognized across Europe", "category": "culture" },
+      { "year": 1976, "event": "Apple Inc. is founded by Steve Jobs, Steve Wozniak, and Ronald Wayne", "category": "invention" }
+    ],
+    "2": [
+      { "year": 1792, "event": "The U.S. Mint is established by Congress", "category": "economy" },
+      { "year": 1872, "event": "The first Arbor Day is celebrated in Nebraska", "category": "environment" },
+      { "year": 1982, "event": "Argentina invades the Falkland Islands, beginning the Falklands War", "category": "war" }
+    ],
+    "3": [
+      { "year": 1776, "event": "George Washington expels the British from Boston", "category": "war" },
+      { "year": 1860, "event": "The Pony Express begins mail service between Missouri and California", "category": "history" },
+      { "year": 1973, "event": "Martin Cooper makes the first handheld mobile phone call", "category": "invention" }
+    ],
+    "4": [
+      { "year": 1949, "event": "NATO (North Atlantic Treaty Organization) is founded by 12 nations", "category": "politics" },
+      { "year": 1960, "event": "Senegal gains independence from France", "category": "politics" },
+      { "year": 1968, "event": "Martin Luther King Jr. is assassinated in Memphis, Tennessee", "category": "history" },
+      { "year": 1975, "event": "Microsoft is founded by Bill Gates and Paul Allen in Albuquerque", "category": "invention" }
+    ],
+    "5": [
+      { "year": 1242, "event": "Alexander Nevsky defeats the Teutonic Knights at the Battle of the Ice", "category": "war" },
+      { "year": 1722, "event": "Dutch explorer Jacob Roggeveen discovers Easter Island", "category": "exploration" },
+      { "year": 1955, "event": "Winston Churchill resigns as British Prime Minister", "category": "politics" }
+    ],
+    "6": [
+      { "year": 1199, "event": "King Richard I (Lionheart) of England dies from an arrow wound", "category": "history" },
+      { "year": 1896, "event": "The first modern Olympic Games open in Athens, Greece", "category": "sports" },
+      { "year": 1917, "event": "The United States declares war on Germany, entering World War I", "category": "war" }
+    ],
+    "7": [
+      { "year": 451, "event": "Attila the Hun begins his invasion of Gaul (France)", "category": "war" },
+      { "year": 1795, "event": "France adopts the meter as its standard unit of measurement", "category": "science" },
+      { "year": 1948, "event": "The World Health Organization is established", "category": "science" }
+    ],
+    "8": [
+      { "year": 217, "event": "Roman Emperor Caracalla is murdered while urinating near Carrhae", "category": "history" },
+      { "year": 1513, "event": "Juan Ponce de León lands in Florida, first European contact", "category": "exploration" },
+      { "year": 1974, "event": "Hank Aaron breaks Babe Ruth's all-time home run record with hit #715", "category": "sports" }
+    ],
+    "9": [
+      { "year": 193, "event": "Septimius Severus is proclaimed Emperor of Rome by his troops", "category": "history" },
+      { "year": 1865, "event": "Confederate General Robert E. Lee surrenders to Ulysses S. Grant, ending the U.S. Civil War", "category": "war" },
+      { "year": 2003, "event": "Baghdad falls to U.S. forces during the Iraq War", "category": "war" }
+    ],
+    "10": [
+      { "year": 1606, "event": "The Virginia Company receives its charter to colonize North America", "category": "history" },
+      { "year": 1815, "event": "Mount Tambora in Indonesia erupts, the deadliest volcanic eruption in history", "category": "disaster" },
+      { "year": 1912, "event": "The Titanic departs Southampton on its ill-fated maiden voyage", "category": "history" }
+    ],
+    "11": [
+      { "year": 146, "event": "The Roman army destroys Carthage, ending the Third Punic War", "category": "war" },
+      { "year": 1814, "event": "Napoleon Bonaparte abdicates the French throne and is exiled to Elba", "category": "history" },
+      { "year": 1970, "event": "Apollo 13 is launched, later experiencing a critical oxygen tank explosion", "category": "science" }
+    ],
+    "12": [
+      { "year": 1204, "event": "Crusaders sack Constantinople during the Fourth Crusade", "category": "war" },
+      { "year": 1861, "event": "The American Civil War begins with the Confederate attack on Fort Sumter", "category": "war" },
+      { "year": 1961, "event": "Yuri Gagarin becomes the first human in space", "category": "science" }
+    ],
+    "13": [
+      { "year": 1598, "event": "The Edict of Nantes grants French Protestants (Huguenots) religious freedom", "category": "religion" },
+      { "year": 1743, "event": "Thomas Jefferson, author of the Declaration of Independence, is born", "category": "history" },
+      { "year": 1970, "event": "Apollo 13 reports the famous message: 'Houston, we've had a problem'", "category": "science" }
+    ],
+    "14": [
+      { "year": 1471, "event": "Edward IV defeats Warwick at the Battle of Barnet during the Wars of the Roses", "category": "war" },
+      { "year": 1828, "event": "Noah Webster publishes the first American English dictionary", "category": "culture" },
+      { "year": 1865, "event": "President Abraham Lincoln is shot by John Wilkes Booth at Ford's Theatre", "category": "history" }
+    ],
+    "15": [
+      { "year": 1349, "event": "Jews are massacred in Erfurt, Germany during the Black Death", "category": "history" },
+      { "year": 1452, "event": "Leonardo da Vinci is born in Vinci, Italy", "category": "culture" },
+      { "year": 1912, "event": "The RMS Titanic sinks in the North Atlantic, killing over 1,500 people", "category": "disaster" }
+    ],
+    "16": [
+      { "year": 1521, "event": "Martin Luther refuses to recant his teachings before the Diet of Worms", "category": "religion" },
+      { "year": 1746, "event": "The Battle of Culloden ends the Jacobite rising in Scotland", "category": "war" },
+      { "year": 1947, "event": "The Texas City Disaster, the deadliest industrial accident in U.S. history", "category": "disaster" }
+    ],
+    "17": [
+      { "year": 1492, "event": "Spain signs agreements with Christopher Columbus for his voyage west", "category": "exploration" },
+      { "year": 1961, "event": "CIA-trained Cuban exiles land at the Bay of Pigs in Cuba", "category": "war" },
+      { "year": 1975, "event": "The Khmer Rouge takes power in Cambodia under Pol Pot", "category": "politics" }
+    ],
+    "18": [
+      { "year": 1025, "event": "Bolesław I the Brave becomes the first King of Poland", "category": "politics" },
+      { "year": 1775, "event": "Paul Revere makes his midnight ride to warn of British troops", "category": "war" },
+      { "year": 1906, "event": "A massive earthquake devastates San Francisco, killing over 3,000", "category": "disaster" }
+    ],
+    "19": [
+      { "year": 1012, "event": "Archbishop Alphege of Canterbury is murdered by Danes", "category": "history" },
+      { "year": 1775, "event": "The American Revolutionary War begins with the Battles of Lexington and Concord", "category": "war" },
+      { "year": 1995, "event": "The Oklahoma City bombing kills 168 people", "category": "history" }
+    ],
+    "20": [
+      { "year": 1303, "event": "The University of Rome (La Sapienza) is founded by Pope Boniface VIII", "category": "history" },
+      { "year": 1534, "event": "Jacques Cartier begins his first voyage to North America", "category": "exploration" },
+      { "year": 1999, "event": "Two students open fire at Columbine High School, Colorado, killing 13 people", "category": "history" }
+    ],
+    "21": [
+      { "year": 753, "event": "Traditional founding date of Rome by Romulus", "category": "civilization" },
+      { "year": 1509, "event": "Henry VIII becomes King of England", "category": "history" },
+      { "year": 2016, "event": "Prince, the legendary musician, dies at Paisley Park aged 57", "category": "culture" }
+    ],
+    "22": [
+      { "year": 1370, "event": "Construction of the Bastille begins in Paris", "category": "history" },
+      { "year": 1724, "event": "Philosopher Immanuel Kant is born in Königsberg, Germany", "category": "culture" },
+      { "year": 1970, "event": "The first Earth Day is held in the United States", "category": "environment" }
+    ],
+    "23": [
+      { "year": 1014, "event": "High King Brian Boru defeats the Vikings at the Battle of Clontarf", "category": "war" },
+      { "year": 1564, "event": "William Shakespeare is born in Stratford-upon-Avon", "category": "culture" },
+      { "year": 1985, "event": "Coca-Cola introduces 'New Coke', which is widely rejected by consumers", "category": "culture" }
+    ],
+    "24": [
+      { "year": 1184, "event": "The Trojan Horse is traditionally used to sack Troy", "category": "history" },
+      { "year": 1800, "event": "The U.S. Library of Congress is established in Washington D.C.", "category": "culture" },
+      { "year": 1916, "event": "The Easter Rising begins in Dublin, Ireland", "category": "politics" }
+    ],
+    "25": [
+      { "year": 404, "event": "The last gladiatorial games in ancient Rome are held", "category": "history" },
+      { "year": 1792, "event": "The guillotine is first used in France", "category": "history" },
+      { "year": 1990, "event": "The Hubble Space Telescope is launched into orbit", "category": "science" }
+    ],
+    "26": [
+      { "year": 121, "event": "Roman Emperor Marcus Aurelius is born", "category": "history" },
+      { "year": 1865, "event": "Confederate General Joseph E. Johnston surrenders to Sherman", "category": "war" },
+      { "year": 1986, "event": "The Chernobyl nuclear disaster occurs in Ukraine", "category": "disaster" }
+    ],
+    "27": [
+      { "year": 1124, "event": "Pope Honorius II is elected", "category": "religion" },
+      { "year": 1521, "event": "Ferdinand Magellan is killed in the Philippines", "category": "exploration" },
+      { "year": 1994, "event": "South Africa holds its first multiracial elections; Nelson Mandela becomes president", "category": "politics" }
+    ],
+    "28": [
+      { "year": 1192, "event": "Assassination of Conrad of Montferrat, King of Jerusalem", "category": "history" },
+      { "year": 1789, "event": "Mutiny on the Bounty occurs in the South Pacific", "category": "history" },
+      { "year": 1945, "event": "Benito Mussolini is captured and executed by Italian partisans", "category": "war" }
+    ],
+    "29": [
+      { "year": 1429, "event": "Joan of Arc relieves the Siege of Orléans", "category": "war" },
+      { "year": 1861, "event": "The Kingdom of Italy is proclaimed with Victor Emmanuel II as king", "category": "politics" },
+      { "year": 1945, "event": "Adolf Hitler marries Eva Braun in a Berlin bunker", "category": "history" }
+    ],
+    "30": [
+      { "year": 1006, "event": "The brightest supernova in recorded history appears in the constellation Lupus", "category": "science" },
+      { "year": 1789, "event": "George Washington is inaugurated as the first U.S. President in New York", "category": "politics" },
+      { "year": 1945, "event": "Adolf Hitler commits suicide in his underground bunker in Berlin", "category": "history" }
+    ]
+  },
+  "5": {
+    "1": [
+      { "year": 305, "event": "Roman Emperor Diocletian and Maximian abdicate", "category": "history" },
+      { "year": 1776, "event": "Bavaria dissolves the Illuminati", "category": "history" },
+      { "year": 1931, "event": "The Empire State Building opens in New York City", "category": "invention" }
+    ],
+    "2": [
+      { "year": 1519, "event": "Leonardo da Vinci dies in Amboise, France", "category": "culture" },
+      { "year": 1808, "event": "Spain's Dos de Mayo Uprising begins against French occupation", "category": "war" },
+      { "year": 2011, "event": "Osama bin Laden is killed by U.S. special forces in Abbottabad, Pakistan", "category": "history" }
+    ],
+    "3": [
+      { "year": 1469, "event": "Niccolò Machiavelli, author of The Prince, is born in Florence", "category": "culture" },
+      { "year": 1791, "event": "Poland adopts the first modern constitution in Europe", "category": "politics" },
+      { "year": 1979, "event": "Margaret Thatcher becomes the first female Prime Minister of Britain", "category": "politics" }
+    ],
+    "4": [
+      { "year": 1471, "event": "Edward IV of England defeats the Lancastrians at the Battle of Tewkesbury", "category": "war" },
+      { "year": 1776, "event": "Rhode Island declares independence from Britain", "category": "politics" },
+      { "year": 1970, "event": "Four students are killed by National Guard troops at Kent State University", "category": "history" }
+    ],
+    "5": [
+      { "year": 553, "event": "The Second Council of Constantinople convenes", "category": "religion" },
+      { "year": 1821, "event": "Napoleon Bonaparte dies in exile on Saint Helena island", "category": "history" },
+      { "year": 1961, "event": "Alan Shepard becomes the first American in space", "category": "science" }
+    ],
+    "6": [
+      { "year": 1527, "event": "The Sack of Rome by troops of Holy Roman Emperor Charles V", "category": "war" },
+      { "year": 1840, "event": "Rowland Hill introduces the Penny Black, the world's first adhesive stamp", "category": "invention" },
+      { "year": 1994, "event": "The Channel Tunnel between England and France officially opens", "category": "invention" }
+    ],
+    "7": [
+      { "year": 558, "event": "The dome of the Hagia Sophia in Constantinople collapses after an earthquake", "category": "history" },
+      { "year": 1824, "event": "Beethoven's 9th Symphony, including 'Ode to Joy', premieres in Vienna", "category": "culture" },
+      { "year": 1945, "event": "Germany surrenders unconditionally to Allied forces in Reims", "category": "war" }
+    ],
+    "8": [
+      { "year": 1450, "event": "Jack Cade's Rebellion begins in Kent, England", "category": "history" },
+      { "year": 1886, "event": "Pharmacist John Pemberton first sells Coca-Cola at Jacob's Pharmacy in Atlanta", "category": "invention" },
+      { "year": 1945, "event": "V-E Day: Allied nations celebrate victory in Europe", "category": "war" }
+    ],
+    "9": [
+      { "year": 1386, "event": "The Treaty of Windsor establishes the Anglo-Portuguese Alliance, the oldest alliance still in force", "category": "politics" },
+      { "year": 1671, "event": "Colonel Thomas Blood attempts to steal the Crown Jewels from the Tower of London", "category": "history" },
+      { "year": 1960, "event": "The FDA approves the first oral contraceptive pill", "category": "science" }
+    ],
+    "10": [
+      { "year": 1503, "event": "Columbus discovers the Cayman Islands", "category": "exploration" },
+      { "year": 1869, "event": "The First Transcontinental Railroad is completed in Utah, USA", "category": "invention" },
+      { "year": 1994, "event": "Nelson Mandela is inaugurated as South Africa's first black president", "category": "politics" }
+    ],
+    "11": [
+      { "year": 912, "event": "Alexander becomes sole ruler of the Byzantine Empire", "category": "history" },
+      { "year": 1811, "event": "Paraguay declares independence from Spain", "category": "politics" },
+      { "year": 1949, "event": "Siam officially changes its name to Thailand", "category": "politics" }
+    ],
+    "12": [
+      { "year": 1364, "event": "The University of Krakow is established in Poland", "category": "history" },
+      { "year": 1551, "event": "The University of San Marcos, the oldest university in the Americas, is founded in Lima", "category": "history" },
+      { "year": 2002, "event": "One million people march in Rome against proposed labor reforms", "category": "politics" }
+    ],
+    "13": [
+      { "year": 1607, "event": "Jamestown, Virginia is established as the first permanent English settlement", "category": "history" },
+      { "year": 1648, "event": "The Treaty of Westphalia ends the Thirty Years' War", "category": "war" },
+      { "year": 1981, "event": "Pope John Paul II is shot and seriously wounded in St. Peter's Square", "category": "history" }
+    ],
+    "14": [
+      { "year": 1264, "event": "Battle of Lewes — Simon de Montfort captures King Henry III of England", "category": "war" },
+      { "year": 1796, "event": "Edward Jenner performs the first vaccination against smallpox", "category": "science" },
+      { "year": 1973, "event": "The Sears Tower in Chicago becomes the world's tallest building", "category": "invention" }
+    ],
+    "15": [
+      { "year": 392, "event": "Theodosius I bans all pagan practices throughout the Roman Empire", "category": "religion" },
+      { "year": 1602, "event": "Bartholomew Gosnold becomes the first European to land on Cape Cod", "category": "exploration" },
+      { "year": 1940, "event": "McDonald's first restaurant opens (by Richard and Maurice McDonald)", "category": "culture" }
+    ],
+    "16": [
+      { "year": 1532, "event": "Francisco Pizarro begins his conquest of the Inca Empire", "category": "history" },
+      { "year": 1770, "event": "Marie Antoinette marries Louis XVI of France", "category": "history" },
+      { "year": 1943, "event": "Swiss chemist Albert Hofmann accidentally discovers LSD", "category": "science" }
+    ],
+    "17": [
+      { "year": 455, "event": "Vandals sack Rome", "category": "war" },
+      { "year": 1792, "event": "The New York Stock Exchange is founded", "category": "economy" },
+      { "year": 1954, "event": "The U.S. Supreme Court rules racial segregation in schools is unconstitutional (Brown v. Board)", "category": "politics" }
+    ],
+    "18": [
+      { "year": 1291, "event": "The city of Acre falls to Muslim forces, ending Crusader presence in the Holy Land", "category": "war" },
+      { "year": 1803, "event": "Louisiana Purchase: Napoleon sells Louisiana territory to the U.S. for $15 million", "category": "history" },
+      { "year": 1980, "event": "Mount St. Helens erupts in Washington State, killing 57 people", "category": "disaster" }
+    ],
+    "19": [
+      { "year": 1536, "event": "Anne Boleyn, second wife of Henry VIII, is beheaded", "category": "history" },
+      { "year": 1649, "event": "England is declared a Commonwealth by its Parliament", "category": "politics" },
+      { "year": 1993, "event": "The Branch Davidian compound in Waco, Texas burns after a 51-day standoff", "category": "history" }
+    ],
+    "20": [
+      { "year": 325, "event": "The First Council of Nicaea convenes to settle questions of Christian doctrine", "category": "religion" },
+      { "year": 1506, "event": "Christopher Columbus dies in Valladolid, Spain", "category": "exploration" },
+      { "year": 1927, "event": "Charles Lindbergh takes off from New York on the first solo transatlantic flight", "category": "exploration" }
+    ],
+    "21": [
+      { "year": 337, "event": "Constantine the Great, first Christian Roman Emperor, dies", "category": "history" },
+      { "year": 1471, "event": "Henry VI of England is murdered in the Tower of London", "category": "history" },
+      { "year": 1932, "event": "Amelia Earhart begins solo transatlantic flight from Newfoundland to Northern Ireland", "category": "exploration" }
+    ],
+    "22": [
+      { "year": 1455, "event": "The Wars of the Roses begin in England with the Battle of St Albans", "category": "war" },
+      { "year": 1843, "event": "Adventists led by William Miller predict the Second Coming of Christ on this date", "category": "religion" },
+      { "year": 1972, "event": "Ceylon officially becomes Sri Lanka", "category": "politics" }
+    ],
+    "23": [
+      { "year": 1430, "event": "Joan of Arc is captured by Burgundian forces at Compiègne", "category": "war" },
+      { "year": 1618, "event": "The Defenestration of Prague sparks the Thirty Years' War", "category": "war" },
+      { "year": 1949, "event": "The Federal Republic of Germany is established in West Germany", "category": "politics" }
+    ],
+    "24": [
+      { "year": 1543, "event": "Nicolaus Copernicus publishes his heliocentric model of the solar system", "category": "science" },
+      { "year": 1830, "event": "The Indian Removal Act is signed by President Andrew Jackson", "category": "politics" },
+      { "year": 1976, "event": "Steve Wozniak completes the Apple I computer", "category": "invention" }
+    ],
+    "25": [
+      { "year": 1085, "event": "Pope Gregory VII dies in exile in Salerno, Italy", "category": "religion" },
+      { "year": 1787, "event": "The Constitutional Convention begins in Philadelphia", "category": "politics" },
+      { "year": 1977, "event": "Star Wars (Episode IV: A New Hope) is released in theaters", "category": "culture" }
+    ],
+    "26": [
+      { "year": 1805, "event": "Napoleon Bonaparte becomes King of Italy", "category": "politics" },
+      { "year": 1865, "event": "Confederate President Jefferson Davis flees Richmond, Virginia", "category": "war" },
+      { "year": 1986, "event": "The Chernobyl nuclear disaster: reactor number 4 explodes at 1:23 AM", "category": "disaster" }
+    ],
+    "27": [
+      { "year": 1498, "event": "Savonarola is excommunicated by Pope Alexander VI", "category": "religion" },
+      { "year": 1813, "event": "U.S. forces capture Toronto (then called York) during the War of 1812", "category": "war" },
+      { "year": 1937, "event": "The Golden Gate Bridge in San Francisco opens to pedestrians", "category": "invention" }
+    ],
+    "28": [
+      { "year": 1503, "event": "Pope Julius II is elected", "category": "religion" },
+      { "year": 1888, "event": "The National Geographic Society is founded in Washington D.C.", "category": "science" },
+      { "year": 1967, "event": "Muhammad Ali refuses military induction, is stripped of his boxing title", "category": "sports" }
+    ],
+    "29": [
+      { "year": 1453, "event": "Constantinople falls to Ottoman Sultan Mehmed II, ending the Byzantine Empire", "category": "war" },
+      { "year": 1660, "event": "King Charles II is restored to the English throne", "category": "politics" },
+      { "year": 1953, "event": "Edmund Hillary and Tenzing Norgay become the first to climb Mount Everest", "category": "exploration" }
+    ],
+    "30": [
+      { "year": 1431, "event": "Joan of Arc is burned at the stake in Rouen, France", "category": "history" },
+      { "year": 1814, "event": "The Treaty of Paris restores the French monarchy following Napoleon's defeat", "category": "politics" },
+      { "year": 1972, "event": "The Bloody Sunday inquiry in Northern Ireland opens", "category": "history" }
+    ],
+    "31": [
+      { "year": 1279, "event": "Kublai Khan defeats the Song Dynasty, unifying China", "category": "war" },
+      { "year": 1790, "event": "Benjamin Franklin, Founding Father and inventor, dies in Philadelphia", "category": "history" },
+      { "year": 1994, "event": "Kurt Cobain, lead singer of Nirvana, is found dead in Seattle", "category": "culture" }
+    ]
+  },
+  "6": {
+    "1": [
+      { "year": 193, "event": "Didius Julianus is proclaimed Roman Emperor after buying the throne from the Praetorian Guard", "category": "history" },
+      { "year": 1533, "event": "Anne Boleyn is crowned Queen of England", "category": "history" },
+      { "year": 1967, "event": "The Beatles release 'Sgt. Pepper's Lonely Hearts Club Band'", "category": "culture" }
+    ],
+    "2": [
+      { "year": 455, "event": "Vandals begin sacking Rome under King Genseric", "category": "war" },
+      { "year": 1953, "event": "Queen Elizabeth II is crowned at Westminster Abbey", "category": "history" },
+      { "year": 1966, "event": "Surveyor 1 becomes the first U.S. spacecraft to land on the Moon", "category": "science" }
+    ],
+    "3": [
+      { "year": 350, "event": "Roman usurper Nepotian is killed after a brief reign", "category": "history" },
+      { "year": 1989, "event": "Tiananmen Square massacre in Beijing — Chinese troops kill hundreds of protesters", "category": "history" },
+      { "year": 1965, "event": "Astronaut Ed White performs the first American spacewalk from Gemini 4", "category": "science" }
+    ],
+    "4": [
+      { "year": 781, "event": "Charlemagne's son Pepin is made King of Italy", "category": "politics" },
+      { "year": 1940, "event": "Dunkirk evacuation ends: 338,000 Allied troops rescued from France", "category": "war" },
+      { "year": 1989, "event": "Solidarity wins elections in Poland, beginning the fall of communism in Eastern Europe", "category": "politics" }
+    ],
+    "5": [
+      { "year": 1723, "event": "Adam Smith, economist and author of The Wealth of Nations, is born", "category": "economy" },
+      { "year": 1849, "event": "Denmark adopts its first democratic constitution", "category": "politics" },
+      { "year": 1968, "event": "Robert F. Kennedy is assassinated at the Ambassador Hotel in Los Angeles", "category": "history" }
+    ],
+    "6": [
+      { "year": 1523, "event": "Gustav Vasa is elected King of Sweden", "category": "politics" },
+      { "year": 1844, "event": "The YMCA (Young Men's Christian Association) is founded in London", "category": "culture" },
+      { "year": 1944, "event": "D-Day: Allied forces land on the beaches of Normandy in the largest seaborne invasion in history", "category": "war" }
+    ],
+    "7": [
+      { "year": 1099, "event": "The First Crusade reaches Jerusalem", "category": "war" },
+      { "year": 1494, "event": "Spain and Portugal sign the Treaty of Tordesillas, dividing the New World", "category": "history" },
+      { "year": 1981, "event": "Israeli jets destroy Iraq's Osirak nuclear reactor in a preemptive strike", "category": "war" }
+    ],
+    "8": [
+      { "year": 632, "event": "Prophet Muhammad dies in Medina, Islam's holiest city", "category": "religion" },
+      { "year": 1783, "event": "Iceland's Laki volcanic eruption begins, one of history's most devastating", "category": "disaster" },
+      { "year": 1967, "event": "The Six-Day War ends with Israel controlling the West Bank, Gaza, and Sinai Peninsula", "category": "war" }
+    ],
+    "9": [
+      { "year": 68, "event": "Roman Emperor Nero commits suicide", "category": "history" },
+      { "year": 1534, "event": "Jacques Cartier becomes the first European to sail into the St. Lawrence River", "category": "exploration" },
+      { "year": 1978, "event": "The Church of Jesus Christ of Latter-day Saints allows black men to become priests", "category": "religion" }
+    ],
+    "10": [
+      { "year": 671, "event": "The first recorded use of clocks in Japan", "category": "invention" },
+      { "year": 1829, "event": "Oxford and Cambridge hold the first rowing race on the Thames", "category": "sports" },
+      { "year": 1967, "event": "The Outer Space Treaty is signed by the U.S., USSR and UK, banning nuclear weapons in space", "category": "science" }
+    ],
+    "11": [
+      { "year": 1184, "event": "The ancient city of Troezen in Greece is abandoned", "category": "history" },
+      { "year": 1509, "event": "Henry VIII marries Catherine of Aragon", "category": "history" },
+      { "year": 1963, "event": "Buddhist monk Thich Quang Duc sets himself on fire in Saigon to protest South Vietnamese government", "category": "history" }
+    ],
+    "12": [
+      { "year": 1429, "event": "Joan of Arc leads the French to victory at the Battle of Jargeau", "category": "war" },
+      { "year": 1665, "event": "The Great Plague of London begins, eventually killing 70,000 people", "category": "disaster" },
+      { "year": 1987, "event": "Reagan challenges Gorbachev: 'Mr. Gorbachev, tear down this wall!'", "category": "politics" }
+    ],
+    "13": [
+      { "year": 1381, "event": "Peasants' Revolt: rebels march on London", "category": "history" },
+      { "year": 1886, "event": "The Statue of Liberty arrives in New York Harbor from France", "category": "history" },
+      { "year": 1983, "event": "The first mobile phone call is made on the Motorola DynaTAC in the U.S.", "category": "invention" }
+    ],
+    "14": [
+      { "year": 1645, "event": "The Battle of Naseby ends the first English Civil War", "category": "war" },
+      { "year": 1777, "event": "The Stars and Stripes is adopted as the flag of the United States", "category": "history" },
+      { "year": 1940, "event": "The first McDonald's opens in San Bernardino, California", "category": "culture" }
+    ],
+    "15": [
+      { "year": 763, "event": "A solar eclipse is recorded by Assyrian scholars, the earliest known record", "category": "science" },
+      { "year": 1215, "event": "King John of England seals the Magna Carta at Runnymede", "category": "politics" },
+      { "year": 1944, "event": "D-Day+9: Allied forces consolidate their beachheads in Normandy", "category": "war" }
+    ],
+    "16": [
+      { "year": 1487, "event": "Lambert Simnel is crowned King of England by Yorkist rebels in Dublin", "category": "history" },
+      { "year": 1858, "event": "Lincoln and Douglas agree to seven debates across Illinois", "category": "politics" },
+      { "year": 1963, "event": "Valentina Tereshkova becomes the first woman in space aboard Vostok 6", "category": "science" }
+    ],
+    "17": [
+      { "year": 1239, "event": "Pope Gregory IX excommunicates Holy Roman Emperor Frederick II for the second time", "category": "religion" },
+      { "year": 1775, "event": "The Society for the Relief of Free Negroes Unlawfully Held in Bondage is founded in Philadelphia", "category": "history" },
+      { "year": 1972, "event": "The last Apollo mission (17) returns from the Moon, ending the Apollo program", "category": "science" }
+    ],
+    "18": [
+      { "year": 618, "event": "Li Yuan becomes Emperor Gaozu of Tang, founding the Tang Dynasty in China", "category": "civilization" },
+      { "year": 1815, "event": "Napoleon suffers his final defeat at the Battle of Waterloo in Belgium", "category": "war" },
+      { "year": 1983, "event": "Sally Ride becomes the first American woman in space", "category": "science" }
+    ],
+    "19": [
+      { "year": 1269, "event": "Magnetic compass declination is first discovered by Chinese scientists", "category": "science" },
+      { "year": 1865, "event": "The 13th Amendment abolishing slavery is ratified", "category": "politics" },
+      { "year": 1953, "event": "Julius and Ethel Rosenberg are executed for passing nuclear secrets to the Soviet Union", "category": "history" }
+    ],
+    "20": [
+      { "year": 451, "event": "Attila the Hun defeats the last forces of the Roman Empire in the West", "category": "war" },
+      { "year": 1756, "event": "Britain declares war on France, beginning the Seven Years' War", "category": "war" },
+      { "year": 1975, "event": "Sony introduces the Betamax videocassette recorder in Japan", "category": "invention" }
+    ],
+    "21": [
+      { "year": 217, "event": "The Battle of the Beas River between Alexander the Great and Porus", "category": "war" },
+      { "year": 1377, "event": "The first public lottery in England is held", "category": "culture" },
+      { "year": 2004, "event": "The transfer of sovereignty in Iraq from the CPA to the interim Iraqi government takes place", "category": "politics" }
+    ],
+    "22": [
+      { "year": 168, "event": "Battle of Pydna — Romans defeat Macedonia", "category": "war" },
+      { "year": 1633, "event": "Galileo is found guilty of heresy by the Inquisition and forced to recant", "category": "science" },
+      { "year": 1978, "event": "The world's first test tube baby, Louise Brown, is born in England", "category": "science" }
+    ],
+    "23": [
+      { "year": 79, "event": "Pliny the Elder, Roman naturalist and author, is born", "category": "culture" },
+      { "year": 1683, "event": "The Ottoman army begins its siege of Vienna", "category": "war" },
+      { "year": 1985, "event": "Coca-Cola launches 'New Coke', replacing its original formula (to public outrage)", "category": "culture" }
+    ],
+    "24": [
+      { "year": 1497, "event": "John Cabot departs from Bristol on his voyage to North America", "category": "exploration" },
+      { "year": 1812, "event": "Napoleon leads the Grande Armée across the Russian border", "category": "war" },
+      { "year": 1948, "event": "The Soviet Union begins the Berlin Blockade", "category": "politics" }
+    ],
+    "25": [
+      { "year": 841, "event": "Vikings raid Rouen in the Seine Valley", "category": "war" },
+      { "year": 1876, "event": "The Battle of Little Bighorn: Custer's Last Stand begins", "category": "war" },
+      { "year": 1950, "event": "North Korea invades South Korea, beginning the Korean War", "category": "war" }
+    ],
+    "26": [
+      { "year": 1358, "event": "The Jacquerie peasant revolt erupts in France", "category": "history" },
+      { "year": 1945, "event": "The United Nations Charter is signed in San Francisco by 50 nations", "category": "politics" },
+      { "year": 1977, "event": "Elvis Presley gives his final concert in Indianapolis, Indiana", "category": "culture" }
+    ],
+    "27": [
+      { "year": 1358, "event": "The Jacquerie peasant revolt spreads across France", "category": "history" },
+      { "year": 1743, "event": "George II of Great Britain is the last British king to lead troops into battle at Dettingen", "category": "war" },
+      { "year": 1988, "event": "Canadian researcher discovers the first hole in the ozone layer over the Arctic", "category": "environment" }
+    ],
+    "28": [
+      { "year": 1098, "event": "Crusaders capture Antioch during the First Crusade", "category": "war" },
+      { "year": 1762, "event": "Peter III of Russia is overthrown by his wife Catherine the Great", "category": "politics" },
+      { "year": 1914, "event": "Archduke Franz Ferdinand of Austria is assassinated in Sarajevo, triggering WWI", "category": "war" }
+    ],
+    "29": [
+      { "year": 512, "event": "An annular solar eclipse occurs on the first day of summer", "category": "science" },
+      { "year": 1613, "event": "The Globe Theatre in London burns to the ground during a performance of Henry VIII", "category": "culture" },
+      { "year": 1995, "event": "The Oklahoma City bombing federal building is demolished", "category": "history" }
+    ],
+    "30": [
+      { "year": 1520, "event": "Suleiman the Magnificent becomes Ottoman Sultan", "category": "history" },
+      { "year": 1908, "event": "The Tunguska event — a massive explosion in Siberia, Russia, flattens 2,000 square kilometers of forest", "category": "disaster" },
+      { "year": 1936, "event": "The first African American medalist at the Berlin Olympics: Jesse Owens wins gold", "category": "sports" }
+    ]
+  },
+  "7": {
+    "1": [
+      { "year": 1569, "event": "The Union of Lublin creates the Polish-Lithuanian Commonwealth", "category": "politics" },
+      { "year": 1867, "event": "Canada becomes a self-governing dominion within the British Empire", "category": "politics" },
+      { "year": 1997, "event": "Hong Kong is handed back to China by Britain", "category": "politics" }
+    ],
+    "2": [
+      { "year": 626, "event": "Li Shimin kills his brothers in the Xuanwu Gate Incident, taking power in Tang Dynasty China", "category": "history" },
+      { "year": 1776, "event": "The Continental Congress votes for American independence from Britain", "category": "politics" },
+      { "year": 1964, "event": "The Civil Rights Act is signed into law by President Johnson, banning racial discrimination", "category": "politics" }
+    ],
+    "3": [
+      { "year": 1187, "event": "Saladin captures Jerusalem's water supply at the Battle of Hattin", "category": "war" },
+      { "year": 1775, "event": "George Washington takes command of the Continental Army in Cambridge", "category": "war" },
+      { "year": 1988, "event": "The USS Vincennes shoots down Iran Air Flight 655, killing 290 civilians", "category": "history" }
+    ],
+    "4": [
+      { "year": 1054, "event": "A supernova observed by Chinese and Arab astronomers creates what becomes the Crab Nebula", "category": "science" },
+      { "year": 1776, "event": "The United States Declaration of Independence is adopted", "category": "politics" },
+      { "year": 1826, "event": "John Adams and Thomas Jefferson both die on this day — the 50th anniversary of independence", "category": "history" }
+    ],
+    "5": [
+      { "year": 1295, "event": "Marco Polo returns to Venice after 24 years of travels in Asia", "category": "exploration" },
+      { "year": 1687, "event": "Isaac Newton publishes Principia Mathematica, establishing classical mechanics", "category": "science" },
+      { "year": 1954, "event": "Elvis Presley records his first commercial song, 'That's Alright Mama'", "category": "culture" }
+    ],
+    "6": [
+      { "year": 1189, "event": "King Henry II of England dies, succeeded by Richard I (Lionheart)", "category": "history" },
+      { "year": 1415, "event": "Jan Hus, Czech religious reformer, is burned at the stake", "category": "religion" },
+      { "year": 1988, "event": "The Piper Alpha oil platform explodes in the North Sea, killing 167", "category": "disaster" }
+    ],
+    "7": [
+      { "year": 1456, "event": "A retrial posthumously acquits Joan of Arc of heresy", "category": "history" },
+      { "year": 1585, "event": "The first English colony in the New World is established on Roanoke Island", "category": "history" },
+      { "year": 1985, "event": "Boris Becker becomes the youngest player and first unseeded player to win Wimbledon", "category": "sports" }
+    ],
+    "8": [
+      { "year": 1099, "event": "Crusaders arrive in Jerusalem and begin their siege of the holy city", "category": "war" },
+      { "year": 1709, "event": "Sweden suffers a catastrophic defeat at the Battle of Poltava in Ukraine", "category": "war" },
+      { "year": 1947, "event": "Reports emerge of a crashed UFO near Roswell, New Mexico", "category": "culture" }
+    ],
+    "9": [
+      { "year": 455, "event": "Emperor Avitus is proclaimed the ruler of the Western Roman Empire", "category": "history" },
+      { "year": 1776, "event": "George Washington orders the Declaration of Independence to be read to American troops", "category": "politics" },
+      { "year": 2011, "event": "South Sudan gains independence from Sudan, becoming the world's newest country", "category": "politics" }
+    ],
+    "10": [
+      { "year": 138, "event": "Roman Emperor Hadrian dies, succeeded by Antoninus Pius", "category": "history" },
+      { "year": 1553, "event": "Lady Jane Grey is deposed and Mary I takes the English throne", "category": "history" },
+      { "year": 1962, "event": "Telstar 1 is launched, enabling the first live trans-Atlantic TV broadcast", "category": "invention" }
+    ],
+    "11": [
+      { "year": 1405, "event": "The explorer Zheng He sets sail on his first voyage from China", "category": "exploration" },
+      { "year": 1798, "event": "Napoleon Bonaparte captures Malta from the Knights of St. John", "category": "war" },
+      { "year": 1979, "event": "Skylab, America's first space station, falls from orbit over Australia", "category": "science" }
+    ],
+    "12": [
+      { "year": 1191, "event": "Richard I of England arrives in the Holy Land during the Third Crusade", "category": "war" },
+      { "year": 1862, "event": "Confederate raider John Hunt Morgan begins his Ohio raid", "category": "war" },
+      { "year": 1976, "event": "The Viking 1 spacecraft enters Martian orbit", "category": "science" }
+    ],
+    "13": [
+      { "year": 100, "event": "Julius Caesar is born in Rome", "category": "history" },
+      { "year": 1793, "event": "Jean-Paul Marat, French revolutionary leader, is assassinated in his bathtub", "category": "history" },
+      { "year": 1985, "event": "Live Aid concerts in London and Philadelphia raise $40 million for famine relief in Africa", "category": "culture" }
+    ],
+    "14": [
+      { "year": 1223, "event": "Louis VIII becomes King of France", "category": "history" },
+      { "year": 1789, "event": "The Bastille is stormed in Paris, beginning the French Revolution", "category": "politics" },
+      { "year": 1969, "event": "The Apollo 11 crew splashes down safely in the Pacific Ocean", "category": "science" }
+    ],
+    "15": [
+      { "year": 1099, "event": "Crusaders capture Jerusalem in the First Crusade, massacring its Muslim and Jewish inhabitants", "category": "war" },
+      { "year": 1870, "event": "The Great Wall of China is formally opened as a tourist attraction", "category": "culture" },
+      { "year": 1979, "event": "Saddam Hussein becomes President of Iraq", "category": "politics" }
+    ],
+    "16": [
+      { "year": 622, "event": "Muhammad's Hijra: the Prophet leaves Mecca for Medina, marking the start of the Islamic calendar", "category": "religion" },
+      { "year": 1945, "event": "The Potsdam Conference between the Big Three Allied leaders begins", "category": "war" },
+      { "year": 1969, "event": "Apollo 11 launches from Kennedy Space Center, carrying astronauts to the Moon", "category": "science" }
+    ],
+    "17": [
+      { "year": 1429, "event": "Joan of Arc leads French victory at the Battle of Patay", "category": "war" },
+      { "year": 1821, "event": "Spain cedes Florida to the United States", "category": "politics" },
+      { "year": 1955, "event": "Disneyland opens in Anaheim, California", "category": "culture" }
+    ],
+    "18": [
+      { "year": 387, "event": "Visigoths sack Rome for the first time in 800 years", "category": "war" },
+      { "year": 1936, "event": "The Spanish Civil War begins", "category": "war" },
+      { "year": 1968, "event": "The Beatles found Apple Corps Ltd. in London", "category": "culture" }
+    ],
+    "19": [
+      { "year": 1374, "event": "Francesco Petrarca (Petrarch), the first humanist scholar, dies", "category": "culture" },
+      { "year": 1848, "event": "The first Women's Rights Convention opens in Seneca Falls, New York", "category": "politics" },
+      { "year": 1979, "event": "The Sandinistas seize power in Nicaragua", "category": "politics" }
+    ],
+    "20": [
+      { "year": 1304, "event": "Francesco Petrarch is born, considered the first modern poet", "category": "culture" },
+      { "year": 1810, "event": "Colombia declares independence from Spain", "category": "politics" },
+      { "year": 1969, "event": "Apollo 11 astronauts Neil Armstrong and Buzz Aldrin become the first humans to walk on the Moon", "category": "science" }
+    ],
+    "21": [
+      { "year": 365, "event": "A tsunami devastates Alexandria, Egypt following a massive earthquake", "category": "disaster" },
+      { "year": 1861, "event": "The first Battle of Bull Run, the first major land battle of the American Civil War", "category": "war" },
+      { "year": 1969, "event": "Neil Armstrong and Buzz Aldrin land on the Moon's Sea of Tranquility", "category": "science" }
+    ],
+    "22": [
+      { "year": 1099, "event": "Godfrey of Bouillon becomes the first Christian ruler of Jerusalem", "category": "war" },
+      { "year": 1916, "event": "The Battle of the Somme begins, one of WWI's bloodiest battles", "category": "war" },
+      { "year": 1991, "event": "Tim Berners-Lee makes the World Wide Web available to the general public", "category": "invention" }
+    ],
+    "23": [
+      { "year": 1829, "event": "William Burt patents the typographer, a precursor to the typewriter", "category": "invention" },
+      { "year": 1885, "event": "Ulysses S. Grant, 18th U.S. President, dies of throat cancer", "category": "history" },
+      { "year": 1952, "event": "The Helsinki Olympic Games open in Finland", "category": "sports" }
+    ],
+    "24": [
+      { "year": 1567, "event": "The city of Caracas, capital of Venezuela, is founded", "category": "history" },
+      { "year": 1847, "event": "Mormon settlers arrive in the Salt Lake Valley in Utah", "category": "religion" },
+      { "year": 1969, "event": "Neil Armstrong and Buzz Aldrin return safely to Earth after their Moon landing", "category": "science" }
+    ],
+    "25": [
+      { "year": 306, "event": "Constantine I is proclaimed Emperor of Rome by his troops in York, England", "category": "history" },
+      { "year": 1593, "event": "Henry IV of France converts to Catholicism to take the throne", "category": "religion" },
+      { "year": 1978, "event": "The first flight of the Boeing 747SP, the world's longest range commercial aircraft", "category": "invention" }
+    ],
+    "26": [
+      { "year": 657, "event": "The Battle of Siffin occurs between Ali ibn Abi Talib and Muawiyah I", "category": "war" },
+      { "year": 1775, "event": "The U.S. Post Office is established with Benjamin Franklin as Postmaster General", "category": "history" },
+      { "year": 2005, "event": "Lance Armstrong wins his 7th consecutive Tour de France", "category": "sports" }
+    ],
+    "27": [
+      { "year": 1214, "event": "The Battle of Bouvines: Philip II of France defeats a coalition against him", "category": "war" },
+      { "year": 1866, "event": "The first successful transatlantic telegraph cable is completed", "category": "invention" },
+      { "year": 1953, "event": "The Korean War armistice is signed, ending three years of fighting", "category": "war" }
+    ],
+    "28": [
+      { "year": 1054, "event": "The Great Schism splits Christianity into Roman Catholic and Eastern Orthodox", "category": "religion" },
+      { "year": 1794, "event": "Maximilien Robespierre, architect of the Reign of Terror, is arrested and executed", "category": "history" },
+      { "year": 1932, "event": "The Summer Olympics open in Los Angeles, California", "category": "sports" }
+    ],
+    "29": [
+      { "year": 1588, "event": "The Spanish Armada sets sail from Lisbon to invade England", "category": "war" },
+      { "year": 1836, "event": "The Melbourne City, Australia is officially established", "category": "history" },
+      { "year": 1981, "event": "Prince Charles and Lady Diana Spencer marry in St. Paul's Cathedral, London", "category": "culture" }
+    ],
+    "30": [
+      { "year": 762, "event": "Baghdad is founded by Caliph Al-Mansur as the capital of the Abbasid Caliphate", "category": "civilization" },
+      { "year": 1863, "event": "Henry Ford, inventor of the Model T and assembly line, is born in Michigan", "category": "invention" },
+      { "year": 1975, "event": "The final U.S. personnel evacuate from Saigon as Vietnam falls to communist forces", "category": "war" }
+    ],
+    "31": [
+      { "year": 781, "event": "Charlemagne's son Louis is crowned King of Aquitaine", "category": "history" },
+      { "year": 1556, "event": "Akbar the Great becomes Mughal Emperor of India at age 13", "category": "history" },
+      { "year": 1991, "event": "The Soviet Union officially dissolves and the Commonwealth of Independent States is established", "category": "history" }
+    ]
+  },
+  "8": {
+    "1": [
+      { "year": 30, "event": "Cleopatra VII of Egypt commits suicide after the conquest by Octavian (Augustus)", "category": "history" },
+      { "year": 1774, "event": "Joseph Priestley discovers oxygen (though Scheele discovered it first)", "category": "science" },
+      { "year": 1981, "event": "MTV launches with the first music video 'Video Killed the Radio Star'", "category": "culture" }
+    ],
+    "2": [
+      { "year": 216, "event": "Battle of Cannae: Hannibal defeats Rome in one of history's worst military disasters", "category": "war" },
+      { "year": 1776, "event": "Members of the Continental Congress sign the Declaration of Independence", "category": "politics" },
+      { "year": 1990, "event": "Iraq invades Kuwait, triggering the Gulf War", "category": "war" }
+    ],
+    "3": [
+      { "year": 1492, "event": "Christopher Columbus sets sail from Palos de la Frontera, Spain", "category": "exploration" },
+      { "year": 1963, "event": "The United States and Soviet Union sign the Limited Nuclear Test Ban Treaty", "category": "politics" },
+      { "year": 2004, "event": "The Statue of Liberty reopens to the public after 9/11 security upgrades", "category": "history" }
+    ],
+    "4": [
+      { "year": 1265, "event": "The future King Edward I of England is born", "category": "history" },
+      { "year": 1821, "event": "The literary magazine 'Saturday Evening Post' publishes its first issue", "category": "culture" },
+      { "year": 1987, "event": "Gary Hart withdraws from the U.S. presidential race following a scandal", "category": "politics" }
+    ],
+    "5": [
+      { "year": 642, "event": "The Battle of Maserfield: King Oswald of Northumbria is killed", "category": "war" },
+      { "year": 1858, "event": "Cyrus West Field completes the first transatlantic telegraph cable", "category": "invention" },
+      { "year": 2012, "event": "Curiosity rover successfully lands on Mars", "category": "science" }
+    ],
+    "6": [
+      { "year": 1284, "event": "The Pied Piper of Hamelin legend is said to have occurred on this date", "category": "culture" },
+      { "year": 1945, "event": "The United States drops an atomic bomb on Hiroshima, Japan, killing 80,000 people instantly", "category": "war" },
+      { "year": 1991, "event": "Tim Berners-Lee publishes the first website on the World Wide Web", "category": "invention" }
+    ],
+    "7": [
+      { "year": 322, "event": "Aristotle, one of the greatest philosophers of antiquity, dies", "category": "history" },
+      { "year": 1782, "event": "George Washington creates the Order of the Purple Heart, the oldest military award still given", "category": "war" },
+      { "year": 1998, "event": "U.S. embassies in Kenya and Tanzania are bombed by Al-Qaeda, killing 224", "category": "history" }
+    ],
+    "8": [
+      { "year": 1576, "event": "Tycho Brahe's observatory Uraniborg is completed in Denmark", "category": "science" },
+      { "year": 1815, "event": "Napoleon is exiled to Saint Helena after his defeat at Waterloo", "category": "history" },
+      { "year": 1974, "event": "Richard Nixon announces his resignation as U.S. President due to Watergate", "category": "politics" }
+    ],
+    "9": [
+      { "year": 378, "event": "Roman Emperor Valens is killed by the Visigoths at the Battle of Adrianople", "category": "war" },
+      { "year": 1945, "event": "The United States drops an atomic bomb on Nagasaki, Japan, killing 40,000 instantly", "category": "war" },
+      { "year": 1974, "event": "Gerald Ford is sworn in as U.S. President after Nixon's resignation", "category": "politics" }
+    ],
+    "10": [
+      { "year": 612, "event": "Nineveh, capital of the Assyrian Empire, is sacked and destroyed", "category": "war" },
+      { "year": 1628, "event": "The Swedish warship Vasa sinks on her maiden voyage in Stockholm harbor", "category": "disaster" },
+      { "year": 1966, "event": "The Beatles release 'Revolver', considered one of the greatest albums of all time", "category": "culture" }
+    ],
+    "11": [
+      { "year": 3114, "event": "The start of the Mesoamerican Long Count Calendar (Maya calendar)", "category": "civilization" },
+      { "year": 1858, "event": "The apparition of the Virgin Mary at Lourdes, France", "category": "religion" },
+      { "year": 1999, "event": "The last total solar eclipse of the 20th century occurs over Europe", "category": "science" }
+    ],
+    "12": [
+      { "year": 30, "event": "Cleopatra VII of Egypt dies, ending the Ptolemaic Dynasty", "category": "history" },
+      { "year": 1851, "event": "The first performance of Verdi's opera Rigoletto in Venice", "category": "culture" },
+      { "year": 1960, "event": "The Echo 1A satellite is launched, the first successful communication satellite", "category": "science" }
+    ],
+    "13": [
+      { "year": 523, "event": "Hormizd IV becomes King of Persia", "category": "history" },
+      { "year": 1521, "event": "Spanish conquistadors capture the Aztec capital Tenochtitlán (modern Mexico City)", "category": "war" },
+      { "year": 1961, "event": "Construction of the Berlin Wall begins, dividing East and West Berlin", "category": "politics" }
+    ],
+    "14": [
+      { "year": 1183, "event": "The Peace of Constance grants independence to the cities of northern Italy", "category": "politics" },
+      { "year": 1784, "event": "The Jay Treaty between U.S. and Britain is signed", "category": "politics" },
+      { "year": 1945, "event": "The Soviet Union declares war on Japan and invades Manchuria", "category": "war" }
+    ],
+    "15": [
+      { "year": 778, "event": "Roland, a Frankish military commander, is killed at the Battle of Roncevaux Pass", "category": "war" },
+      { "year": 1914, "event": "The Panama Canal officially opens to commercial traffic", "category": "invention" },
+      { "year": 1945, "event": "Japan surrenders, ending World War II (V-J Day)", "category": "war" }
+    ],
+    "16": [
+      { "year": 1328, "event": "Louis IV, Holy Roman Emperor, takes possession of Rome", "category": "history" },
+      { "year": 1858, "event": "Atlantic cable successfully transmits first telegraph messages between Europe and America", "category": "invention" },
+      { "year": 1977, "event": "Elvis Presley is found dead at his Graceland home in Memphis, Tennessee", "category": "culture" }
+    ],
+    "17": [
+      { "year": 1761, "event": "Catherine the Great becomes Empress of Russia", "category": "politics" },
+      { "year": 1862, "event": "The first running of the Brighton & Hove Albion horse race", "category": "sports" },
+      { "year": 1945, "event": "The Potsdam Conference begins with Truman, Churchill and Stalin", "category": "war" }
+    ],
+    "18": [
+      { "year": 1587, "event": "Virginia Dare becomes the first English child born in the Americas", "category": "history" },
+      { "year": 1868, "event": "The first section of the Suez Canal opens", "category": "invention" },
+      { "year": 1991, "event": "The Soviet Union formally recognizes the independence of the three Baltic states", "category": "politics" }
+    ],
+    "19": [
+      { "year": 43, "event": "Octavian (later Augustus) becomes Roman consul at age 19", "category": "history" },
+      { "year": 1561, "event": "Mary, Queen of Scots, returns to Scotland from France", "category": "history" },
+      { "year": 1989, "event": "Mikhail Gorbachev announces the withdrawal of Soviet forces from Afghanistan", "category": "politics" }
+    ],
+    "20": [
+      { "year": 1191, "event": "Richard I of England recaptures Acre during the Third Crusade", "category": "war" },
+      { "year": 1866, "event": "The Austro-Prussian War ends with the Peace of Prague", "category": "war" },
+      { "year": 1977, "event": "The Voyager 2 spacecraft is launched to explore the outer solar system", "category": "science" }
+    ],
+    "21": [
+      { "year": 1680, "event": "Pueblo Indians capture Santa Fe from Spanish in the Pueblo Revolt", "category": "war" },
+      { "year": 1770, "event": "James Cook claims eastern Australia for Great Britain and names it New South Wales", "category": "exploration" },
+      { "year": 1991, "event": "World chess champion Garry Kasparov defeats IBM's Deep Blue in the first chess match vs. computer", "category": "science" }
+    ],
+    "22": [
+      { "year": 565, "event": "The first recorded mention of the Loch Ness Monster in a biography of Saint Columba", "category": "culture" },
+      { "year": 1770, "event": "James Cook reaches the shores of New Zealand", "category": "exploration" },
+      { "year": 1989, "event": "Nolan Ryan pitches his 5,000th career strikeout", "category": "sports" }
+    ],
+    "23": [
+      { "year": 1617, "event": "Pocahontas, the Native American who married English colonist John Rolfe, dies", "category": "history" },
+      { "year": 1305, "event": "William Wallace, Scottish independence hero, is executed in London", "category": "war" },
+      { "year": 2000, "event": "The first crew arrives at the International Space Station", "category": "science" }
+    ],
+    "24": [
+      { "year": 79, "event": "Mount Vesuvius erupts, burying the Roman city of Pompeii under ash", "category": "disaster" },
+      { "year": 1456, "event": "The printing of the Gutenberg Bible is completed in Mainz, Germany", "category": "invention" },
+      { "year": 1995, "event": "Netscape goes public, sparking the dot-com era", "category": "invention" }
+    ],
+    "25": [
+      { "year": 325, "event": "The First Ecumenical Council of Nicaea concludes", "category": "religion" },
+      { "year": 1875, "event": "Captain Matthew Webb becomes the first person to swim the English Channel", "category": "sports" },
+      { "year": 1944, "event": "Paris is liberated from Nazi German occupation", "category": "war" }
+    ],
+    "26": [
+      { "year": 1346, "event": "English forces defeat France at the Battle of Crécy during the Hundred Years' War", "category": "war" },
+      { "year": 1743, "event": "Antoine Lavoisier, father of modern chemistry, is born in Paris", "category": "science" },
+      { "year": 1978, "event": "The Camp David Accords between Egypt and Israel are announced", "category": "politics" }
+    ],
+    "27": [
+      { "year": 1776, "event": "British forces defeat George Washington's army at the Battle of Long Island", "category": "war" },
+      { "year": 1859, "event": "The first oil well in the U.S. is drilled in Titusville, Pennsylvania", "category": "invention" },
+      { "year": 1979, "event": "Lord Mountbatten is assassinated by the IRA while fishing off the coast of Ireland", "category": "history" }
+    ],
+    "28": [
+      { "year": 475, "event": "Romulus Augustulus becomes the last Emperor of Rome", "category": "history" },
+      { "year": 1963, "event": "Martin Luther King Jr. delivers his 'I Have a Dream' speech in Washington D.C.", "category": "history" },
+      { "year": 1996, "event": "Australian gunman Martin Bryant kills 35 people in the Port Arthur massacre", "category": "history" }
+    ],
+    "29": [
+      { "year": 1533, "event": "Thomas Cranmer is appointed Archbishop of Canterbury", "category": "religion" },
+      { "year": 1842, "event": "The Treaty of Nanking ends the First Opium War between Britain and China", "category": "war" },
+      { "year": 1991, "event": "Hurricane Bob makes landfall on the U.S. East Coast", "category": "disaster" }
+    ],
+    "30": [
+      { "year": 1363, "event": "The Battle of Lake Poyang begins — the world's largest naval battle in history", "category": "war" },
+      { "year": 1862, "event": "The second Battle of Bull Run ends in a Union defeat during the American Civil War", "category": "war" },
+      { "year": 1967, "event": "Thurgood Marshall becomes the first African American Justice of the U.S. Supreme Court", "category": "history" }
+    ],
+    "31": [
+      { "year": 1056, "event": "Byzantine Empress Theodora dies, ending the Macedonian dynasty", "category": "history" },
+      { "year": 1888, "event": "Jack the Ripper commits his first confirmed murder in London", "category": "history" },
+      { "year": 1997, "event": "Princess Diana is killed in a car crash in Paris's Pont de l'Alma tunnel", "category": "history" }
+    ]
+  },
+  "9": {
+    "1": [
+      { "year": 1939, "event": "Germany invades Poland, beginning World War II", "category": "war" },
+      { "year": 1715, "event": "Louis XIV, the Sun King of France, dies after a 72-year reign", "category": "history" },
+      { "year": 1985, "event": "The wreck of the Titanic is discovered by Robert Ballard", "category": "history" }
+    ],
+    "2": [
+      { "year": 31, "event": "Battle of Actium: Octavian defeats Mark Antony and Cleopatra", "category": "war" },
+      { "year": 1666, "event": "The Great Fire of London begins, destroying much of the medieval city", "category": "disaster" },
+      { "year": 1945, "event": "Japan formally surrenders, ending World War II", "category": "war" }
+    ],
+    "3": [
+      { "year": 301, "event": "San Marino, one of the world's smallest nations, is founded", "category": "civilization" },
+      { "year": 1783, "event": "The Treaty of Paris is signed, officially ending the American Revolution", "category": "war" },
+      { "year": 1967, "event": "Sweden switches from driving on the left to driving on the right", "category": "culture" }
+    ],
+    "4": [
+      { "year": 476, "event": "Romulus Augustulus, the last Western Roman Emperor, is deposed by Odoacer — end of the Western Roman Empire", "category": "civilization" },
+      { "year": 1781, "event": "The city of Los Angeles is founded as 'El Pueblo de la Reina de Los Angeles'", "category": "history" },
+      { "year": 1998, "event": "Google is founded by Larry Page and Sergey Brin in a Menlo Park garage", "category": "invention" }
+    ],
+    "5": [
+      { "year": 1666, "event": "The Great Fire of London is extinguished after destroying 13,000 houses", "category": "disaster" },
+      { "year": 1905, "event": "The Treaty of Portsmouth ends the Russo-Japanese War", "category": "war" },
+      { "year": 2007, "event": "Luciano Pavarotti, legendary opera tenor, dies at age 71", "category": "culture" }
+    ],
+    "6": [
+      { "year": 394, "event": "The Olympic Games are abolished by Theodosius I after 1,168 years", "category": "sports" },
+      { "year": 1620, "event": "The Mayflower sets sail from Plymouth, England, carrying Pilgrim colonists to America", "category": "history" },
+      { "year": 1997, "event": "Mother Teresa dies in Calcutta, India, aged 87", "category": "history" }
+    ],
+    "7": [
+      { "year": 70, "event": "The Roman army destroys the Second Temple in Jerusalem", "category": "war" },
+      { "year": 1533, "event": "Elizabeth I, Queen of England, is born at Greenwich Palace", "category": "history" },
+      { "year": 1822, "event": "Brazil declares independence from Portugal", "category": "politics" }
+    ],
+    "8": [
+      { "year": 1504, "event": "Michelangelo's David is unveiled in Florence, Italy", "category": "culture" },
+      { "year": 1941, "event": "The Siege of Leningrad begins — it will last 872 days", "category": "war" },
+      { "year": 1974, "event": "Gerald Ford grants a full pardon to former President Nixon", "category": "politics" }
+    ],
+    "9": [
+      { "year": 1087, "event": "William the Conqueror dies after a fall from his horse at the Siege of Mantes", "category": "history" },
+      { "year": 1850, "event": "California is admitted as the 31st U.S. state", "category": "politics" },
+      { "year": 1971, "event": "Attica Prison riot in New York begins — 43 killed in suppression", "category": "history" }
+    ],
+    "10": [
+      { "year": 422, "event": "Celestine I becomes Pope", "category": "religion" },
+      { "year": 1823, "event": "Simón Bolívar becomes the first President of Peru", "category": "politics" },
+      { "year": 2001, "event": "Apple releases the first version of Mac OS X (10.1 Puma)", "category": "invention" }
+    ],
+    "11": [
+      { "year": 1709, "event": "The Battle of Malplaquet takes place, one of the bloodiest battles of the War of Spanish Succession", "category": "war" },
+      { "year": 1973, "event": "Military coup in Chile overthrows President Salvador Allende, who dies in the assault", "category": "politics" },
+      { "year": 2001, "event": "Terrorist attacks destroy the World Trade Center and damage the Pentagon, killing nearly 3,000", "category": "history" }
+    ],
+    "12": [
+      { "year": 490, "event": "The Battle of Marathon: Athenians defeat the Persian invasion", "category": "war" },
+      { "year": 1683, "event": "The Battle of Vienna: Polish and German forces defeat the Ottoman army, ending their advance into Europe", "category": "war" },
+      { "year": 1962, "event": "The Beatles record their first single, 'Love Me Do', at EMI Studios", "category": "culture" }
+    ],
+    "13": [
+      { "year": 1759, "event": "The Battle of the Plains of Abraham decides the fate of Canada — Britain defeats France", "category": "war" },
+      { "year": 1814, "event": "Francis Scott Key writes 'The Star-Spangled Banner' after witnessing the Battle of Fort McHenry", "category": "culture" },
+      { "year": 1971, "event": "Bangladesh gains independence from Pakistan", "category": "politics" }
+    ],
+    "14": [
+      { "year": 786, "event": "Harun al-Rashid becomes Caliph of the Islamic world", "category": "history" },
+      { "year": 1812, "event": "Napoleon's Grande Armée captures Moscow, which burns down", "category": "war" },
+      { "year": 1982, "event": "The first compact discs go on sale in Japan", "category": "invention" }
+    ],
+    "15": [
+      { "year": 480, "event": "The Battle of Thermopylae: 300 Spartans hold off the Persian army", "category": "war" },
+      { "year": 1776, "event": "The first systematic attack on a city begins — the British bombardment of New York", "category": "war" },
+      { "year": 1935, "event": "Germany enacts the Nuremberg Laws, stripping Jews of citizenship", "category": "politics" }
+    ],
+    "16": [
+      { "year": 1380, "event": "The Battle of Kulikovo: Russia defeats the Mongols — the beginning of Russia's independence", "category": "war" },
+      { "year": 1620, "event": "Pilgrims sign the Mayflower Compact, establishing a form of self-governance", "category": "politics" },
+      { "year": 1940, "event": "France requests an armistice with Nazi Germany", "category": "war" }
+    ],
+    "17": [
+      { "year": 1394, "event": "Jews are expelled from France by order of Charles VI", "category": "history" },
+      { "year": 1787, "event": "The U.S. Constitution is signed in Philadelphia by the Founding Fathers", "category": "politics" },
+      { "year": 1978, "event": "The Camp David Accords are signed by Egypt and Israel", "category": "politics" }
+    ],
+    "18": [
+      { "year": 96, "event": "Roman Emperor Domitian is assassinated, succeeded by Nerva", "category": "history" },
+      { "year": 1793, "event": "The Capitol Building cornerstone is laid in Washington D.C.", "category": "history" },
+      { "year": 1970, "event": "Jimi Hendrix, legendary rock guitarist, dies in London aged 27", "category": "culture" }
+    ],
+    "19": [
+      { "year": 335, "event": "Emperor Constantine I dedicates the Church of the Holy Sepulchre in Jerusalem", "category": "religion" },
+      { "year": 1778, "event": "France declares war on Britain, entering the American Revolution on the colonists' side", "category": "war" },
+      { "year": 1955, "event": "Albert Einstein, who revolutionized physics, dies in Princeton, New Jersey", "category": "science" }
+    ],
+    "20": [
+      { "year": 622, "event": "Muhammad arrives in Medina, beginning the Islamic calendar (1 AH)", "category": "religion" },
+      { "year": 1519, "event": "Magellan's expedition departs to circumnavigate the world", "category": "exploration" },
+      { "year": 1976, "event": "Viking 1 becomes the first spacecraft to successfully land on Mars", "category": "science" }
+    ],
+    "21": [
+      { "year": 454, "event": "Aetius, the general who stopped Attila the Hun, is murdered by Emperor Valentinian III", "category": "history" },
+      { "year": 1792, "event": "The French First Republic is proclaimed", "category": "politics" },
+      { "year": 1937, "event": "J.R.R. Tolkien publishes The Hobbit", "category": "culture" }
+    ],
+    "22": [
+      { "year": 1499, "event": "The Swiss Confederation is granted independence by the Holy Roman Empire", "category": "politics" },
+      { "year": 1862, "event": "Abraham Lincoln issues the Emancipation Proclamation", "category": "politics" },
+      { "year": 1980, "event": "Saddam Hussein of Iraq invades Iran, beginning the 8-year Iran-Iraq War", "category": "war" }
+    ],
+    "23": [
+      { "year": 480, "event": "The Battle of Salamis: Greek naval victory over Persia preserves Western civilization", "category": "war" },
+      { "year": 1806, "event": "The Lewis and Clark expedition returns to St. Louis, Missouri", "category": "exploration" },
+      { "year": 1962, "event": "The first James Bond film, 'Dr. No', premieres in London", "category": "culture" }
+    ],
+    "24": [
+      { "year": 622, "event": "The Hijra is completed as Prophet Muhammad reaches Medina", "category": "religion" },
+      { "year": 1789, "event": "The U.S. Supreme Court is officially established", "category": "politics" },
+      { "year": 1960, "event": "The first nuclear-powered aircraft carrier, USS Enterprise, is launched", "category": "science" }
+    ],
+    "25": [
+      { "year": 1066, "event": "The Battle of Stamford Bridge: Harold II defeats the Norwegian Vikings", "category": "war" },
+      { "year": 1513, "event": "Vasco Núñez de Balboa becomes the first European to see the Pacific Ocean", "category": "exploration" },
+      { "year": 1962, "event": "The first transatlantic TV broadcast occurs via the Telstar satellite", "category": "invention" }
+    ],
+    "26": [
+      { "year": 46, "event": "Julius Caesar defeats Pompey's supporters at the Battle of Thapsus", "category": "war" },
+      { "year": 1580, "event": "Francis Drake completes his circumnavigation of the globe", "category": "exploration" },
+      { "year": 1983, "event": "A Soviet early warning system falsely indicates a U.S. missile attack; officer Petrov averts nuclear war", "category": "history" }
+    ],
+    "27": [
+      { "year": 52, "event": "The Battle of Alesia: Julius Caesar defeats Vercingetorix, completing conquest of Gaul", "category": "war" },
+      { "year": 1825, "event": "The world's first railway locomotive, the Stockton and Darlington Railway, opens in England", "category": "invention" },
+      { "year": 1983, "event": "Aeroflot Flight 6833 crashes in Krasnoyarsk, Russia, killing 174 people", "category": "disaster" }
+    ],
+    "28": [
+      { "year": 48, "event": "Pompey the Great is assassinated in Egypt on the orders of Ptolemy XIII", "category": "history" },
+      { "year": 1781, "event": "British General Cornwallis surrenders at Yorktown, effectively ending the American Revolution", "category": "war" },
+      { "year": 1994, "event": "The Channel Tunnel formally opens to passenger services", "category": "invention" }
+    ],
+    "29": [
+      { "year": 480, "event": "Odoacer defeats Odovacer at the Battle of Verona", "category": "war" },
+      { "year": 1789, "event": "The U.S. Department of State is established", "category": "politics" },
+      { "year": 2004, "event": "NASA launches the Cassini spacecraft for its Saturn orbit insertion", "category": "science" }
+    ],
+    "30": [
+      { "year": 1399, "event": "Henry IV deposes Richard II as King of England", "category": "history" },
+      { "year": 1791, "event": "The U.S. Bill of Rights is submitted to the states for ratification", "category": "politics" },
+      { "year": 1955, "event": "James Dean, legendary Hollywood actor, is killed in a car crash aged 24", "category": "culture" }
+    ]
+  },
+  "10": {
+    "1": [
+      { "year": 331, "event": "Alexander the Great defeats Darius III at the Battle of Gaugamela, conquering Persia", "category": "war" },
+      { "year": 1949, "event": "The People's Republic of China is proclaimed by Mao Zedong", "category": "politics" },
+      { "year": 1994, "event": "The first free elections in South Africa under Nelson Mandela", "category": "politics" }
+    ],
+    "2": [
+      { "year": 1187, "event": "Saladin recaptures Jerusalem from the Crusaders", "category": "war" },
+      { "year": 1836, "event": "Charles Darwin returns to England after his voyage on the HMS Beagle", "category": "science" },
+      { "year": 1944, "event": "The Warsaw Uprising ends — 200,000 Poles killed in Nazi German reprisals", "category": "war" }
+    ],
+    "3": [
+      { "year": 382, "event": "Eastern Roman Emperor Theodosius makes peace with the Visigoths", "category": "history" },
+      { "year": 1863, "event": "Abraham Lincoln proclaims the last Thursday in November as Thanksgiving Day", "category": "culture" },
+      { "year": 1990, "event": "Germany is officially reunified after 45 years of division", "category": "politics" }
+    ],
+    "4": [
+      { "year": 1535, "event": "The first complete English-language Bible is printed by Miles Coverdale", "category": "religion" },
+      { "year": 1957, "event": "The Soviet Union launches Sputnik 1, the world's first artificial satellite", "category": "science" },
+      { "year": 1965, "event": "Pope Paul VI becomes the first pope to visit the Americas", "category": "religion" }
+    ],
+    "5": [
+      { "year": 610, "event": "The Prophet Muhammad begins receiving revelations — the start of Islam", "category": "religion" },
+      { "year": 1789, "event": "Women's March on Versailles forces Louis XVI to return to Paris during the French Revolution", "category": "history" },
+      { "year": 1969, "event": "Monty Python's Flying Circus first airs on the BBC", "category": "culture" }
+    ],
+    "6": [
+      { "year": 105, "event": "Cai Lun of China invents paper", "category": "invention" },
+      { "year": 1536, "event": "William Tyndale, who translated the Bible into English, is executed", "category": "religion" },
+      { "year": 1927, "event": "The Jazz Singer, the first sound film (talkie), is released", "category": "culture" }
+    ],
+    "7": [
+      { "year": 3761, "event": "Traditional date of creation of the world according to the Hebrew calendar", "category": "religion" },
+      { "year": 1571, "event": "The Battle of Lepanto: Christian forces defeat the Ottoman fleet", "category": "war" },
+      { "year": 2001, "event": "The U.S. and UK begin bombing Afghanistan after 9/11", "category": "war" }
+    ],
+    "8": [
+      { "year": 451, "event": "The Council of Chalcedon opens to define the nature of Christ", "category": "religion" },
+      { "year": 1871, "event": "The Great Chicago Fire breaks out, killing 300 and leaving 100,000 homeless", "category": "disaster" },
+      { "year": 1967, "event": "Che Guevara is captured and executed in Bolivia", "category": "history" }
+    ],
+    "9": [
+      { "year": 1192, "event": "Minamoto no Yoritomo is appointed the first Shogun of Japan, beginning feudal rule", "category": "civilization" },
+      { "year": 1989, "event": "The Berlin Wall falls — German reunification begins", "category": "politics" },
+      { "year": 1967, "event": "John Lennon and Yoko Ono first meet at the Indica Gallery in London", "category": "culture" }
+    ],
+    "10": [
+      { "year": 680, "event": "The Battle of Karbala: Husayn ibn Ali is killed — the central event in Shia Islam", "category": "religion" },
+      { "year": 1813, "event": "The Battle of Leipzig, the largest battle in European history before WWI", "category": "war" },
+      { "year": 1973, "event": "U.S. Vice President Spiro Agnew resigns due to corruption charges", "category": "politics" }
+    ],
+    "11": [
+      { "year": 1531, "event": "Our Lady of Guadalupe appears to Juan Diego in Mexico City", "category": "religion" },
+      { "year": 1869, "event": "The Suez Canal opens, connecting the Mediterranean and Red Seas", "category": "invention" },
+      { "year": 1975, "event": "The governor-general of Australia dismisses Prime Minister Gough Whitlam in a constitutional crisis", "category": "politics" }
+    ],
+    "12": [
+      { "year": 1492, "event": "Christopher Columbus makes landfall in the Bahamas, the first European contact with the Americas", "category": "exploration" },
+      { "year": 1810, "event": "The first Oktoberfest is celebrated in Munich for the wedding of Crown Prince Ludwig", "category": "culture" },
+      { "year": 1960, "event": "Soviet Premier Nikita Khrushchev pounds his shoe on the desk at the UN", "category": "politics" }
+    ],
+    "13": [
+      { "year": 54, "event": "Nero becomes Roman Emperor after the death of Claudius", "category": "history" },
+      { "year": 1307, "event": "Philip IV of France orders the arrest of all Knights Templar in France", "category": "history" },
+      { "year": 1884, "event": "Greenwich Mean Time is adopted as international standard time", "category": "science" }
+    ],
+    "14": [
+      { "year": 1066, "event": "The Battle of Hastings: William the Conqueror defeats Harold II, transforming England", "category": "war" },
+      { "year": 1890, "event": "Dwight D. Eisenhower, 34th U.S. President and WWII supreme commander, is born", "category": "history" },
+      { "year": 1964, "event": "Martin Luther King Jr. is awarded the Nobel Peace Prize", "category": "history" }
+    ],
+    "15": [
+      { "year": 70, "event": "The Siege of Jerusalem ends with the destruction of the Second Temple", "category": "war" },
+      { "year": 1582, "event": "The Gregorian calendar is adopted in Catholic countries", "category": "science" },
+      { "year": 1990, "event": "Mikhail Gorbachev is awarded the Nobel Peace Prize for ending the Cold War", "category": "politics" }
+    ],
+    "16": [
+      { "year": 1555, "event": "Bishops Latimer and Ridley are burned at the stake for heresy in Oxford", "category": "religion" },
+      { "year": 1793, "event": "Marie Antoinette, Queen of France, is executed by guillotine", "category": "history" },
+      { "year": 1978, "event": "Pope John Paul II is elected — the first non-Italian pope in 455 years", "category": "religion" }
+    ],
+    "17": [
+      { "year": 1346, "event": "David II of Scotland is captured at the Battle of Neville's Cross", "category": "war" },
+      { "year": 1777, "event": "The American victory at Saratoga marks the turning point of the American Revolution", "category": "war" },
+      { "year": 1989, "event": "The Loma Prieta earthquake strikes San Francisco during the World Series, killing 67", "category": "disaster" }
+    ],
+    "18": [
+      { "year": 1009, "event": "The Church of the Holy Sepulchre in Jerusalem is destroyed on orders of al-Hakim bi-Amr Allah", "category": "religion" },
+      { "year": 1867, "event": "The United States formally takes possession of Alaska from Russia", "category": "politics" },
+      { "year": 1989, "event": "East Germany's communist leader Erich Honecker resigns", "category": "politics" }
+    ],
+    "19": [
+      { "year": 202, "event": "Battle of Zama: Scipio Africanus defeats Hannibal, ending the Second Punic War", "category": "war" },
+      { "year": 1781, "event": "British General Cornwallis surrenders at Yorktown, ending the American Revolutionary War", "category": "war" },
+      { "year": 1987, "event": "Black Monday: the largest single-day stock market crash in history", "category": "economy" }
+    ],
+    "20": [
+      { "year": 1568, "event": "Mary Queen of Scots arrives in England seeking protection from Elizabeth I", "category": "history" },
+      { "year": 1714, "event": "George I becomes King of Great Britain, beginning the Hanoverian dynasty", "category": "history" },
+      { "year": 2011, "event": "Muammar Gaddafi is captured and killed, ending 42 years of rule in Libya", "category": "history" }
+    ],
+    "21": [
+      { "year": 1879, "event": "Thomas Edison successfully tests his first practical incandescent light bulb", "category": "invention" },
+      { "year": 1805, "event": "The Battle of Trafalgar: British Admiral Nelson defeats the French fleet but is killed", "category": "war" },
+      { "year": 1879, "event": "Thomas Edison successfully demonstrates his first practical light bulb", "category": "invention" }
+    ],
+    "22": [
+      { "year": 4004, "event": "Traditional biblical date of creation of the universe (Archbishop Ussher's calculation)", "category": "religion" },
+      { "year": 1797, "event": "André-Jacques Garnerin makes the first parachute jump from a balloon in Paris", "category": "invention" },
+      { "year": 1962, "event": "President Kennedy announces the Cuban Missile Crisis to the American public", "category": "politics" }
+    ],
+    "23": [
+      { "year": 42, "event": "The Battle of Philippi: Octavian and Antony defeat Brutus and Cassius", "category": "war" },
+      { "year": 1942, "event": "The Battle of El Alamein begins, turning the tide in the Western Desert campaign", "category": "war" },
+      { "year": 1983, "event": "U.S. Marine barracks in Beirut is bombed, killing 241 soldiers", "category": "war" }
+    ],
+    "24": [
+      { "year": 1648, "event": "The Peace of Westphalia is signed, ending the Thirty Years' War in Europe", "category": "war" },
+      { "year": 1929, "event": "Black Thursday: the U.S. stock market crashes, triggering the Great Depression", "category": "economy" },
+      { "year": 1945, "event": "The United Nations is officially established", "category": "politics" }
+    ],
+    "25": [
+      { "year": 1415, "event": "The Battle of Agincourt: Henry V's English forces defeat the French", "category": "war" },
+      { "year": 1854, "event": "The Charge of the Light Brigade takes place during the Crimean War", "category": "war" },
+      { "year": 1971, "event": "Taiwan is expelled from the United Nations and replaced by the People's Republic of China", "category": "politics" }
+    ],
+    "26": [
+      { "year": 1466, "event": "The Peace of Thorn ends the Thirteen Years' War", "category": "war" },
+      { "year": 1825, "event": "Erie Canal opens in New York, connecting the Great Lakes to New York City", "category": "invention" },
+      { "year": 1944, "event": "The Battle of Leyte Gulf, the largest naval battle in history, ends in Allied victory", "category": "war" }
+    ],
+    "27": [
+      { "year": 312, "event": "Constantine I sees a vision of a cross in the sky before the Battle of Milvian Bridge", "category": "religion" },
+      { "year": 1682, "event": "William Penn founds the city of Philadelphia in Pennsylvania", "category": "history" },
+      { "year": 2010, "event": "The world's tallest structure, the Burj Khalifa in Dubai, officially opens", "category": "invention" }
+    ],
+    "28": [
+      { "year": 312, "event": "Battle of Milvian Bridge: Constantine defeats Maxentius and becomes Roman Emperor", "category": "war" },
+      { "year": 1893, "event": "The Czechoslovak Republic is proclaimed in Prague", "category": "politics" },
+      { "year": 1962, "event": "The Cuban Missile Crisis ends as Soviet ships turn back", "category": "politics" }
+    ],
+    "29": [
+      { "year": 1618, "event": "Sir Walter Raleigh, English explorer and poet, is executed", "category": "history" },
+      { "year": 1923, "event": "The Republic of Turkey is proclaimed by Mustafa Kemal (Atatürk)", "category": "politics" },
+      { "year": 1998, "event": "John Glenn, the first American to orbit the Earth, returns to space at age 77", "category": "science" }
+    ],
+    "30": [
+      { "year": 1270, "event": "Kublai Khan's Mongol fleet is destroyed by a typhoon in Japan", "category": "disaster" },
+      { "year": 1888, "event": "The Statue of Liberty is dedicated in New York Harbor by President Cleveland", "category": "history" },
+      { "year": 1990, "event": "Germany is reunified — the two German states merge into one", "category": "politics" }
+    ],
+    "31": [
+      { "year": 475, "event": "Romulus Augustulus deposes Julius Nepos as Western Roman Emperor", "category": "history" },
+      { "year": 1517, "event": "Martin Luther nails his 95 Theses to the door of the Wittenberg Castle Church, starting the Protestant Reformation", "category": "religion" },
+      { "year": 1984, "event": "Indian Prime Minister Indira Gandhi is assassinated by her bodyguards", "category": "history" }
+    ]
+  },
+  "11": {
+    "1": [
+      { "year": 1512, "event": "Michelangelo's Sistine Chapel ceiling is unveiled in Vatican City", "category": "culture" },
+      { "year": 1755, "event": "A massive earthquake destroys Lisbon, Portugal, killing 60,000", "category": "disaster" },
+      { "year": 1952, "event": "The United States tests its first hydrogen bomb at Eniwetok Atoll", "category": "science" }
+    ],
+    "2": [
+      { "year": 619, "event": "Tang Emperor Gaozu has his son Li Yuanji poisoned", "category": "history" },
+      { "year": 1917, "event": "The Balfour Declaration: Britain expresses support for a Jewish homeland in Palestine", "category": "politics" },
+      { "year": 1947, "event": "Howard Hughes's massive aircraft, the Spruce Goose, makes its only flight", "category": "invention" }
+    ],
+    "3": [
+      { "year": 361, "event": "Julian the Apostate becomes Roman Emperor", "category": "history" },
+      { "year": 1793, "event": "Olympe de Gouges, feminist and political activist, is guillotined in Paris", "category": "history" },
+      { "year": 1957, "event": "The Soviet Union launches Sputnik 2, carrying the dog Laika into space", "category": "science" }
+    ],
+    "4": [
+      { "year": 1429, "event": "Joan of Arc and the French army lift the Siege of Orléans", "category": "war" },
+      { "year": 1890, "event": "The Forth Bridge in Scotland opens — the world's longest cantilever bridge at the time", "category": "invention" },
+      { "year": 1995, "event": "Israeli Prime Minister Yitzhak Rabin is assassinated in Tel Aviv", "category": "history" }
+    ],
+    "5": [
+      { "year": 1415, "event": "Henry V begins his campaign in France following the Battle of Agincourt", "category": "war" },
+      { "year": 1605, "event": "The Gunpowder Plot is foiled in England — Guy Fawkes arrested beneath Parliament", "category": "history" },
+      { "year": 1990, "event": "Rabbi Meir Kahane is assassinated in New York City", "category": "history" }
+    ],
+    "6": [
+      { "year": 1528, "event": "The first expedition to reach the Gulf of Mexico from Spain arrives", "category": "exploration" },
+      { "year": 1869, "event": "The first intercollegiate football game is played in the U.S. — Rutgers beats Princeton 6-4", "category": "sports" },
+      { "year": 1944, "event": "Franklin D. Roosevelt wins a fourth term as U.S. President", "category": "politics" }
+    ],
+    "7": [
+      { "year": 1493, "event": "Christopher Columbus returns to Hispaniola on his second voyage", "category": "exploration" },
+      { "year": 1917, "event": "The October Revolution (Bolshevik Revolution) begins in Russia, leading to the Soviet Union", "category": "politics" },
+      { "year": 1996, "event": "NASA's Mars Global Surveyor is launched to study Mars", "category": "science" }
+    ],
+    "8": [
+      { "year": 1519, "event": "Hernán Cortés enters the Aztec capital Tenochtitlán, meeting Emperor Montezuma II", "category": "history" },
+      { "year": 1895, "event": "Wilhelm Röntgen discovers X-rays while experimenting at the University of Würzburg", "category": "science" },
+      { "year": 1923, "event": "Hitler's Beer Hall Putsch fails in Munich — he is arrested two days later", "category": "history" }
+    ],
+    "9": [
+      { "year": 1620, "event": "The Mayflower reaches Massachusetts after 66 days at sea", "category": "history" },
+      { "year": 1938, "event": "Kristallnacht: Nazis unleash a nationwide pogrom against Jews in Germany and Austria", "category": "history" },
+      { "year": 1989, "event": "The Berlin Wall falls — East Germany opens its borders", "category": "politics" }
+    ],
+    "10": [
+      { "year": 1444, "event": "The Battle of Varna: Ottomans defeat a Crusader army", "category": "war" },
+      { "year": 1871, "event": "Henry Morton Stanley finds David Livingstone in Tanzania with 'Dr. Livingstone, I presume?'", "category": "exploration" },
+      { "year": 1969, "event": "Sesame Street premieres on PBS in the United States", "category": "culture" }
+    ],
+    "11": [
+      { "year": 1215, "event": "The Fourth Lateran Council, the most important church council of the Middle Ages, opens", "category": "religion" },
+      { "year": 1918, "event": "The armistice ending World War I is signed at 11 AM on the 11th day of the 11th month", "category": "war" },
+      { "year": 1965, "event": "Rhodesia declares independence from Britain", "category": "politics" }
+    ],
+    "12": [
+      { "year": 1035, "event": "Canute the Great, Viking King of England, Denmark and Norway, dies", "category": "history" },
+      { "year": 1954, "event": "Ellis Island immigration station officially closes after processing 12 million immigrants", "category": "history" },
+      { "year": 1980, "event": "Voyager 1 makes its closest approach to Saturn and its moons", "category": "science" }
+    ],
+    "13": [
+      { "year": 1093, "event": "Margaret, Queen of Scotland, dies and is later canonized", "category": "religion" },
+      { "year": 1850, "event": "Robert Louis Stevenson, author of Treasure Island, is born in Edinburgh", "category": "culture" },
+      { "year": 1985, "event": "The volcano Nevado del Ruiz erupts in Colombia, killing over 23,000 people", "category": "disaster" }
+    ],
+    "14": [
+      { "year": 565, "event": "Emperor Justinian I of Byzantium dies", "category": "history" },
+      { "year": 1889, "event": "Nellie Bly begins her around-the-world journey, completing it in 72 days", "category": "exploration" },
+      { "year": 1991, "event": "The UN Security Council authorizes force to expel Iraq from Kuwait", "category": "politics" }
+    ],
+    "15": [
+      { "year": 1533, "event": "Spanish conquistador Francisco Pizarro captures the Inca capital Cusco", "category": "war" },
+      { "year": 1867, "event": "Sweden's Alfred Nobel patents dynamite", "category": "invention" },
+      { "year": 1988, "event": "Palestinian leader Yasser Arafat proclaims the existence of the State of Palestine", "category": "politics" }
+    ],
+    "16": [
+      { "year": 534, "event": "The Roman legal code Corpus Juris Civilis is completed under Justinian I", "category": "politics" },
+      { "year": 1632, "event": "The Battle of Lützen: Gustavus Adolphus of Sweden is killed", "category": "war" },
+      { "year": 1945, "event": "United Nations Educational, Scientific and Cultural Organization (UNESCO) is founded", "category": "culture" }
+    ],
+    "17": [
+      { "year": 9, "event": "The Varian Disaster: Germanic tribes destroy three Roman legions in the Teutoburg Forest", "category": "war" },
+      { "year": 1869, "event": "The Suez Canal is inaugurated in a lavish ceremony", "category": "invention" },
+      { "year": 1993, "event": "The NAFTA agreement passes the U.S. Senate", "category": "economy" }
+    ],
+    "18": [
+      { "year": 1307, "event": "William Tell shoots an apple from his son's head, according to Swiss legend", "category": "culture" },
+      { "year": 1626, "event": "St. Peter's Basilica in Vatican City is consecrated", "category": "religion" },
+      { "year": 1978, "event": "Jonestown massacre: 918 people die in a mass suicide/murder in Guyana under Jim Jones", "category": "history" }
+    ],
+    "19": [
+      { "year": 1493, "event": "Columbus lands on Puerto Rico on his second voyage", "category": "exploration" },
+      { "year": 1863, "event": "Lincoln delivers the Gettysburg Address at the dedication of a military cemetery", "category": "history" },
+      { "year": 1985, "event": "Bill Gates releases the first version of Microsoft Windows", "category": "invention" }
+    ],
+    "20": [
+      { "year": 284, "event": "Diocletian is proclaimed Roman Emperor", "category": "history" },
+      { "year": 1945, "event": "The Nuremberg Trials of Nazi war criminals begin", "category": "history" },
+      { "year": 1975, "event": "Spanish dictator Francisco Franco dies, ending 36 years of rule", "category": "politics" }
+    ],
+    "21": [
+      { "year": 1783, "event": "The first hot air balloon flight with human passengers takes place near Paris", "category": "invention" },
+      { "year": 1877, "event": "Thomas Edison announces the invention of the phonograph", "category": "invention" },
+      { "year": 1974, "event": "The Birmingham pub bombings kill 21 in England", "category": "history" }
+    ],
+    "22": [
+      { "year": 498, "event": "Clovis I becomes the first king of the Franks to convert to Catholicism", "category": "religion" },
+      { "year": 1718, "event": "Pirate Blackbeard (Edward Teach) is killed in a naval battle off North Carolina", "category": "history" },
+      { "year": 1963, "event": "U.S. President John F. Kennedy is assassinated in Dallas, Texas", "category": "history" }
+    ],
+    "23": [
+      { "year": 534, "event": "The city of Algiers is founded", "category": "civilization" },
+      { "year": 1859, "event": "Charles Darwin publishes 'On the Origin of Species', proposing evolution by natural selection", "category": "science" },
+      { "year": 1963, "event": "Doctor Who premieres on the BBC", "category": "culture" }
+    ],
+    "24": [
+      { "year": 380, "event": "Theodosius I makes Christianity the official religion of the Roman Empire", "category": "religion" },
+      { "year": 1859, "event": "Charles Darwin publishes 'On the Origin of Species'", "category": "science" },
+      { "year": 1963, "event": "Lee Harvey Oswald, accused assassin of JFK, is shot and killed by Jack Ruby on live TV", "category": "history" }
+    ],
+    "25": [
+      { "year": 1177, "event": "The Battle of Montgisard: Baldwin IV of Jerusalem defeats Saladin", "category": "war" },
+      { "year": 1491, "event": "Granada, the last Moorish kingdom in Spain, surrenders to Ferdinand and Isabella", "category": "war" },
+      { "year": 1963, "event": "Kenya gains independence from Britain", "category": "politics" }
+    ],
+    "26": [
+      { "year": 783, "event": "Charlemagne defeats the Saxons at the Battle of Detmold", "category": "war" },
+      { "year": 1832, "event": "Mary Wollstonecraft, mother of Mary Shelley, dies", "category": "culture" },
+      { "year": 1986, "event": "The Chernobyl nuclear disaster's extent is finally acknowledged to the international community", "category": "disaster" }
+    ],
+    "27": [
+      { "year": 1095, "event": "Pope Urban II calls for the First Crusade at the Council of Clermont", "category": "religion" },
+      { "year": 1664, "event": "New Amsterdam is officially renamed New York", "category": "history" },
+      { "year": 1978, "event": "Harvey Milk and Mayor George Moscone are assassinated in San Francisco", "category": "history" }
+    ],
+    "28": [
+      { "year": 1443, "event": "The Kalemegdan fortress falls to the Ottoman Turks", "category": "war" },
+      { "year": 1928, "event": "Ravel's Bolero premieres in Paris", "category": "culture" },
+      { "year": 1990, "event": "Margaret Thatcher resigns as British Prime Minister after 11 years", "category": "politics" }
+    ],
+    "29": [
+      { "year": 1530, "event": "Cardinal Wolsey dies on his way to face trial for treason in London", "category": "history" },
+      { "year": 1929, "event": "Richard Byrd and crew become the first to fly over the South Pole", "category": "exploration" },
+      { "year": 1947, "event": "The UN votes to partition Palestine into Jewish and Arab states", "category": "politics" }
+    ],
+    "30": [
+      { "year": 1700, "event": "The Great Northern War begins when Russia, Denmark and Poland attack Sweden", "category": "war" },
+      { "year": 1782, "event": "The preliminary articles of peace ending the American Revolution are signed in Paris", "category": "war" },
+      { "year": 1954, "event": "The Algerian War of Independence begins with a series of attacks on French targets", "category": "war" }
+    ]
+  },
+  "12": {
+    "1": [
+      { "year": 800, "event": "Charlemagne, King of the Franks, is crowned Holy Roman Emperor by Pope Leo III", "category": "history" },
+      { "year": 1913, "event": "The Ford Motor Company introduces the first moving assembly line", "category": "invention" },
+      { "year": 1955, "event": "Rosa Parks refuses to give up her seat on a bus in Montgomery, Alabama", "category": "history" }
+    ],
+    "2": [
+      { "year": 1547, "event": "Hernán Cortés, Spanish conqueror of the Aztec Empire, dies", "category": "history" },
+      { "year": 1804, "event": "Napoleon Bonaparte crowns himself Emperor of France in Notre Dame Cathedral", "category": "history" },
+      { "year": 1942, "event": "The world's first man-made nuclear reactor, Chicago Pile-1, achieves criticality", "category": "science" }
+    ],
+    "3": [
+      { "year": 915, "event": "Pope John X crowns Berengar I as Emperor of Rome", "category": "history" },
+      { "year": 1818, "event": "Illinois becomes the 21st U.S. state", "category": "politics" },
+      { "year": 1984, "event": "The Bhopal disaster: a gas leak at a pesticide plant in India kills over 3,000 people", "category": "disaster" }
+    ],
+    "4": [
+      { "year": 1154, "event": "Henry II becomes King of England, founding the Plantagenet dynasty", "category": "history" },
+      { "year": 1791, "event": "The Observer, the world's first Sunday newspaper, is published in Britain", "category": "culture" },
+      { "year": 1978, "event": "The first U.S. commercial test for DNA fingerprinting is conducted", "category": "science" }
+    ],
+    "5": [
+      { "year": 63, "event": "Roman Emperor Augustus is born (as Gaius Octavius)", "category": "history" },
+      { "year": 1456, "event": "A retrial rehabilitates Joan of Arc, posthumously acquitting her of heresy", "category": "history" },
+      { "year": 1945, "event": "Flight 19, a group of U.S. Navy bombers, disappears in the Bermuda Triangle", "category": "history" }
+    ],
+    "6": [
+      { "year": 1240, "event": "Mongols sack and burn Kiev, one of the great cultural centers of the era", "category": "war" },
+      { "year": 1865, "event": "The 13th Amendment abolishing slavery is ratified in the United States", "category": "politics" },
+      { "year": 1991, "event": "President Mikhail Gorbachev resigns, formally dissolving the Soviet Union", "category": "politics" }
+    ],
+    "7": [
+      { "year": 43, "event": "Marcus Tullius Cicero, the great Roman orator, is assassinated", "category": "history" },
+      { "year": 1941, "event": "Japan attacks the U.S. naval base at Pearl Harbor, Hawaii, bringing the U.S. into WWII", "category": "war" },
+      { "year": 1987, "event": "Reagan and Gorbachev sign the INF Treaty, eliminating intermediate-range nuclear missiles", "category": "politics" }
+    ],
+    "8": [
+      { "year": 1533, "event": "The Inca leader Atahualpa is executed by Francisco Pizarro in Peru", "category": "war" },
+      { "year": 1886, "event": "The American Federation of Labor (AFL) is founded", "category": "economy" },
+      { "year": 1980, "event": "John Lennon, former Beatle and peace activist, is shot and killed in New York City", "category": "culture" }
+    ],
+    "9": [
+      { "year": 1245, "event": "Sancho II of Portugal is deposed by his brother Alfonso III", "category": "history" },
+      { "year": 1905, "event": "Norwegian playwright Henrik Ibsen suffers a stroke that leads to his death", "category": "culture" },
+      { "year": 1992, "event": "Prince Charles and Princess Diana announce their separation", "category": "history" }
+    ],
+    "10": [
+      { "year": 1520, "event": "Pope Leo X excommunicates Martin Luther from the Catholic Church", "category": "religion" },
+      { "year": 1869, "event": "The first Nobel Prizes are awarded in Stockholm and Oslo", "category": "science" },
+      { "year": 1994, "event": "Nelson Mandela receives the Nobel Peace Prize in Oslo, Norway", "category": "politics" }
+    ],
+    "11": [
+      { "year": 969, "event": "Byzantine Emperor Nikephoros II Phokas is assassinated by his wife and her lover", "category": "history" },
+      { "year": 1936, "event": "King Edward VIII abdicates the British throne for love of Wallis Simpson", "category": "history" },
+      { "year": 1972, "event": "Apollo 17 launches — the last time humans would travel to the Moon", "category": "science" }
+    ],
+    "12": [
+      { "year": 627, "event": "The Byzantine Empire decisively defeats Persia at the Battle of Nineveh", "category": "war" },
+      { "year": 1901, "event": "Guglielmo Marconi receives the first transatlantic radio transmission", "category": "invention" },
+      { "year": 2000, "event": "The U.S. Supreme Court halts Florida's presidential vote recount, effectively giving Bush the presidency", "category": "politics" }
+    ],
+    "13": [
+      { "year": 1250, "event": "King Louis IX of France is captured by Muslims during the Seventh Crusade", "category": "war" },
+      { "year": 1577, "event": "Francis Drake begins his circumnavigation of the globe", "category": "exploration" },
+      { "year": 2003, "event": "Saddam Hussein is captured by U.S. forces near Tikrit, Iraq", "category": "history" }
+    ],
+    "14": [
+      { "year": 557, "event": "Constantinople is severely damaged by an earthquake", "category": "disaster" },
+      { "year": 1911, "event": "Roald Amundsen's team becomes the first to reach the South Pole", "category": "exploration" },
+      { "year": 1985, "event": "Live Aid raises over $100 million for African famine relief", "category": "culture" }
+    ],
+    "15": [
+      { "year": 37, "event": "Caligula is proclaimed Roman Emperor after the death of Tiberius", "category": "history" },
+      { "year": 1791, "event": "The U.S. Bill of Rights is ratified, guaranteeing fundamental freedoms", "category": "politics" },
+      { "year": 1939, "event": "The Wizard of Oz premieres in Hollywood, California", "category": "culture" }
+    ],
+    "16": [
+      { "year": 714, "event": "Pepin of Herstal, Frankish mayor of the palace, dies", "category": "history" },
+      { "year": 1773, "event": "The Boston Tea Party: colonists dump British tea into Boston Harbor", "category": "history" },
+      { "year": 1944, "event": "The Battle of the Bulge begins — Germany's last major offensive on the Western Front", "category": "war" }
+    ],
+    "17": [
+      { "year": 1398, "event": "Timur (Tamerlane) sacks Delhi, killing 100,000 people in one day", "category": "war" },
+      { "year": 1903, "event": "The Wright Brothers achieve their first successful powered flight at Kitty Hawk", "category": "invention" },
+      { "year": 1989, "event": "The Simpsons airs its first full episode on Fox", "category": "culture" }
+    ],
+    "18": [
+      { "year": 218, "event": "Macrinus is defeated by forces loyal to young Emperor Elagabalus", "category": "history" },
+      { "year": 1865, "event": "The 13th Amendment abolishing slavery is ratified by Georgia, completing ratification", "category": "politics" },
+      { "year": 1975, "event": "The hit film Jaws is released, creating the concept of the blockbuster movie", "category": "culture" }
+    ],
+    "19": [
+      { "year": 1154, "event": "Henry II becomes King of England at Westminster Abbey", "category": "history" },
+      { "year": 1776, "event": "General Washington crosses the Delaware River to attack British forces", "category": "war" },
+      { "year": 2016, "event": "A Russian plane crashes into the Black Sea, killing 92 including the Alexandrov Ensemble", "category": "disaster" }
+    ],
+    "20": [
+      { "year": 1192, "event": "Richard I of England is captured and held for ransom by Duke Leopold of Austria", "category": "history" },
+      { "year": 1812, "event": "The last survivors of Napoleon's Grande Armée stagger out of Russia", "category": "war" },
+      { "year": 1968, "event": "Jacqueline Kennedy marries Greek shipping magnate Aristotle Onassis", "category": "culture" }
+    ],
+    "21": [
+      { "year": 1620, "event": "The Mayflower Pilgrims land at Plymouth Rock, Massachusetts", "category": "history" },
+      { "year": 1844, "event": "The Bahá'í Faith is founded by the Báb in Shiraz, Persia", "category": "religion" },
+      { "year": 1988, "event": "Lockerbie disaster: Pan Am Flight 103 explodes over Scotland, killing 270", "category": "disaster" }
+    ],
+    "22": [
+      { "year": 1216, "event": "Pope Honorius III approves the rule of the Dominican Order", "category": "religion" },
+      { "year": 1808, "event": "Ludwig van Beethoven conducts the first performance of his 5th and 6th Symphonies", "category": "culture" },
+      { "year": 2010, "event": "SpaceX launches its first spacecraft, the Dragon capsule", "category": "science" }
+    ],
+    "23": [
+      { "year": 679, "event": "Childeric II, King of the Franks, is murdered", "category": "history" },
+      { "year": 1823, "event": "Clement Clarke Moore publishes 'A Visit from St. Nicholas' ('Twas the Night Before Christmas')", "category": "culture" },
+      { "year": 1972, "event": "Apollo 17 returns to Earth — the last human Moon mission to date", "category": "science" }
+    ],
+    "24": [
+      { "year": 1524, "event": "Vasco da Gama, Portuguese explorer who found the sea route to India, dies in Cochin", "category": "exploration" },
+      { "year": 1818, "event": "'Silent Night' is performed for the first time in Oberndorf bei Salzburg, Austria", "category": "culture" },
+      { "year": 1968, "event": "Apollo 8 astronauts become the first humans to orbit the Moon", "category": "science" }
+    ],
+    "25": [
+      { "year": 800, "event": "Charlemagne is crowned Holy Roman Emperor by Pope Leo III at St. Peter's Basilica", "category": "history" },
+      { "year": 1066, "event": "William the Conqueror is crowned King of England at Westminster Abbey", "category": "history" },
+      { "year": 1991, "event": "Mikhail Gorbachev resigns as leader of the Soviet Union, which dissolves the next day", "category": "politics" }
+    ],
+    "26": [
+      { "year": 1776, "event": "George Washington's forces defeat the Hessians at the Battle of Trenton", "category": "war" },
+      { "year": 1898, "event": "Marie and Pierre Curie announce the discovery of radium", "category": "science" },
+      { "year": 2004, "event": "A massive Indian Ocean earthquake and tsunami kills over 230,000 people in 14 countries", "category": "disaster" }
+    ],
+    "27": [
+      { "year": 537, "event": "The Hagia Sophia basilica in Constantinople is completed", "category": "civilization" },
+      { "year": 1571, "event": "Johannes Kepler, astronomer who described planetary motion, is born", "category": "science" },
+      { "year": 1945, "event": "General Patton's Third Army liberates the Buchenwald concentration camp", "category": "war" }
+    ],
+    "28": [
+      { "year": 418, "event": "Boniface I is elected Pope", "category": "religion" },
+      { "year": 1895, "event": "Wilhelm Röntgen takes the first X-ray image — of his wife's hand", "category": "science" },
+      { "year": 1973, "event": "Aleksandr Solzhenitsyn publishes 'The Gulag Archipelago' in Paris", "category": "culture" }
+    ],
+    "29": [
+      { "year": 170, "event": "Emperor Marcus Aurelius begins his philosophical work 'Meditations'", "category": "culture" },
+      { "year": 1170, "event": "Archbishop Thomas Becket is murdered in Canterbury Cathedral", "category": "religion" },
+      { "year": 1991, "event": "The first Gulf War ends with a cease-fire", "category": "war" }
+    ],
+    "30": [
+      { "year": 39, "event": "Emperor Caligula's sister Agrippina the Younger gives birth to the future Emperor Nero", "category": "history" },
+      { "year": 1922, "event": "The Union of Soviet Socialist Republics (USSR) is officially established", "category": "politics" },
+      { "year": 2006, "event": "Saddam Hussein is executed by hanging in Baghdad, Iraq", "category": "history" }
+    ],
+    "31": [
+      { "year": 192, "event": "Roman Emperor Commodus is assassinated by a conspiracy of the Praetorian Guard", "category": "history" },
+      { "year": 1759, "event": "Arthur Guinness signs a 9,000-year lease on the St. James's Gate Brewery in Dublin", "category": "culture" },
+      { "year": 1999, "event": "The United States officially transfers control of the Panama Canal to Panama", "category": "politics" }
+    ]
+  }
+}

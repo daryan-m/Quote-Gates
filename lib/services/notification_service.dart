@@ -96,7 +96,6 @@ class NotificationService {
     const NotificationDetails details =
         NotificationDetails(android: androidDetails);
 
-    // گۆڕینی DateTime بۆ TZDateTime
     final tzDateTime = tz.TZDateTime.from(time, tz.local);
 
     await _notifications.zonedSchedule(
@@ -108,6 +107,29 @@ class NotificationService {
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
+    );
+  }
+
+  // ✅ نوێ — زەنگی کاروبار کاتێک دووبارە نیشاندرایەوە
+  static Future<void> showTaskReminder(String title, int id) async {
+    const AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
+      'task_channel',
+      'Task Reminders',
+      channelDescription: 'Reminders for your tasks',
+      importance: Importance.high,
+      priority: Priority.high,
+      fullScreenIntent: true,
+    );
+
+    const NotificationDetails details =
+        NotificationDetails(android: androidDetails);
+
+    await _notifications.show(
+      id,
+      '⏰ Task Reminder',
+      title,
+      details,
     );
   }
 
