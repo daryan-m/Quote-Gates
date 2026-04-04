@@ -3,6 +3,8 @@ name: Build Flutter App
 on:
   push:
     branches: [ main, master ]
+    tags:
+      - 'v*'                    # ✅ زیادکراو
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
@@ -25,7 +27,7 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-        flutter-version: '3.29.3'   # ✅ گۆڕدرا لە 3.24.0
+        flutter-version: '3.29.3'
 
     - name: Flutter Doctor
       run: flutter doctor
