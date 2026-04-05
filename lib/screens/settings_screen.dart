@@ -113,7 +113,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         color: color,
                         shape: BoxShape.circle,
                         border: Border.all(
-                          color: isSelected ? Colors.blue : Colors.grey.shade300,
+                          color:
+                              isSelected ? Colors.blue : Colors.grey.shade300,
                           width: isSelected ? 3 : 1,
                         ),
                         boxShadow: [
@@ -167,8 +168,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               child: GestureDetector(
                 onTap: () => setState(() => _fontFamily = font),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 12, vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                   child: Row(
                     children: [
                       Container(
