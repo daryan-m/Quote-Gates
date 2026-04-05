@@ -19,13 +19,14 @@ class TaskService {
   // بارکردنی کاروبارەکانی کەتگۆری دیاریکراو
   Future<List<Task>> getTasksForCategory(String category) async {
     final all = await getAllTasks();
-    return all.where((t) => t.category == category).toList();
+    return all.where((t) => t.autoCategory == category).toList();
   }
 
   // ذەخیرەکردنی هەموو کاروبارەکان
   Future<void> _saveTasks(List<Task> tasks) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_tasksKey, jsonEncode(tasks.map((t) => t.toJson()).toList()));
+    await prefs.setString(
+        _tasksKey, jsonEncode(tasks.map((t) => t.toJson()).toList()));
   }
 
   // زیادکردنی کاروبار

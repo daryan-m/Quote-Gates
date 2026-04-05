@@ -6,10 +6,7 @@ import '../services/notification_service.dart';
 class RemindersScreen extends StatefulWidget {
   final Future<bool> Function()? onRequestAlarm;
 
-  const RemindersScreen({
-    super.key,
-    this.onRequestAlarm,
-  });
+  const RemindersScreen({super.key, this.onRequestAlarm});
 
   @override
   State<RemindersScreen> createState() => _RemindersScreenState();
@@ -25,6 +22,17 @@ class _RemindersScreenState extends State<RemindersScreen> {
   bool _isRecurringWeekly = false;
   bool _isRecurringMonthly = false;
   bool _isRecurringYearly = false;
+  int? _customRepeatDays;
+
+  final List<String> _weekdays = [
+    'MON',
+    'TUE',
+    'WED',
+    'THU',
+    'FRI',
+    'SAT',
+    'SUN'
+  ];
 
   @override
   void initState() {
@@ -49,7 +57,8 @@ class _RemindersScreenState extends State<RemindersScreen> {
   }
 
   Future<void> _addReminder() async {
-    // پشکنینی ڕێگەپێدان پێش زیادکردنی ریمایندەر
+    if (_titleController.text.trim().isEmpty) return;
+
     if (widget.onRequestAlarm != null) {
       final granted = await widget.onRequestAlarm!();
       if (!granted) return;
@@ -63,7 +72,11 @@ class _RemindersScreenState extends State<RemindersScreen> {
       _selectedTime.minute,
     );
 
-    if (scheduledDateTime.isBefore(DateTime.now()) && !_isRecurringWeekly) {
+    if (scheduledDateTime.isBefore(DateTime.now()) &&
+        !_isRecurringWeekly &&
+        !_isRecurringDaily &&
+        !_isRecurringMonthly &&
+        !_isRecurringYearly) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Please select a future time")),
@@ -90,6 +103,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
       'dateTime': scheduledDateTime.toIso8601String(),
       'repeatType': repeatType,
       'weekdays': _selectedWeekdays,
+      'customDays': _customRepeatDays,
     };
 
     _reminders.add(reminder);
@@ -98,7 +112,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
     await NotificationService.scheduleReminder(
       scheduledDateTime,
       _titleController.text,
-      "Reminder: ${_titleController.text}",
+      "🔔 ${_titleController.text}",
       id,
     );
 
@@ -108,6 +122,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
     _isRecurringWeekly = false;
     _isRecurringMonthly = false;
     _isRecurringYearly = false;
+    _customRepeatDays = null;
     setState(() {});
 
     if (!mounted) return;
@@ -145,6 +160,24 @@ class _RemindersScreenState extends State<RemindersScreen> {
     if (time != null) setState(() => _selectedTime = time);
   }
 
+  String _getRepeatText(Map<String, dynamic> reminder) {
+    final type = reminder['repeatType'];
+    if (type == 'daily') return '🔁 Daily';
+    if (type == 'weekly') {
+      final weekdays = reminder['weekdays'] as List?;
+      if (weekdays != null && weekdays.isNotEmpty) {
+        return '🔁 Weekly on ${weekdays.join(', ')}';
+      }
+      return '🔁 Weekly';
+    }
+    if (type == 'monthly') return '🔁 Monthly';
+    if (type == 'yearly') return '🔁 Yearly';
+    if (reminder['customDays'] != null) {
+      return '🔁 Every ${reminder['customDays']} days';
+    }
+    return '';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -172,62 +205,58 @@ class _RemindersScreenState extends State<RemindersScreen> {
                     Row(
                       children: [
                         Expanded(
-                            child: OutlinedButton.icon(
-                                onPressed: _pickDate,
-                                icon: const Icon(Icons.calendar_today),
-                                label: Text("${_selectedDate.toLocal()}"
-                                    .split(' ')[0]))),
+                          child: OutlinedButton.icon(
+                            onPressed: _pickDate,
+                            icon: const Icon(Icons.calendar_today),
+                            label: Text(
+                                "${_selectedDate.toLocal()}".split(' ')[0]),
+                          ),
+                        ),
                         const SizedBox(width: 12),
                         Expanded(
-                            child: OutlinedButton.icon(
-                                onPressed: _pickTime,
-                                icon: const Icon(Icons.access_time),
-                                label: Text(_selectedTime.format(context)))),
+                          child: OutlinedButton.icon(
+                            onPressed: _pickTime,
+                            icon: const Icon(Icons.access_time),
+                            label: Text(_selectedTime.format(context)),
+                          ),
+                        ),
                       ],
                     ),
+                    const SizedBox(height: 12),
+                    const Divider(),
+                    const Text("Repeat (Optional)",
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                     const SizedBox(height: 8),
                     CheckboxListTile(
                       title: const Text("Repeat Daily"),
                       value: _isRecurringDaily,
-                      onChanged: (val) {
-                        setState(() {
-                          _isRecurringDaily = val ?? false;
-                          if (val == true) {
-                            _isRecurringWeekly = false;
-                            _isRecurringMonthly = false;
-                            _isRecurringYearly = false;
-                          }
-                        });
-                      },
+                      onChanged: (val) => setState(() {
+                        _isRecurringDaily = val ?? false;
+                        if (val == true) {
+                          _isRecurringWeekly = false;
+                          _isRecurringMonthly = false;
+                          _isRecurringYearly = false;
+                        }
+                      }),
                     ),
                     CheckboxListTile(
                       title: const Text("Repeat Weekly"),
                       value: _isRecurringWeekly,
-                      onChanged: (val) {
-                        setState(() {
-                          _isRecurringWeekly = val ?? false;
-                          if (val == true) {
-                            _isRecurringDaily = false;
-                            _isRecurringMonthly = false;
-                            _isRecurringYearly = false;
-                          }
-                        });
-                      },
+                      onChanged: (val) => setState(() {
+                        _isRecurringWeekly = val ?? false;
+                        if (val == true) {
+                          _isRecurringDaily = false;
+                          _isRecurringMonthly = false;
+                          _isRecurringYearly = false;
+                        }
+                      }),
                     ),
                     if (_isRecurringWeekly)
                       Padding(
                         padding: const EdgeInsets.only(left: 32),
                         child: Wrap(
                           spacing: 8,
-                          children: [
-                            'MON',
-                            'TUE',
-                            'WED',
-                            'THU',
-                            'FRI',
-                            'SAT',
-                            'SUN'
-                          ].map((day) {
+                          children: _weekdays.map((day) {
                             return FilterChip(
                               label: Text(day),
                               selected: _selectedWeekdays.contains(day),
@@ -247,30 +276,33 @@ class _RemindersScreenState extends State<RemindersScreen> {
                     CheckboxListTile(
                       title: const Text("Repeat Monthly"),
                       value: _isRecurringMonthly,
-                      onChanged: (val) {
-                        setState(() {
-                          _isRecurringMonthly = val ?? false;
-                          if (val == true) {
-                            _isRecurringDaily = false;
-                            _isRecurringWeekly = false;
-                            _isRecurringYearly = false;
-                          }
-                        });
-                      },
+                      onChanged: (val) => setState(() {
+                        _isRecurringMonthly = val ?? false;
+                        if (val == true) {
+                          _isRecurringDaily = false;
+                          _isRecurringWeekly = false;
+                          _isRecurringYearly = false;
+                        }
+                      }),
                     ),
                     CheckboxListTile(
                       title: const Text("Repeat Yearly"),
                       value: _isRecurringYearly,
-                      onChanged: (val) {
-                        setState(() {
-                          _isRecurringYearly = val ?? false;
-                          if (val == true) {
-                            _isRecurringDaily = false;
-                            _isRecurringWeekly = false;
-                            _isRecurringMonthly = false;
-                          }
-                        });
-                      },
+                      onChanged: (val) => setState(() {
+                        _isRecurringYearly = val ?? false;
+                        if (val == true) {
+                          _isRecurringDaily = false;
+                          _isRecurringWeekly = false;
+                          _isRecurringMonthly = false;
+                        }
+                      }),
+                    ),
+                    TextField(
+                      decoration: const InputDecoration(
+                          hintText: "Custom repeat (days)"),
+                      keyboardType: TextInputType.number,
+                      onChanged: (val) =>
+                          setState(() => _customRepeatDays = int.tryParse(val)),
                     ),
                     const SizedBox(height: 12),
                     ElevatedButton(
@@ -289,6 +321,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
                     itemBuilder: (context, index) {
                       final reminder = _reminders[index];
                       final dateTime = DateTime.parse(reminder['dateTime']);
+                      final repeatText = _getRepeatText(reminder);
                       return Card(
                         margin: const EdgeInsets.symmetric(
                             horizontal: 16, vertical: 4),
@@ -296,8 +329,17 @@ class _RemindersScreenState extends State<RemindersScreen> {
                           leading:
                               const Icon(Icons.alarm, color: Colors.orange),
                           title: Text(reminder['title']),
-                          subtitle: Text(
-                              "${dateTime.toLocal()}".replaceAll('.000', '')),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("${dateTime.toLocal()}"
+                                  .replaceAll('.000', '')),
+                              if (repeatText.isNotEmpty)
+                                Text(repeatText,
+                                    style: const TextStyle(
+                                        fontSize: 11, color: Colors.blueGrey)),
+                            ],
+                          ),
                           trailing: IconButton(
                             icon: const Icon(Icons.delete, color: Colors.red),
                             onPressed: () =>

@@ -20,6 +20,7 @@ dependencies:
   sqflite: ^2.3.3
   path: ^1.9.0
   timezone: ^0.9.4
+  share_plus: ^10.1.4
 
 dev_dependencies:
   flutter_test:
@@ -31,3 +32,19 @@ flutter:
   assets:
     - assets/quotes/
     - assets/historical_events.json
+  fonts:
+    - family: CabinSketch
+      fonts:
+        - asset: assets/fonts/CabinSketch-Regular.ttf
+    - family: Caveat
+      fonts:
+        - asset: assets/fonts/Caveat-Regular.ttf
+    - family: DancingScript
+      fonts:
+        - asset: assets/fonts/DancingScript-Regular.ttf
+    - family: Lobster
+      fonts:
+        - asset: assets/fonts/Lobster-Regular.ttf
+    - family: LobsterTwo
+      fonts:
+        - asset: assets/fonts/LobsterTwo-Regular.ttf

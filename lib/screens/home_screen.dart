@@ -13,7 +13,7 @@ import 'notes_screen.dart';
 import 'reminders_screen.dart';
 import 'settings_screen.dart';
 import 'today_history_screen.dart';
-import '../widgets/task_panel.dart';
+import 'tasks_screen.dart';
 import '../widgets/quote_edit_dialog.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -35,14 +35,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   DateTime _now = DateTime.now();
   Timer? _clockTimer;
 
-  // Active tab: today, week, month, year
-  String _activeTab = 'today';
+  List<Task> _allTasks = [];
 
-  // Tasks per category
-  List<Task> _todayTasks = [];
-  List<Task> _weekTasks = [];
-  List<Task> _monthTasks = [];
-  List<Task> _yearTasks = [];
+  Color _quoteTextColor = const Color(0xFF2C2C2C);
+  String _quoteFontFamily = 'System';
 
   String _colorToHex(Color color) {
     return color.toARGB32().toRadixString(16).padLeft(8, '0');
@@ -52,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _loadSettings();
+    _loadQuoteStyle();
     _checkFirstLaunch();
     _scheduleDailyQuoteIfNeeded();
     _loadDailyQuote();
@@ -77,18 +74,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 
   Future<void> _loadTasks() async {
-    final today = await _taskService.getTasksForCategory('today');
-    final week = await _taskService.getTasksForCategory('week');
-    final month = await _taskService.getTasksForCategory('month');
-    final year = await _taskService.getTasksForCategory('year');
-    if (mounted) {
-      setState(() {
-        _todayTasks = today;
-        _weekTasks = week;
-        _monthTasks = month;
-        _yearTasks = year;
-      });
-    }
+    final all = await _taskService.getAllTasks();
+    if (mounted) setState(() => _allTasks = all);
   }
 
   Future<void> _checkFirstLaunch() async {
@@ -100,6 +87,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     }
   }
 
+  // ١. نیشاندانی دیالۆگی ڕێپێدانەکان
   void _showPermissionDialog() {
     showDialog(
       context: context,
@@ -111,9 +99,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         content: const Text(
           "This app needs:\n\n"
           "🔔 Notifications — Daily quotes\n"
-          "💾 Storage — Save images\n"
+          "🖼️ Photos — Save images\n" // گۆڕدرا بۆ وێنە
           "⏰ Alarms — Reminders\n\n"
-          "Please allow to continue.",
+          "Please allow all to continue.",
         ),
         actions: [
           TextButton(
@@ -121,9 +109,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             child: const Text("Later"),
           ),
           ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
               Navigator.pop(context);
-              _requestAllPermissions();
+              await _requestAllPermissions();
             },
             child: const Text("Allow"),
           ),
@@ -132,37 +120,38 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
+  // ٢. داواکردنی ڕێپێدانەکان بە شێوەی زنجیرەیی و بەکارهێنانی Photos
   Future<void> _requestAllPermissions() async {
+    // داواکردنی نۆتیفیکەیشن
     await Permission.notification.request();
-    await Permission.storage.request();
+
+    // لێرە بەکارهێنانی Photos لەجیاتی Storage بۆ ئەندرۆیدە نوێیەکان
+    await Permission.photos.request();
+
+    // داواکردنی ئالارم
     await Permission.scheduleExactAlarm.request();
+
+    if (mounted) {
+      setState(() {});
+    }
   }
 
+  // --- فانکشنەکانی تاقیکردنەوە بە جیا ---
+
   Future<bool> requestNotificationForNote() async {
-    final status = await Permission.notification.status;
-    if (status.isDenied) {
-      final result = await Permission.notification.request();
-      return result.isGranted;
-    }
-    return true;
+    final status = await Permission.notification.request();
+    return status.isGranted;
   }
 
   Future<bool> requestAlarmForReminder() async {
-    final status = await Permission.scheduleExactAlarm.status;
-    if (status.isDenied) {
-      final result = await Permission.scheduleExactAlarm.request();
-      return result.isGranted;
-    }
-    return true;
+    final status = await Permission.scheduleExactAlarm.request();
+    return status.isGranted;
   }
 
+  // چاککردنی ئەم فانکشنە بۆ Photos
   Future<bool> requestStorageForImage() async {
-    final status = await Permission.storage.status;
-    if (status.isDenied) {
-      final result = await Permission.storage.request();
-      return result.isGranted;
-    }
-    return true;
+    final status = await Permission.photos.request();
+    return status.isGranted;
   }
 
   Future<void> _loadSettings() async {
@@ -178,6 +167,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     }
   }
 
+  Future<void> _loadQuoteStyle() async {
+    final textColor = await _storage.getSavedQuoteTextColor();
+    final font = await _storage.getSavedQuoteFont();
+    setState(() {
+      _quoteTextColor = textColor;
+      _quoteFontFamily = font;
+    });
+  }
+
   Future<void> _scheduleDailyQuoteIfNeeded() async {
     final time = await _storage.getDailyQuoteTime();
     if (time != null) {
@@ -191,21 +189,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         quote: quote.text,
         author: quote.author,
       );
-    }
-  }
-
-  List<Task> get _activeTasks {
-    switch (_activeTab) {
-      case 'today':
-        return _todayTasks;
-      case 'week':
-        return _weekTasks;
-      case 'month':
-        return _monthTasks;
-      case 'year':
-        return _yearTasks;
-      default:
-        return _todayTasks;
     }
   }
 
@@ -250,7 +233,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         child: Column(
           children: [
             _buildHeader(),
-            _buildTabBar(),
             const SizedBox(height: 8),
             Expanded(
               child: SingleChildScrollView(
@@ -258,8 +240,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   children: [
                     _buildClock(),
                     _buildQuoteSection(),
-                    const SizedBox(height: 16),
-                    _buildTaskPanel(),
                     const SizedBox(height: 16),
                   ],
                 ),
@@ -277,7 +257,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       child: Row(
         children: [
-          // Settings icon - left
           IconButton(
             icon: Icon(Icons.settings_outlined, color: _textColors),
             onPressed: () async {
@@ -303,7 +282,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               );
             },
           ),
-          // App name - center
           Expanded(
             child: Center(
               child: Row(
@@ -312,82 +290,28 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   Icon(Icons.auto_awesome,
                       color: _textColors.withValues(alpha: 0.7), size: 20),
                   const SizedBox(width: 8),
-                  Text(
-                    "Wisdom Gates",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                      color: _textColors,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
+                  Text("Wisdom Gates",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                          color: _textColors,
+                          letterSpacing: 0.5)),
                 ],
               ),
             ),
           ),
-          // App icon placeholder - right
           Container(
             width: 40,
             height: 40,
             decoration: BoxDecoration(
               color: _cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: _textColors.withValues(alpha: 0.1),
-              ),
+              border: Border.all(color: _textColors.withValues(alpha: 0.1)),
             ),
             child: Icon(Icons.wb_sunny_outlined,
                 color: _textColors.withValues(alpha: 0.7), size: 20),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildTabBar() {
-    final tabs = [
-      ('today', 'Today'),
-      ('week', 'This Week'),
-      ('month', 'This Month'),
-      ('year', 'This Year'),
-    ];
-
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16),
-      padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(
-        color: _cardColor,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: _textColors.withValues(alpha: 0.08)),
-      ),
-      child: Row(
-        children: tabs.map((tab) {
-          final isActive = _activeTab == tab.$1;
-          return Expanded(
-            child: GestureDetector(
-              onTap: () => setState(() => _activeTab = tab.$1),
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                decoration: BoxDecoration(
-                  color: isActive
-                      ? _textColors.withValues(alpha: 0.9)
-                      : Colors.transparent,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  tab.$2,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: isActive ? FontWeight.w700 : FontWeight.w400,
-                    color: isActive ? _bgColor : _subTextColor,
-                  ),
-                ),
-              ),
-            ),
-          );
-        }).toList(),
       ),
     );
   }
@@ -407,18 +331,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 second: _now.second,
                 textColor: _textColors,
                 isDark: _isDark,
+                tasks: _allTasks,
+                now: _now,
               ),
             ),
           ),
           const SizedBox(height: 12),
-          Text(
-            "$_weekdayName, ${_now.day} $_monthName ${_now.year}",
-            style: TextStyle(
-              fontSize: 14,
-              color: _subTextColor,
-              letterSpacing: 0.5,
-            ),
-          ),
+          Text("$_weekdayName, ${_now.day} $_monthName ${_now.year}",
+              style: TextStyle(
+                  fontSize: 14, color: _subTextColor, letterSpacing: 0.5)),
         ],
       ),
     );
@@ -433,16 +354,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           context: context,
           builder: (_) => QuoteEditDialog(
             quote: _selectedQuote!,
-            bgColor: _bgColor,
-            fontFamily: _fontFamily,
-            onSave: (updatedQuote, newBg, newFont) async {
+            onSave:
+                (updatedQuote, quoteBgColor, quoteTextColor, quoteFont) async {
               setState(() {
-                _selectedQuote = updatedQuote;
-                _bgColor = newBg;
-                _fontFamily = newFont;
+                _quoteTextColor = quoteTextColor;
+                _quoteFontFamily = quoteFont;
               });
-              await _storage.saveBackgroundColor(_colorToHex(newBg));
-              await _storage.saveFontFamily(newFont);
+              // هەڵگرتنیان لە مۆبایلدا
+              await _storage.saveQuoteStyle(
+                  quoteBgColor, quoteTextColor, quoteFont);
             },
           ),
         );
@@ -465,9 +385,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               style: TextStyle(
                 fontSize: 15,
                 fontStyle: FontStyle.italic,
-                color: _textColors,
+                color: _quoteTextColor,
                 height: 1.5,
-                fontFamily: _fontFamily == 'System' ? null : _fontFamily,
+                fontFamily:
+                    _quoteFontFamily == 'System' ? null : _quoteFontFamily,
               ),
               textAlign: TextAlign.center,
               maxLines: 3,
@@ -477,10 +398,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "— ${_selectedQuote!.author}",
-                  style: TextStyle(fontSize: 12, color: _subTextColor),
-                ),
+                Text("— ${_selectedQuote!.author}",
+                    style: TextStyle(fontSize: 12, color: _subTextColor)),
                 Row(
                   children: [
                     Icon(Icons.edit_outlined, size: 14, color: _subTextColor),
@@ -496,31 +415,30 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
-  Widget _buildTaskPanel() {
-    return TaskPanel(
-      category: _activeTab,
-      tasks: _activeTasks,
-      bgColor: _bgColor,
-      textColor: _textColors,
-      cardColor: _cardColor,
-      subTextColor: _subTextColor,
-      onTasksChanged: () => _loadTasks(),
-      onRequestAlarm: requestAlarmForReminder,
-    );
-  }
-
   Widget _buildBottomNav() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
         color: _cardColor,
-        border: Border(
-          top: BorderSide(color: _textColors.withValues(alpha: 0.08)),
-        ),
+        border:
+            Border(top: BorderSide(color: _textColors.withValues(alpha: 0.08))),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          _navButton(Icons.task_alt_outlined, "Tasks", () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => TasksScreen(
+                  bgColor: _bgColor,
+                  textColor: _textColors,
+                  onRequestAlarm: requestAlarmForReminder,
+                  onTaskChanged: _loadTasks,
+                ),
+              ),
+            );
+          }),
           _navButton(Icons.note_outlined, "Notes", () {
             Navigator.push(
               context,
@@ -529,6 +447,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   onRequestNotification: requestNotificationForNote,
                   onRequestAlarm: requestAlarmForReminder,
                 ),
+              ),
+            );
+          }),
+          _navButton(Icons.alarm_outlined, "Reminders", () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) =>
+                    RemindersScreen(onRequestAlarm: requestAlarmForReminder),
               ),
             );
           }),
@@ -542,22 +469,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ),
             );
           }),
-          _navButton(Icons.alarm_outlined, "Reminders", () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => RemindersScreen(
-                  onRequestAlarm: requestAlarmForReminder,
-                ),
-              ),
-            );
-          }),
           _navButton(Icons.today_outlined, "Today", () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (_) => const TodayHistoryScreen(),
-              ),
+              MaterialPageRoute(builder: (_) => const TodayHistoryScreen()),
             );
           }),
         ],
@@ -591,6 +506,8 @@ class ClockPainter extends CustomPainter {
   final int second;
   final Color textColor;
   final bool isDark;
+  final List<Task> tasks;
+  final DateTime now;
 
   const ClockPainter({
     required this.hour,
@@ -598,6 +515,8 @@ class ClockPainter extends CustomPainter {
     required this.second,
     required this.textColor,
     required this.isDark,
+    required this.tasks,
+    required this.now,
   });
 
   @override
@@ -605,10 +524,16 @@ class ClockPainter extends CustomPainter {
     final center = Offset(size.width / 2, size.height / 2);
     final radius = size.width / 2;
 
-    // Face
+    // 4 rings outside the clock (year, month, week, day)
+    _drawYearRing(canvas, center, radius);
+    _drawMonthRing(canvas, center, radius);
+    _drawWeekRing(canvas, center, radius);
+    _drawDayRing(canvas, center, radius);
+
+    // Clock face
     canvas.drawCircle(
       center,
-      radius,
+      radius - 28,
       Paint()
         ..color = isDark
             ? Colors.white.withValues(alpha: 0.06)
@@ -616,10 +541,10 @@ class ClockPainter extends CustomPainter {
         ..style = PaintingStyle.fill,
     );
 
-    // Border
+    // Clock border
     canvas.drawCircle(
       center,
-      radius,
+      radius - 28,
       Paint()
         ..color = textColor.withValues(alpha: 0.15)
         ..style = PaintingStyle.stroke
@@ -630,12 +555,12 @@ class ClockPainter extends CustomPainter {
     for (int i = 0; i < 12; i++) {
       final angle = (i * 30) * math.pi / 180;
       final outer = Offset(
-        center.dx + (radius - 8) * math.cos(angle - math.pi / 2),
-        center.dy + (radius - 8) * math.sin(angle - math.pi / 2),
+        center.dx + (radius - 32) * math.cos(angle - math.pi / 2),
+        center.dy + (radius - 32) * math.sin(angle - math.pi / 2),
       );
       final inner = Offset(
-        center.dx + (radius - 16) * math.cos(angle - math.pi / 2),
-        center.dy + (radius - 16) * math.sin(angle - math.pi / 2),
+        center.dx + (radius - 40) * math.cos(angle - math.pi / 2),
+        center.dy + (radius - 40) * math.sin(angle - math.pi / 2),
       );
       canvas.drawLine(
         outer,
@@ -649,16 +574,15 @@ class ClockPainter extends CustomPainter {
     // Numbers
     for (int i = 1; i <= 12; i++) {
       final angle = (i * 30) * math.pi / 180;
-      final x = center.dx + (radius - 30) * math.cos(angle - math.pi / 2);
-      final y = center.dy + (radius - 30) * math.sin(angle - math.pi / 2);
+      final x = center.dx + (radius - 48) * math.cos(angle - math.pi / 2);
+      final y = center.dy + (radius - 48) * math.sin(angle - math.pi / 2);
       final tp = TextPainter(
         text: TextSpan(
           text: i.toString(),
           style: TextStyle(
-            fontSize: 11,
-            fontWeight: FontWeight.w600,
-            color: textColor.withValues(alpha: 0.7),
-          ),
+              fontSize: 10,
+              fontWeight: FontWeight.w600,
+              color: textColor.withValues(alpha: 0.7)),
         ),
         textDirection: TextDirection.ltr,
       )..layout();
@@ -669,10 +593,8 @@ class ClockPainter extends CustomPainter {
     final hourAngle = ((hour * 30) + (minute * 0.5) - 90) * math.pi / 180;
     canvas.drawLine(
       center,
-      Offset(
-        center.dx + (radius - 55) * math.cos(hourAngle),
-        center.dy + (radius - 55) * math.sin(hourAngle),
-      ),
+      Offset(center.dx + (radius - 70) * math.cos(hourAngle),
+          center.dy + (radius - 70) * math.sin(hourAngle)),
       Paint()
         ..color = textColor
         ..strokeWidth = 4
@@ -683,10 +605,8 @@ class ClockPainter extends CustomPainter {
     final minAngle = (minute * 6 - 90) * math.pi / 180;
     canvas.drawLine(
       center,
-      Offset(
-        center.dx + (radius - 35) * math.cos(minAngle),
-        center.dy + (radius - 35) * math.sin(minAngle),
-      ),
+      Offset(center.dx + (radius - 50) * math.cos(minAngle),
+          center.dy + (radius - 50) * math.sin(minAngle)),
       Paint()
         ..color = textColor.withValues(alpha: 0.8)
         ..strokeWidth = 3
@@ -697,10 +617,8 @@ class ClockPainter extends CustomPainter {
     final secAngle = (second * 6 - 90) * math.pi / 180;
     canvas.drawLine(
       center,
-      Offset(
-        center.dx + (radius - 25) * math.cos(secAngle),
-        center.dy + (radius - 25) * math.sin(secAngle),
-      ),
+      Offset(center.dx + (radius - 40) * math.cos(secAngle),
+          center.dy + (radius - 40) * math.sin(secAngle)),
       Paint()
         ..color = Colors.redAccent
         ..strokeWidth = 1.5
@@ -708,11 +626,172 @@ class ClockPainter extends CustomPainter {
     );
 
     // Center dot
-    canvas.drawCircle(center, 5, Paint()..color = textColor);
-    canvas.drawCircle(center, 3, Paint()..color = Colors.redAccent);
+    canvas.drawCircle(center, 4, Paint()..color = textColor);
+    canvas.drawCircle(center, 2, Paint()..color = Colors.redAccent);
+  }
+
+  void _drawYearRing(Canvas canvas, Offset center, double radius) {
+    final ringRadius = radius - 8;
+    canvas.drawCircle(
+        center,
+        ringRadius,
+        Paint()
+          ..color = textColor.withValues(alpha: 0.1)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3);
+
+    for (var task in tasks) {
+      final taskTime = task.scheduledTime;
+      if (taskTime == null) continue;
+      final autoCat = _getAutoCategory(taskTime);
+      if (autoCat != 'year') continue;
+      final monthAngle = ((taskTime.month - 1) * (360 / 12)) - 90;
+      _drawTaskArc(canvas, center, ringRadius, monthAngle, monthAngle + 5,
+          Colors.purple);
+    }
+  }
+
+  void _drawMonthRing(Canvas canvas, Offset center, double radius) {
+    final ringRadius = radius - 16;
+    canvas.drawCircle(
+        center,
+        ringRadius,
+        Paint()
+          ..color = textColor.withValues(alpha: 0.12)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3);
+
+    final daysInMonth = DateTime(now.year, now.month + 1, 0).day;
+    for (int i = 0; i < daysInMonth; i++) {
+      final startAngle = (i * (360 / daysInMonth)) - 90;
+      canvas.drawArc(
+        Rect.fromCircle(center: center, radius: ringRadius),
+        startAngle * math.pi / 180,
+        (360 / daysInMonth) * math.pi / 180,
+        false,
+        Paint()
+          ..color = textColor.withValues(alpha: 0.05)
+          ..strokeWidth = 1,
+      );
+    }
+
+    for (var task in tasks) {
+      final taskTime = task.scheduledTime;
+      if (taskTime == null) continue;
+      final autoCat = _getAutoCategory(taskTime);
+      if (autoCat != 'month') continue;
+      final daysInMonthNow = DateTime(now.year, now.month + 1, 0).day;
+      final dayAngle = ((taskTime.day - 1) * (360 / daysInMonthNow)) - 90;
+      _drawTaskArc(
+          canvas, center, ringRadius, dayAngle, dayAngle + 3, Colors.blue);
+    }
+  }
+
+  void _drawWeekRing(Canvas canvas, Offset center, double radius) {
+    final ringRadius = radius - 24;
+    canvas.drawCircle(
+        center,
+        ringRadius,
+        Paint()
+          ..color = textColor.withValues(alpha: 0.14)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3);
+
+    for (int i = 0; i < 7; i++) {
+      final startAngle = (i * (360 / 7)) - 90;
+      canvas.drawArc(
+        Rect.fromCircle(center: center, radius: ringRadius),
+        startAngle * math.pi / 180,
+        (360 / 7) * math.pi / 180,
+        false,
+        Paint()
+          ..color = textColor.withValues(alpha: 0.08)
+          ..strokeWidth = 1,
+      );
+    }
+
+    for (var task in tasks) {
+      final taskTime = task.scheduledTime;
+      if (taskTime == null) continue;
+      final autoCat = _getAutoCategory(taskTime);
+      if (autoCat != 'week') continue;
+      final diffDays = now.difference(taskTime).inDays.abs();
+      if (diffDays > 7) continue;
+      final weekdayAngle = ((taskTime.weekday - 1) * (360 / 7)) - 90;
+      final hourAngle =
+          ((taskTime.hour * 60 + taskTime.minute) * (360 / (24 * 60))) - 90;
+      final totalAngle = weekdayAngle + (hourAngle / 7);
+      _drawTaskArc(
+          canvas, center, ringRadius, totalAngle, totalAngle + 2, Colors.green);
+    }
+  }
+
+  void _drawDayRing(Canvas canvas, Offset center, double radius) {
+    final ringRadius = radius - 32;
+    canvas.drawCircle(
+        center,
+        ringRadius,
+        Paint()
+          ..color = textColor.withValues(alpha: 0.16)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3);
+
+    for (int i = 0; i < 24; i++) {
+      final startAngle = (i * 15) - 90;
+      canvas.drawArc(
+        Rect.fromCircle(center: center, radius: ringRadius),
+        startAngle * math.pi / 180,
+        15 * math.pi / 180,
+        false,
+        Paint()
+          ..color = textColor.withValues(alpha: 0.06)
+          ..strokeWidth = 1,
+      );
+    }
+
+    for (var task in tasks) {
+      final taskTime = task.scheduledTime;
+      if (taskTime == null) continue;
+      final autoCat = _getAutoCategory(taskTime);
+      if (autoCat != 'today') continue;
+      final diffDays = now.difference(taskTime).inDays.abs();
+      if (diffDays > 1) continue;
+      final hourAngle =
+          ((taskTime.hour * 60 + taskTime.minute) * (360 / (24 * 60))) - 90;
+      _drawTaskArc(
+          canvas, center, ringRadius, hourAngle, hourAngle + 4, Colors.orange);
+    }
+  }
+
+  void _drawTaskArc(Canvas canvas, Offset center, double radius,
+      double startAngleDeg, double endAngleDeg, Color color) {
+    canvas.drawArc(
+      Rect.fromCircle(center: center, radius: radius),
+      startAngleDeg * math.pi / 180,
+      (endAngleDeg - startAngleDeg) * math.pi / 180,
+      false,
+      Paint()
+        ..color = color
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2,
+    );
+  }
+
+  String _getAutoCategory(DateTime time) {
+    final diff = time.difference(DateTime.now());
+    if (diff.inDays < 1) return 'today';
+    if (diff.inDays < 7) return 'week';
+    if (diff.inDays < 30) return 'month';
+    return 'year';
   }
 
   @override
-  bool shouldRepaint(covariant ClockPainter old) =>
-      old.second != second || old.minute != minute || old.hour != hour;
+  bool shouldRepaint(covariant ClockPainter old) {
+    return old.second != second ||
+        old.minute != minute ||
+        old.hour != hour ||
+        old.now.day != now.day ||
+        old.now.month != now.month ||
+        old.now.year != now.year;
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class StorageService {
@@ -72,5 +73,31 @@ class StorageService {
   Future<bool> getFirstLaunchShown() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(_firstLaunchKey) ?? false;
+  }
+
+  // لە ناو کلاسی StorageService دا، لە کۆتاییدا
+  Future<void> saveQuoteStyle(
+      Color bgColor, Color textColor, String font) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('quote_bg_color', bgColor.toARGB32());
+    await prefs.setInt('quote_text_color', textColor.toARGB32());
+    await prefs.setString('quote_font', font);
+  }
+
+  Future<Color> getSavedQuoteBgColor() async {
+    final prefs = await SharedPreferences.getInstance();
+    final colorValue = prefs.getInt('quote_bg_color');
+    return colorValue != null ? Color(colorValue) : Colors.white;
+  }
+
+  Future<Color> getSavedQuoteTextColor() async {
+    final prefs = await SharedPreferences.getInstance();
+    final colorValue = prefs.getInt('quote_text_color');
+    return colorValue != null ? Color(colorValue) : const Color(0xFF2C2C2C);
+  }
+
+  Future<String> getSavedQuoteFont() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString('quote_font') ?? 'System';
   }
 }
