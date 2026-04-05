@@ -37,8 +37,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
     {'label': 'Sky', 'color': const Color(0xFFE3F2FD)},
   ];
 
+  final List<String> _fonts = ['System', 'Serif', 'Monospace'];
+
   bool get _isDark => _bgColor.computeLuminance() < 0.5;
-  Color get _textColors => _isDark ? Colors.white : const Color(0xFF2C2C2C);
+  Color get _textColor => _isDark ? Colors.white : const Color(0xFF2C2C2C);
 
   @override
   void initState() {
@@ -69,26 +71,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
       backgroundColor: _bgColor,
       appBar: AppBar(
         backgroundColor: _bgColor,
-        foregroundColor: _textColors,
+        foregroundColor: _textColor,
         elevation: 0,
-        title: Text("Settings",
-            style: TextStyle(color: _textColors, fontWeight: FontWeight.w700)),
+        title: Text(
+          "Settings",
+          style: TextStyle(color: _textColor, fontWeight: FontWeight.w700),
+        ),
         actions: [
           TextButton(
             onPressed: () {
               widget.onSettingsChanged(_bgColor, _fontFamily, _dailyQuoteTime);
               Navigator.pop(context);
             },
-            child: Text("Save",
-                style:
-                    TextStyle(color: _textColors, fontWeight: FontWeight.w700)),
+            child: Text(
+              "Save",
+              style: TextStyle(color: _textColor, fontWeight: FontWeight.w700),
+            ),
           ),
         ],
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // باکگراوند
           _sectionTitle("Theme"),
           const SizedBox(height: 12),
           Wrap(
@@ -109,8 +113,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         color: color,
                         shape: BoxShape.circle,
                         border: Border.all(
-                          color:
-                              isSelected ? Colors.blue : Colors.grey.shade300,
+                          color: isSelected ? Colors.blue : Colors.grey.shade300,
                           width: isSelected ? 3 : 1,
                         ),
                         boxShadow: [
@@ -122,67 +125,93 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ],
                       ),
                       child: isSelected
-                          ? Icon(Icons.check,
+                          ? Icon(
+                              Icons.check,
                               color: color.computeLuminance() < 0.5
                                   ? Colors.white
-                                  : Colors.black)
+                                  : Colors.black,
+                            )
                           : null,
                     ),
                     const SizedBox(height: 4),
-                    Text(opt['label'] as String,
-                        style: TextStyle(
-                            fontSize: 11,
-                            color: _textColors.withValues(alpha: 0.7))),
+                    Text(
+                      opt['label'] as String,
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: _textColor.withValues(alpha: 0.7),
+                      ),
+                    ),
                   ],
                 ),
               );
             }).toList(),
           ),
-
           const SizedBox(height: 24),
-
-          // فۆنت
           _sectionTitle("Font Style"),
           const SizedBox(height: 12),
-          RadioGroup<String>(
-            groupValue: _fontFamily,
-            onChanged: (v) => setState(() => _fontFamily = v!),
-            child: Column(
-              children: ['System', 'Serif', 'Monospace'].map((font) {
-                final isSelected = _fontFamily == font;
-                return Container(
-                  margin: const EdgeInsets.only(bottom: 8),
-                  decoration: BoxDecoration(
-                    color: isSelected
-                        ? _textColors.withValues(alpha: 0.1)
-                        : Colors.transparent,
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: isSelected
-                          ? _textColors.withValues(alpha: 0.3)
-                          : _textColors.withValues(alpha: 0.1),
-                    ),
-                  ),
-                  child: RadioListTile<String>(
-                    value: font,
-                    title: Text(
-                      "The quick brown fox — $font",
-                      style: TextStyle(
-                        fontFamily: font == 'System' ? null : font,
-                        color: _textColors,
-                        fontSize: 14,
+          ..._fonts.map((font) {
+            final isSelected = _fontFamily == font;
+            return Container(
+              margin: const EdgeInsets.only(bottom: 8),
+              decoration: BoxDecoration(
+                color: isSelected
+                    ? _textColor.withValues(alpha: 0.1)
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: isSelected
+                      ? _textColor.withValues(alpha: 0.3)
+                      : _textColor.withValues(alpha: 0.1),
+                ),
+              ),
+              child: GestureDetector(
+                onTap: () => setState(() => _fontFamily = font),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 12, vertical: 10),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 20,
+                        height: 20,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: isSelected
+                                ? _textColor
+                                : _textColor.withValues(alpha: 0.3),
+                            width: 2,
+                          ),
+                        ),
+                        child: isSelected
+                            ? Center(
+                                child: Container(
+                                  width: 10,
+                                  height: 10,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: _textColor,
+                                  ),
+                                ),
+                              )
+                            : null,
                       ),
-                    ),
-                    activeColor: _textColors,
+                      const SizedBox(width: 12),
+                      Text(
+                        "The quick brown fox — $font",
+                        style: TextStyle(
+                          fontFamily: font == 'System' ? null : font,
+                          color: _textColor,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
                   ),
-                );
-              }).toList(),
-            ),
-          ),
-
+                ),
+              ),
+            );
+          }),
           const SizedBox(height: 24),
-
-          // کاتی وتەی ڕۆژانە
           _sectionTitle("Daily Quote Time"),
           const SizedBox(height: 12),
           GestureDetector(
@@ -190,29 +219,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: _textColors.withValues(alpha: 0.08),
+                color: _textColor.withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: _textColors.withValues(alpha: 0.15)),
+                border: Border.all(
+                  color: _textColor.withValues(alpha: 0.15),
+                ),
               ),
               child: Row(
                 children: [
-                  Icon(Icons.alarm, color: _textColors),
+                  Icon(Icons.alarm, color: _textColor),
                   const SizedBox(width: 12),
                   Text(
                     _dailyQuoteTime,
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
-                      color: _textColors,
+                      color: _textColor,
                     ),
                   ),
                   const Spacer(),
-                  Icon(Icons.edit_outlined,
-                      color: _textColors.withValues(alpha: 0.5)),
+                  Icon(
+                    Icons.edit_outlined,
+                    color: _textColor.withValues(alpha: 0.5),
+                  ),
                 ],
               ),
             ),
           ),
+          const SizedBox(height: 32),
         ],
       ),
     );
@@ -224,7 +258,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       style: TextStyle(
         fontSize: 13,
         fontWeight: FontWeight.w700,
-        color: _textColors.withValues(alpha: 0.5),
+        color: _textColor.withValues(alpha: 0.5),
         letterSpacing: 1,
       ),
     );
