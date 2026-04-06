@@ -1,35 +1,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     
-    <!-- ڕێگەپێدانی نۆتیفیکەیشن (بۆ ئەندرۆید 13+) -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     
-    <!-- ڕێگەپێدانی هەڵگرتنی وێنە -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    
-    <!-- بۆ ئەندرۆید 11+ (بۆ هەڵگرتنی وێنە لە گالێری) -->
-    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
-
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
-    
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
     
-    <!-- ڕێگەپێدانی کاتژمێری زەنگ (بۆ ئاگادارییەکان) -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
-    
-    <!-- ڕێگەپێدانی دەستپێکردنی ئەپەکە لە پشتەوە -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    
-    <!-- ڕێگەپێدانی نیشاندانی ئاگاداری لەسەر شاشەی قفڵکراو -->
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
     
-    <!-- بۆ بینینی کاتی ڕاستەقینە -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
-        android:label="myapp"
+        android:label="wisdom_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
@@ -60,7 +47,6 @@
             android:name="flutterEmbedding"
             android:value="2" />
             
-        <!-- بۆ نۆتیفیکەیشن چانێلەکان -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="daily_quote_channel" />
