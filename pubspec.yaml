@@ -21,6 +21,7 @@ dependencies:
   path: ^1.9.0
   timezone: ^0.9.4
   share_plus: ^10.1.4
+  in_app_purchase: ^3.2.0
 
 dev_dependencies:
   flutter_test:

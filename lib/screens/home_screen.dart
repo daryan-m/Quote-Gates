@@ -15,6 +15,8 @@ import 'settings_screen.dart';
 import 'today_history_screen.dart';
 import 'tasks_screen.dart';
 import '../widgets/quote_edit_dialog.dart';
+import '../services/purchase_service.dart';
+import 'package:wisdom_app/widgets/upgrade_sheet.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -40,6 +42,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Color _quoteTextColor = const Color(0xFF2C2C2C);
   String _quoteFontFamily = 'System';
 
+  bool _isPro = false;
+
   String _colorToHex(Color color) {
     return color.toARGB32().toRadixString(16).padLeft(8, '0');
   }
@@ -54,10 +58,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     _loadDailyQuote();
     _loadTasks();
     _startClock();
+    _isPro = PurchaseService.instance.isProUser;
+    PurchaseService.instance.addListener(_onProChanged);
+  }
+
+  void _onProChanged() {
+    if (mounted) setState(() => _isPro = PurchaseService.instance.isProUser);
   }
 
   @override
   void dispose() {
+    PurchaseService.instance.removeListener(_onProChanged);
     _clockTimer?.cancel();
     super.dispose();
   }
@@ -125,9 +136,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     // داواکردنی نۆتیفیکەیشن
     await Permission.notification.request();
 
-    // لێرە بەکارهێنانی Photos لەجیاتی Storage بۆ ئەندرۆیدە نوێیەکان
-    await Permission.photos.request();
-
     // داواکردنی ئالارم
     await Permission.scheduleExactAlarm.request();
 
@@ -145,12 +153,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   Future<bool> requestAlarmForReminder() async {
     final status = await Permission.scheduleExactAlarm.request();
-    return status.isGranted;
-  }
-
-  // چاککردنی ئەم فانکشنە بۆ Photos
-  Future<bool> requestStorageForImage() async {
-    final status = await Permission.photos.request();
     return status.isGranted;
   }
 
@@ -300,17 +302,41 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ),
             ),
           ),
-          Container(
-            width: 40,
-            height: 40,
-            decoration: BoxDecoration(
-              color: _cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: _textColors.withValues(alpha: 0.1)),
-            ),
-            child: Icon(Icons.wb_sunny_outlined,
-                color: _textColors.withValues(alpha: 0.7), size: 20),
-          ),
+          if (!_isPro)
+            GestureDetector(
+              onTap: _showUpgradeSheet,
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.workspace_premium_rounded,
+                        color: Colors.white, size: 14),
+                    SizedBox(width: 4),
+                    Text(
+                      "Upgrade",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 0.3,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          else
+            const SizedBox(width: 40),
         ],
       ),
     );
@@ -354,16 +380,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           context: context,
           builder: (_) => QuoteEditDialog(
             quote: _selectedQuote!,
-            onSave:
-                (updatedQuote, quoteBgColor, quoteTextColor, quoteFont) async {
-              setState(() {
-                _quoteTextColor = quoteTextColor;
-                _quoteFontFamily = quoteFont;
-              });
-              // هەڵگرتنیان لە مۆبایلدا
-              await _storage.saveQuoteStyle(
-                  quoteBgColor, quoteTextColor, quoteFont);
-            },
           ),
         );
       },
@@ -460,20 +476,28 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             );
           }),
           _navButton(Icons.format_quote_outlined, "Quotes", () {
+            if (!_isPro) {
+              _showUpgradeSheet();
+              return;
+            }
             Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => QuotesScreen(onQuoteSelected: (q) {
-                  setState(() => _selectedQuote = q);
-                }),
-              ),
-            );
+                context,
+                MaterialPageRoute(
+                  builder: (_) => QuotesScreen(onQuoteSelected: (q) {
+                    setState(() => _selectedQuote = q);
+                  }),
+                ));
           }),
           _navButton(Icons.today_outlined, "Today", () {
+            if (!_isPro) {
+              _showUpgradeSheet();
+              return;
+            }
             Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const TodayHistoryScreen()),
-            );
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const TodayHistoryScreen(),
+                ));
           }),
         ],
       ),
@@ -494,6 +518,42 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             Text(label, style: TextStyle(fontSize: 10, color: _subTextColor)),
           ],
         ),
+      ),
+    );
+  }
+
+  void _showUpgradeSheet() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => UpgradeSheet(
+        onPurchase: () async {
+          Navigator.pop(context);
+          final ok = await PurchaseService.instance.buyYearlyPro();
+          if (!ok && mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content:
+                    const Text("کڕین سەرکەوتوو نەبوو، دووبارە هەوڵبدەرەوە"),
+                backgroundColor: Colors.red.shade700,
+                behavior: SnackBarBehavior.floating,
+              ),
+            );
+          }
+        },
+        onRestore: () async {
+          Navigator.pop(context);
+          await PurchaseService.instance.restorePurchases();
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text("کڕینەکانت گەڕاندەوە"),
+                behavior: SnackBarBehavior.floating,
+              ),
+            );
+          }
+        },
       ),
     );
   }

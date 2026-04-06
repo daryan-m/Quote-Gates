@@ -7,13 +7,10 @@ import '../models/quote.dart';
 
 class QuoteEditDialog extends StatefulWidget {
   final Quote quote;
-  final Function(Quote quote, Color bgColor, Color textColor, String fontFamily)
-      onSave;
 
   const QuoteEditDialog({
     super.key,
     required this.quote,
-    required this.onSave,
   });
 
   @override
@@ -71,145 +68,121 @@ class _QuoteEditDialogState extends State<QuoteEditDialog> {
     _fontFamily = 'System';
   }
 
-  Future<void> _saveToGallery() async {
-    try {
-      final Uint8List image = await _screenshotController.captureFromWidget(
-        _buildQuotePreview(),
-      );
-      await Gal.putImageBytes(image, album: "Wisdom Gates");
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Quote saved to gallery")),
-        );
-      }
-    } catch (e) {
-      debugPrint('Error saving to gallery: $e');
-    }
-  }
-
-  void _shareQuote() async {
-    try {
-      final Uint8List image = await _screenshotController.captureFromWidget(
-        _buildQuotePreview(),
-      );
-      await Share.shareXFiles([XFile.fromData(image, name: 'quote.png')]);
-    } catch (e) {
-      final text = '"${widget.quote.text}" — ${widget.quote.author}';
-      await Share.share(text);
-    }
-  }
-
-  Widget _buildQuotePreview() {
-    return Container(
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: _quoteBgColor,
-        borderRadius: BorderRadius.circular(32),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-            spreadRadius: 2,
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Icon(Icons.format_quote, size: 50, color: Colors.blueGrey),
-          const SizedBox(height: 20),
-          Text(
-            widget.quote.text,
-            style: TextStyle(
-              fontSize: 20,
-              fontStyle: FontStyle.italic,
-              color: _quoteTextColor,
-              fontFamily: _fontFamily == 'System' ? null : _fontFamily,
-              height: 1.4,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 20),
-          Text(
-            "— ${widget.quote.author}",
-            style: TextStyle(fontSize: 16, color: _quoteTextColor),
-          ),
-        ],
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Dialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-      child: Container(
-        constraints: const BoxConstraints(maxHeight: 650),
+  Future<Uint8List> _captureQuoteImage() async {
+    return await _screenshotController.captureFromWidget(
+      Container(
+        padding: const EdgeInsets.all(32),
         decoration: BoxDecoration(
           color: _quoteBgColor,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(32),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            const Icon(Icons.format_quote, size: 60, color: Colors.blueGrey),
+            const SizedBox(height: 24),
+            Text(
+              widget.quote.text,
+              style: TextStyle(
+                fontSize: 24,
+                fontStyle: FontStyle.italic,
+                color: _quoteTextColor,
+                fontFamily: _fontFamily == 'System' ? null : _fontFamily,
+                height: 1.5,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 24),
+            Text(
+              "— ${widget.quote.author}",
+              style: TextStyle(fontSize: 18, color: _quoteTextColor),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _shareQuote() async {
+    final image = await _captureQuoteImage();
+    await Share.shareXFiles([XFile.fromData(image, name: 'quote.png')]);
+  }
+
+  Future<void> _saveToGallery() async {
+    final image = await _captureQuoteImage();
+    await Gal.putImageBytes(image, album: "Wisdom Gates");
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Quote saved to gallery")),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+  
+    
+
+    return Dialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      child: Container(
+        constraints: const BoxConstraints(maxHeight: 620),
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
             // Preview
-            Screenshot(
-              controller: _screenshotController,
-              child: Container(
-                margin: const EdgeInsets.all(16),
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: _quoteBgColor,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.08),
-                      blurRadius: 10,
-                      spreadRadius: 2,
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: _quoteBgColor,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 8,
+                    spreadRadius: 1,
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  Icon(Icons.format_quote,
+                      color: _quoteTextColor.withValues(alpha: 0.4), size: 40),
+                  const SizedBox(height: 12),
+                  Text(
+                    widget.quote.text,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontStyle: FontStyle.italic,
+                      color: _quoteTextColor,
+                      fontFamily: _fontFamily == 'System' ? null : _fontFamily,
+                      height: 1.5,
                     ),
-                  ],
-                ),
-                child: Column(
-                  children: [
-                    Icon(Icons.format_quote,
-                        color: _quoteTextColor.withValues(alpha: 0.4),
-                        size: 32),
-                    const SizedBox(height: 12),
-                    Text(
-                      widget.quote.text,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontStyle: FontStyle.italic,
-                        color: _quoteTextColor,
-                        fontFamily:
-                            _fontFamily == 'System' ? null : _fontFamily,
-                        height: 1.5,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      "— ${widget.quote.author}",
-                      style: TextStyle(
-                          fontSize: 14,
-                          color: _quoteTextColor.withValues(alpha: 0.6)),
-                    ),
-                  ],
-                ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    "— ${widget.quote.author}",
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: _quoteTextColor.withValues(alpha: 0.6)),
+                  ),
+                ],
               ),
             ),
 
+            const SizedBox(height: 16),
+
             Expanded(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Background Color",
+                    const Text("Background Color",
                         style: TextStyle(
-                            color: _quoteTextColor.withValues(alpha: 0.7),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600)),
+                            fontSize: 13, fontWeight: FontWeight.w600)),
                     const SizedBox(height: 8),
                     Wrap(
                       spacing: 8,
@@ -219,8 +192,8 @@ class _QuoteEditDialogState extends State<QuoteEditDialog> {
                         return GestureDetector(
                           onTap: () => setState(() => _quoteBgColor = color),
                           child: Container(
-                            width: 36,
-                            height: 36,
+                            width: 40,
+                            height: 40,
                             decoration: BoxDecoration(
                               color: color,
                               shape: BoxShape.circle,
@@ -243,11 +216,9 @@ class _QuoteEditDialogState extends State<QuoteEditDialog> {
                       }).toList(),
                     ),
                     const SizedBox(height: 16),
-                    Text("Text Color",
+                    const Text("Text Color",
                         style: TextStyle(
-                            color: _quoteTextColor.withValues(alpha: 0.7),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600)),
+                            fontSize: 13, fontWeight: FontWeight.w600)),
                     const SizedBox(height: 8),
                     Wrap(
                       spacing: 8,
@@ -257,8 +228,8 @@ class _QuoteEditDialogState extends State<QuoteEditDialog> {
                         return GestureDetector(
                           onTap: () => setState(() => _quoteTextColor = color),
                           child: Container(
-                            width: 36,
-                            height: 36,
+                            width: 40,
+                            height: 40,
                             decoration: BoxDecoration(
                               color: color,
                               shape: BoxShape.circle,
@@ -281,36 +252,38 @@ class _QuoteEditDialogState extends State<QuoteEditDialog> {
                       }).toList(),
                     ),
                     const SizedBox(height: 16),
-                    Text("Font Style",
+                    const Text("Font Style",
                         style: TextStyle(
-                            color: _quoteTextColor.withValues(alpha: 0.7),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600)),
+                            fontSize: 13, fontWeight: FontWeight.w600)),
                     const SizedBox(height: 8),
                     Wrap(
                       spacing: 8,
+                      runSpacing: 8,
                       children: _fonts.map((font) {
                         final isSelected = _fontFamily == font;
                         return GestureDetector(
                           onTap: () => setState(() => _fontFamily = font),
                           child: Container(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 14, vertical: 8),
+                                horizontal: 12, vertical: 6),
                             decoration: BoxDecoration(
                               color: isSelected
-                                  ? _quoteTextColor.withValues(alpha: 0.15)
+                                  ? Colors.blueGrey
                                   : Colors.transparent,
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(
                                 color: isSelected
-                                    ? _quoteTextColor.withValues(alpha: 0.5)
-                                    : _quoteTextColor.withValues(alpha: 0.15),
+                                    ? Colors.blueGrey
+                                    : Colors.grey.shade300,
+                                width: 1,
                               ),
                             ),
                             child: Text(
                               font,
                               style: TextStyle(
-                                color: _quoteTextColor,
+                                color: isSelected
+                                    ? Colors.white
+                                    : Colors.grey.shade700,
                                 fontSize: 12,
                                 fontFamily: font == 'System' ? null : font,
                               ),
@@ -319,50 +292,49 @@ class _QuoteEditDialogState extends State<QuoteEditDialog> {
                         );
                       }).toList(),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 16),
                   ],
                 ),
               ),
             ),
 
-            // Buttons
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: OutlinedButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: Text("Cancel",
-                          style: TextStyle(color: _quoteTextColor)),
+            // دوگمەکان
+            Row(
+              children: [
+                Expanded(
+                  child: TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
+                    child: const Text("Cancel"),
                   ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: ElevatedButton.icon(
-                      onPressed: _shareQuote,
-                      icon: const Icon(Icons.share, size: 18),
-                      label: const Text("Share"),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueGrey,
-                        foregroundColor: Colors.white,
-                      ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: _shareQuote,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueGrey,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
+                    child: const Text("Share"),
                   ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: ElevatedButton.icon(
-                      onPressed: _saveToGallery,
-                      icon: const Icon(Icons.save_alt, size: 18),
-                      label: const Text("Save"),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green,
-                        foregroundColor: Colors.white,
-                      ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: _saveToGallery,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
+                    child: const Text("Save"),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:wisdom_app/services/purchase_service.dart';
 import 'screens/home_screen.dart';
 import 'services/notification_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await NotificationService.initialize();
+  await PurchaseService.instance.initialize();
   runApp(const WisdomApp());
 }
 

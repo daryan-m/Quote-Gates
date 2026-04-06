@@ -128,10 +128,40 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "in_app_purchase",
+      "rootUri": "file:///home/user/.pub-cache/hosted/pub.dev/in_app_purchase-3.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "in_app_purchase_android",
+      "rootUri": "file:///home/user/.pub-cache/hosted/pub.dev/in_app_purchase_android-0.4.0+10",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
+    },
+    {
+      "name": "in_app_purchase_platform_interface",
+      "rootUri": "file:///home/user/.pub-cache/hosted/pub.dev/in_app_purchase_platform_interface-1.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "in_app_purchase_storekit",
+      "rootUri": "file:///home/user/.pub-cache/hosted/pub.dev/in_app_purchase_storekit-0.4.8+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
+    },
+    {
       "name": "intl",
       "rootUri": "file:///home/user/.pub-cache/hosted/pub.dev/intl-0.18.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "json_annotation",
+      "rootUri": "file:///home/user/.pub-cache/hosted/pub.dev/json_annotation-4.11.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
     },
     {
       "name": "leak_tracker",
