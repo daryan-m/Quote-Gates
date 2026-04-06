@@ -5,7 +5,7 @@
   "packages": [
     {
       "name": "wisdom_app",
-      "version": "1.0.0+1",
+      "version": "1.0.0+50",
       "dependencies": [
         "flutter",
         "flutter_local_notifications",
