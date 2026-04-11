@@ -159,3 +159,8 @@ secrets.yaml
 *.secret
 myapp_backup.zip
 *.zip
+
+# Data files
+facts_data.json
+history_data.json
+quotes_data.json

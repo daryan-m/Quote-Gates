@@ -5,7 +5,8 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myapp"
+    // ✅ ئەمانە بگۆڕە بۆ wisdom_app
+    namespace = "com.example.wisdom_app" 
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"
 
@@ -20,7 +21,8 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.myapp"
+        // ✅ ئەمە گرنگترینە، دەبێت وەک کۆدی MainActivity بێت
+        applicationId = "com.example.wisdom_app"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -29,7 +31,6 @@ android {
 
     buildTypes {
         release {
-            // ✅ دیباگ کیز بەکاردێت بۆ CI بەبێ ئیمزای ڕیلیز
             signingConfig = signingConfigs.getByName("debug")
         }
     }
