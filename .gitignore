@@ -156,5 +156,6 @@ firebase_options.dart
 # Secrets
 secrets.json
 secrets.yaml
-*.secretmyapp_backup.zip
+*.secret
+myapp_backup.zip
 *.zip

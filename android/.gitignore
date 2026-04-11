@@ -1,36 +1,9 @@
-# ── Flutter ──────────────────────────────────────────────────────────────────
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pub-cache/
-.pub/
-build/
-*.g.dart
-*.freezed.dart
-
-# ── Android ──────────────────────────────────────────────────────────────────
-gradle-wrapper.jar
-/.gradle
-/captures/
-/gradlew
-/gradlew.bat
+.gradle/
 /local.properties
 GeneratedPluginRegistrant.java
 .cxx/
-
-# کلیلی ئەپ — هەرگیز نەشارێنە
 key.properties
 **/*.keystore
 **/*.jks
-
-# ── IDE ───────────────────────────────────────────────────────────────────────
-.idea/
-.vscode/
-*.iml
-*.ipr
-*.iws
-
-# ── سیستەم ───────────────────────────────────────────────────────────────────
-.DS_Store
-Thumbs.db
+/app/build/
+/captures/
