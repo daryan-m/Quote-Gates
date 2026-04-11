@@ -18,8 +18,8 @@ class Quote {
   }
 
   Map<String, dynamic> toJson() => {
-    'text': text,
-    'author': author,
-    'category': category,
-  };
+        'text': text,
+        'author': author,
+        'category': category,
+      };
 }

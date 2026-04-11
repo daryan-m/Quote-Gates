@@ -535,7 +535,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content:
-                    const Text("کڕین سەرکەوتوو نەبوو، دووبارە هەوڵبدەرەوە"),
+                    const Text("Purchase failed, please try again."),
                 backgroundColor: Colors.red.shade700,
                 behavior: SnackBarBehavior.floating,
               ),
@@ -548,7 +548,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
-                content: Text("کڕینەکانت گەڕاندەوە"),
+                content: Text("Your purchases have been restored."),
                 behavior: SnackBarBehavior.floating,
               ),
             );

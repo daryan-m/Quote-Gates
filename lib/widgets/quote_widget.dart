@@ -17,63 +17,74 @@ class QuoteWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isDark = backgroundColor.computeLuminance() < 0.5;
-    final textColor = isDark ? Colors.white : Colors.black87;
-    final cardColor = isDark ? Colors.grey.shade900 : Colors.grey.shade100;
+    final textColor = isDark ? Colors.white : const Color(0xFF2C2C2C);
+    final subTextColor =
+        isDark ? Colors.white70 : Colors.black.withValues(alpha: 0.45);
 
     return Container(
-      margin: const EdgeInsets.all(20),
-      padding: const EdgeInsets.all(28),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 36),
       decoration: BoxDecoration(
-        color: cardColor,
-        borderRadius: BorderRadius.circular(40),
-        boxShadow: [
-          BoxShadow(
-            color: isDark ? Colors.black45 : Colors.black12,
-            blurRadius: 15,
-            spreadRadius: 3,
-            offset: const Offset(0, 5),
-          ),
-        ],
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(32),
         border: Border.all(
-          color: isDark ? Colors.grey.shade700 : Colors.grey.shade300,
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.08)
+              : Colors.black.withValues(alpha: 0.06),
           width: 1,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.35)
+                : Colors.black.withValues(alpha: 0.08),
+            blurRadius: 20,
+            spreadRadius: 2,
+            offset: const Offset(0, 6),
+          ),
+        ],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Icon(
-            Icons.format_quote,
-            size: 60,
-            color: textColor.withValues(alpha: 0.4),
+            Icons.format_quote_rounded,
+            size: 52,
+            color: textColor.withValues(alpha: 0.2),
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 20),
           Text(
             quote,
             style: TextStyle(
-              fontSize: 26,
+              fontSize: 22,
               fontFamily: fontFamily == 'System' ? null : fontFamily,
               fontStyle: FontStyle.italic,
-              height: 1.4,
+              height: 1.55,
               color: textColor,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w400,
+              letterSpacing: 0.2,
             ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 24),
           Container(
-            width: 60,
-            height: 2,
-            color: textColor.withValues(alpha: 0.3),
+            width: 48,
+            height: 1.5,
+            decoration: BoxDecoration(
+              color: subTextColor,
+              borderRadius: BorderRadius.circular(1),
+            ),
           ),
           const SizedBox(height: 16),
           Text(
-            "— $author —",
+            "— $author",
             style: TextStyle(
-              fontSize: 18,
-              color: textColor.withValues(alpha: 0.7),
+              fontSize: 15,
+              color: subTextColor,
+              fontFamily: fontFamily == 'System' ? null : fontFamily,
               fontWeight: FontWeight.w300,
-              letterSpacing: 1,
+              letterSpacing: 1.2,
             ),
             textAlign: TextAlign.center,
           ),

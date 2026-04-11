@@ -160,7 +160,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     Navigator.pop(context);
   }
 
-  Widget _buildLockedFeature(String feature, String kurdishName) {
+  Widget _buildLockedFeature(String feature, String description) {
     return GestureDetector(
       onTap: _showUpgradeMessage,
       child: Container(
@@ -176,7 +176,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             const SizedBox(width: 12),
             Expanded(
               child: Text(
-                "$kurdishName — تەنها بۆ پرۆ",
+                "$description — Only for Pro",
                 style: TextStyle(color: _sub, fontSize: 13),
               ),
             ),
@@ -447,7 +447,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   // ── گرید رەنگی تێکست ────────────────────────────────────────────────────────
   Widget _buildTextColorGrid() {
     if (!_isPro) {
-      return _buildLockedFeature("Text Color", "رەنگی تێکست");
+      return _buildLockedFeature("Text Color", "Change the text color");
     }
     return GridView.builder(
       shrinkWrap: true,
@@ -510,7 +510,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   // ── سلایدەری قەبارەی تێکست ──────────────────────────────────────────────────
   Widget _buildFontSizeSlider() {
     if (!_isPro) {
-      return _buildLockedFeature("Text Size", "قەبارەی تێکست");
+      return _buildLockedFeature("Text Size", "Adjust the text size");
     }
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
@@ -743,8 +743,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 if (!result && mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: const Text(
-                          "کڕین سەرکەوتوو نەبوو، دووبارە هەوڵبدەرەوە"),
+                      content: const Text("Purchase failed, please try again."),
                       backgroundColor: Colors.red.shade700,
                       behavior: SnackBarBehavior.floating,
                     ),
