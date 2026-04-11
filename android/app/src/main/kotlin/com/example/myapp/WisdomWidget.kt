@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.widget.RemoteViews
+import com.example.myapp.R
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.SimpleDateFormat
